@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('house')->group(function(){
-    Route::get('/','HouseController@index');
-    Route::get('/{id}','HouseController@show');
+Route::post('login',[LoginController::class, 'login']);
+Route::group(['middleware' => ['jwt']], function (){
+
+    Route::prefix('house')->group(function(){
+        Route::get('/','HouseController@index');
+        Route::get('/{id}','HouseController@show');
+    });
 });
