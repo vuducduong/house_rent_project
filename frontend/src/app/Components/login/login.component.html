@@ -42,14 +42,14 @@
           <form action="" method="post">
             <div class="form-group">
               <label for="email">Email</label>
-              <input type="text" class="form-control" id="email">
+              <input type="email" class="form-control" name="email" [(ngModel)]="email">
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" id="password">
+              <input type="password" class="form-control" name="password" [(ngModel)]="password">
             </div>
             <div class="text-center">
-              <button type="submit" class="btn btn-default"> Log in</button>
+              <button (click)="getToken()" type="submit" class="btn btn-default"> Log in</button>
             </div>
           </form>
 
