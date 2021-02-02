@@ -17,15 +17,18 @@ class House extends Model
         'amountOfbathrooms',
         'description',
         'status',
+        'image',
+        'bookings_id',
+        'users_id',
         
     ];
     function houseImages(){
         return $this->hasMany(HouseImages::class);
     }
-    function booking(){
+    function bookings(){
         return $this->beLongTo(Booking::class);
     }
-    function user(){
+    function users(){
         return $this->beLongTo(User::class);
     }
 }

@@ -23,6 +23,7 @@ class User extends Authenticatable
         'address',
         'phone',
         'avatar',
+        
     ];
 
     /**
@@ -44,10 +45,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    function house(){
+    function houses(){
         return $this->hasMany(House::class);
     }
-    function booking(){
+    function bookings(){
         return $this->hasMany(Booking::class);
     }
 }
