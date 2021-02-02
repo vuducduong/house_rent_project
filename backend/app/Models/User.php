@@ -20,6 +20,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'address',
+        'phone',
+        'avatar',
     ];
 
     /**
@@ -40,4 +43,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    function house(){
+        return $this->hasMany(House::class);
+    }
+    function booking(){
+        return $this->hasMany(Booking::class);
+    }
 }
