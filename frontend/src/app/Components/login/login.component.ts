@@ -7,13 +7,14 @@ import {Router} from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  
+
 })
 export class LoginComponent implements OnInit {
 
   email: '';
   password: '';
   result: Observable<any>;
+  submitted: boolean = false;
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -29,6 +30,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
     },
     error => console.log(error));
-    
+
 }
 }
