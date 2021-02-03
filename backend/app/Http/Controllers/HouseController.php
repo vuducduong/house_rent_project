@@ -49,13 +49,13 @@ class HouseController extends Controller
      */
     public function show($id)
     {
-        $house=House::find($id);
-        $house= DB::table('houses')
-        ->join('house_images','houses.id','=','house_images.houses_id')
-        ->select('house_images.*','houses.*')
-        ->where('houses.id','=',$id)
-        ->first();
-        return response()->json($house);
+        $house = House::find($id);
+    $images = DB::table('house_images')->where('houses_id','=',$id)->get();
+    $data = [
+        "houses" => $house,
+        "houseImages" => $images,
+    ];
+    return response()->json($data);
     }
 
     /**

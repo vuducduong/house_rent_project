@@ -15,10 +15,10 @@ class AddUsersIdToHousesTable extends Migration
     {
         Schema::table('houses', function (Blueprint $table) {
             
-            $table->unsignedBigInteger('users_id')->nullable();
-            $table->foreign('users_id')->references('id')->on('users');
-        
-    });
+                $table->unsignedBigInteger('users_id')->nullable();
+                $table->foreign('users_id')->references('id')->on('users');
+            
+        });
     }
 
     /**
