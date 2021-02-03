@@ -32,8 +32,3 @@ Route::post('login',[LoginController::class, 'login']);
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
     });
 // });
-
-
-
-
-

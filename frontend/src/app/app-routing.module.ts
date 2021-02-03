@@ -7,9 +7,10 @@ import { HostComponent } from './Components/host/host.component';
 const routes: Routes = [
   {path:'',component: HomeComponent},
 
-  {path:'houseDetail',component: HomeDetailComponent},
+  {path:'myHomeList',component: HostComponent},
+  
+  {path:'houseDetail/:id',component: HomeDetailComponent}
 
-  {path:'myHomeList',component: HostComponent}
 ];
 
 @NgModule({

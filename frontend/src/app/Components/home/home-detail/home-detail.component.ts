@@ -24,6 +24,7 @@ id!:any
     this.houseService.getHouse(this.id).subscribe(
       data=>{
         this.house=data
+        console.log(this.id)
       },error=>{
         console.log(error);
       }
