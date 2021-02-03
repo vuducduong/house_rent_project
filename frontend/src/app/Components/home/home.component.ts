@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HomeService } from './home.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 houses!:any
   constructor(
-    private homeService: HomeService
+    private homeService: HomeService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +26,10 @@ houses!:any
         console.log(error)
       }
     )
+  }
+
+  viewHouse(id: any){
+    this.router.navigate(['houseDetail/'+id])
   }
 
 }
