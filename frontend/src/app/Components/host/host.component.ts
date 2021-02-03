@@ -21,7 +21,6 @@ export class HostComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-
     this.loadData()
     
     
@@ -35,4 +34,6 @@ export class HostComponent implements OnInit {
       }
     )
   } 
+
+
 }
