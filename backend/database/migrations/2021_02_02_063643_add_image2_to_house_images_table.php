@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddHousesIdToBookingsTable extends Migration
+class AddImage2ToHouseImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class AddHousesIdToBookingsTable extends Migration
      */
     public function up()
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            $table->unsignedBigInteger('houses_id')->nullable();
-            $table->foreign('houses_id')->references('id')->on('houses');
+        Schema::table('house_images', function (Blueprint $table) {
+            $table->string('image2');
+            $table->string('image3');
+            $table->string('image4');
+            $table->string('image5');
+            $table->string('image6');
         });
     }
 
@@ -26,7 +29,7 @@ class AddHousesIdToBookingsTable extends Migration
      */
     public function down()
     {
-        Schema::table('bookings', function (Blueprint $table) {
+        Schema::table('house_images', function (Blueprint $table) {
             //
         });
     }

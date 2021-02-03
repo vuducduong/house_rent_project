@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\House;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class HouseController extends Controller
 {
@@ -14,7 +16,8 @@ class HouseController extends Controller
      */
     public function index()
     {
-        //
+        $houses= House::all();
+        return response()->json($houses);
     }
 
     /**
@@ -44,9 +47,15 @@ class HouseController extends Controller
      * @param  \App\Models\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function show(House $house)
+    public function show($id)
     {
-        //
+        $house=House::find($id);
+        $house= DB::table('houses')
+        ->join('house_images','houses.id','=','house_images.houses_id')
+        ->select('house_images.*','houses.*')
+        ->where('houses.id','=',$id)
+        ->first();
+        return response()->json($house);
     }
 
     /**

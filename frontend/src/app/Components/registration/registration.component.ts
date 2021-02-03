@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RegistrationService } from './registration.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor() { }
+  name!: string;
+  email!: string;
+  password!: string;
+  submitted: boolean = false;
+  constructor(private userService: RegistrationService,
+    private router: Router)
+ { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    this.submitted = true;
+    this.register();
+  }
+
+  register(){
+    this.userService.register({
+      name: this.name,
+      email: this.email,
+      password: this.password,
+    }).subscribe((data)=>{
+      this.router.navigate(['login']);
+    });
+  }
 }

@@ -12,12 +12,13 @@ class Booking extends Model
         'startDay',
         'endDay',
         'pricePerDay',
-        'houses_id',
+        'users_id',
+        
     ];
-    function house(){
+    function houses(){
         return $this->hasMany(House::class);
     }
-    function user(){
+    function users(){
         return $this->beLongTo(User::class);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditAvatarColumn extends Migration
+class AddUsersIdToHousesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class EditAvatarColumn extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-                $table->string('avatar')->nullable()->change();
-        });
+        Schema::table('houses', function (Blueprint $table) {
+            
+            $table->unsignedBigInteger('users_id')->nullable();
+            $table->foreign('users_id')->references('id')->on('users');
+        
+    });
     }
 
     /**
@@ -25,7 +28,7 @@ class EditAvatarColumn extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('houses', function (Blueprint $table) {
             //
         });
     }

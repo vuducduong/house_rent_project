@@ -6,9 +6,11 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  
 })
 export class LoginComponent implements OnInit {
+
   email: '';
   password: '';
   result: Observable<any>;
@@ -27,6 +29,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['homes']);
     },
     error => console.log(error));
-  }
-
+    
+}
 }
