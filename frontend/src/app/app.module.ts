@@ -14,7 +14,6 @@ import { CreateHomeComponent } from './Components/host/create-home/create-home.c
 
 import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
 
-import { ToastrModule } from 'ngx-toastr';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -50,6 +49,7 @@ import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatSortModule} from "@angular/material/sort";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -68,7 +68,7 @@ import {MatSortModule} from "@angular/material/sort";
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule,
+    ToastrModule.forRoot(),
     NgbModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
