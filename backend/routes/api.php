@@ -25,5 +25,10 @@ Route::post('login',[LoginController::class, 'login']);
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
+
+
+
+        // MyHomeList
+        Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
     });
 // });

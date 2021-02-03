@@ -15,6 +15,7 @@ import { CreateHomeComponent } from './Components/host/create-home/create-home.c
 import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
 
 import { ToastrModule } from 'ngx-toastr';
+import { UsersComponent } from './Components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
     CreateHomeComponent,
 
     HomeDetailComponent,
+
+    UsersComponent,
   
   ],
   imports: [
