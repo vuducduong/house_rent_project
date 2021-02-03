@@ -28,7 +28,7 @@ export class RegistrationComponent implements OnInit {
     this.register();
   }
   showToasterSuccess() {
-    this.notificationService.warning('Đăng ký thành công.', 'Thông báo !');
+    this.notificationService.success('Đăng ký thành công.', 'Thông báo !');
   }
   showToasterError() {
     this.notificationService.error(

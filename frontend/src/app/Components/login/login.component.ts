@@ -22,12 +22,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getToken();
+    this.submitted = true;
+    console.log(this.result);
   }
   getToken(){
     this.loginService.login(this.email, this.password).subscribe(
       data => {
         localStorage.setItem('AccessToken', data.token);
-        this.router.navigate(['home']);
+        console.log('token',data.token);
+        this.router.navigate(['homes']);
     },
     error => console.log(error));
 
