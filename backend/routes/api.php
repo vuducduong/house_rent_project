@@ -1,9 +1,10 @@
 <?php
 
+
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+
+Route::post('registration',[UserController::class,'store']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -32,3 +36,8 @@ Route::post('login',[LoginController::class, 'login']);
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
     });
 // });
+Route::prefix('user')->group(function(){
+    Route::get('/','UserController@index');
+    Route::get('/{id}','UserController@show');
+    Route::put('/{id}','UserController@update');
+});
