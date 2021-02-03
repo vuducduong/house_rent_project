@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getToken();
+    console.log(this.result);
   }
   getToken(){
     this.loginService.login(this.email, this.password).subscribe(
