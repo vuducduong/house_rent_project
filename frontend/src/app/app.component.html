@@ -18,9 +18,11 @@
         <button class="navbar-btn nav-button wow bounceInRight login" onclick=" window.open('register.html')"
                 data-wow-delay="0.4s">Login
         </button>
-        <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')"
-                data-wow-delay="0.5s">Submit
-        </button>
+        <a routerLink="myHomeList" routerLinkActive="active"  class="navbar-btn nav-button wow fadeInRight" 
+                data-wow-delay="0.5s">Trang cá nhân 
+                <!-- <router-outlet></router-outlet> -->
+
+      </a>
       </div>
       <ul class="main-nav nav navbar-nav navbar-right">
         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
@@ -132,6 +134,7 @@
   <div class="slider">
     <div id="bg-slider" class="owl-carousel owl-theme">
 
+
       <div class="item"><img src="assets/img/slide1/slider-image-2.jpg" alt="The Last of us"></div>
       <div class="item"><img src="assets/img/slide1/slider-image-1.jpg" alt="GTA V"></div>
 
@@ -151,7 +154,7 @@
 
 <!-- <app-home></app-home> -->
 <!-- <app-login></app-login> -->
-<!-- <router-outlet></router-outlet> -->
+<router-outlet></router-outlet>
 <!-- <app-host></app-host> -->
 <!-- <app-create-home></app-create-home> -->
 
