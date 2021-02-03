@@ -7,13 +7,14 @@ import {Router} from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  
+
 })
 export class LoginComponent implements OnInit {
 
   email: '';
   password: '';
   result: Observable<any>;
+  submitted: boolean = false;
   constructor(
     private loginService: LoginService,
     private router: Router
@@ -21,15 +22,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.getToken();
+    this.submitted = true;
     console.log(this.result);
   }
   getToken(){
     this.loginService.login(this.email, this.password).subscribe(
       data => {
         localStorage.setItem('AccessToken', data.token);
+        console.log('token',data.token);
         this.router.navigate(['homes']);
     },
     error => console.log(error));
-    
+
 }
 }

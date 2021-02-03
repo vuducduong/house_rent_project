@@ -50,6 +50,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatSortModule} from "@angular/material/sort";
 import {ToastrModule} from "ngx-toastr";
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -108,6 +109,7 @@ import {ToastrModule} from "ngx-toastr";
     OverlayModule,
     PortalModule,
     ScrollingModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
