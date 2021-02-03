@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\House;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -90,5 +91,19 @@ class HouseController extends Controller
     public function destroy(House $house)
     {
         //
+    }
+
+
+
+    public function myHomeList($id)
+    {
+        $list = User::find($id);
+        $list = DB::table('users')
+        ->join('houses','users.id','=','houses.users_id')
+        ->select('users.name','houses.*')
+        ->where('users.id','=',$id)
+        ->get();
+        return response()->json($list);
+
     }
 }

@@ -20,10 +20,20 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('login',[LoginController::class, 'login']);
-Route::group(['middleware' => ['jwt']], function (){
+// Route::group(['middleware' => ['jwt']], function (){
 
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
+
+
+
+        // MyHomeList
+        Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
     });
-});
+// });
+
+
+
+
+
