@@ -35,5 +35,7 @@ export class HostComponent implements OnInit {
     )
   } 
 
-
+  getInfo() {
+    this.router.navigate(['myHomeList/acc']);
+  }
 }

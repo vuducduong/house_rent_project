@@ -29,7 +29,8 @@ export class LoginComponent implements OnInit {
   getToken(){
     this.loginService.login(this.email, this.password).subscribe(
       data => {
-        localStorage.setItem('AccessToken', data.token);
+        localStorage.setItem('token', data[1]);
+        localStorage.setItem('id', data[0].id)
         console.log('token',data.token);
         this.router.navigate(['homes']);
     },
