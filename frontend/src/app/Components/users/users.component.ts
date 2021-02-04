@@ -61,4 +61,9 @@ id!: any
     }, error => {this.toastr.error('Cập nhật thông tin không thành công')})
       
     }
+
+    cancel(){
+      this.router.navigate(['myHomeList']);
+  
+    }
 }
