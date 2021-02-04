@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\HouseController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
@@ -18,18 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('registration',[UserController::class,'store']);
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::post('login',[LoginController::class, 'login']);
 //  Route::group(['middleware' => ['jwt']], function (){
-
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
-
-
+        Route::put('/{id}', [HouseController::class, 'update']);
 
         // MyHomeList
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
