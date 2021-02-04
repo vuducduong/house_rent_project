@@ -51,6 +51,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatSortModule} from "@angular/material/sort";
 import {ToastrModule} from "ngx-toastr";
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { UpdateHomeComponent } from './Components/host/update-home/update-home.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HostComponent,
     CreateHomeComponent,
     HomeDetailComponent,
+    UpdateHomeComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,12 @@ export class HostService {
   createHouse(value: any){
     return this.http.post(`${this.baseUrl}/createHome`,value);
   }
+  updateHost(id: number, value: any): Observable<Object> {
+    return this.http.put(`${this.baseUrl}/${id}`, value);
+  }
+  getHost(id: number){
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
   
 
 }

@@ -1,6 +1,7 @@
 <?php
 
 
+use App\Http\Controllers\HouseController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
@@ -28,6 +29,8 @@ Route::post('login',[LoginController::class, 'login']);
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
+        Route::put('/{id}', [HouseController::class, 'update']);
+
 
 
 
