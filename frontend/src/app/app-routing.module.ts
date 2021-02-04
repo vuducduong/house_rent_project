@@ -5,11 +5,12 @@ import { HomeDetailComponent } from './Components/home/home-detail/home-detail.c
 import { HomeComponent } from './Components/home/home.component';
 import { HostComponent } from './Components/host/host.component';
 import { LoginComponent } from './Components/login/login.component';
+import { RegistrationComponent } from './Components/registration/registration.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
 
-  {path:'home',component: HomeComponent},
+  {path:'homes',component: HomeComponent},
 
   {path:'myHomeList',component: HostComponent},
   
@@ -17,7 +18,8 @@ const routes: Routes = [
 
   {path: 'login', component: LoginComponent},
 
-  {path:'myHomeList/acc',component:UsersComponent}
+  {path:'myHomeList/acc',component:UsersComponent},
+  {path: 'registration', component: RegistrationComponent},
 
 ];
 

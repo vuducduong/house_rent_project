@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('registration',[UserController::class,'store']);
 
+
+Route::post('register',[UserController::class,'store']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

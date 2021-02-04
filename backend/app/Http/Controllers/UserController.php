@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
+use PhpParser\Node\Expr\FuncCall;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
@@ -115,5 +117,10 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getUserInfo(Request $request){
+        $user = JWTAuth::toUser($request->token);
+        return response()->json(['result' => $user]);
     }
 }
