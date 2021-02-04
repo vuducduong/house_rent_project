@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+
 Route::post('register',[UserController::class,'store']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
@@ -39,3 +41,8 @@ Route::post('login',[LoginController::class, 'login']);
         Route::post('/createHome','\App\Http\Controllers\HouseController@store');
     });
 // });
+Route::prefix('user')->group(function(){
+    Route::get('/','UserController@index');
+    Route::get('/{id}','UserController@show');
+    Route::put('/{id}','UserController@update');
+});

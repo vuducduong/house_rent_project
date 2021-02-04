@@ -14,6 +14,7 @@ import { CreateHomeComponent } from './Components/host/create-home/create-home.c
 
 import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
 
+import { UsersComponent } from './Components/users/users.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -62,6 +63,9 @@ import { UpdateHomeComponent } from './Components/host/update-home/update-home.c
     HostComponent,
     CreateHomeComponent,
     HomeDetailComponent,
+
+    UsersComponent,
+ 
     UpdateHomeComponent,
   ],
   imports: [

@@ -1,3 +1,4 @@
+import { UsersComponent } from './Components/users/users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
@@ -13,7 +14,6 @@ const routes: Routes = [
 
 
 //MyHomeList
-  {path:'myHomeList',component: HostComponent},
   {path:'myHomeList/createHome',component:CreateHomeComponent},
   {path:'myHomeList/edit/:id',component:UpdateHomeComponent},
 
@@ -26,6 +26,9 @@ const routes: Routes = [
   {path:'houseDetail/:id',component: HomeDetailComponent},
 
   {path: 'login', component: LoginComponent},
+
+  {path:'myHomeList/acc',component:UsersComponent},
+
   {path: 'registration', component: RegistrationComponent},
 
 
