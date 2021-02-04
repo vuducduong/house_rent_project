@@ -110,6 +110,5 @@ class HouseController extends Controller
         ->where('users.id','=',$id)
         ->get();
         return response()->json($list);
-
     }
 }
