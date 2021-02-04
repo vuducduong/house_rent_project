@@ -9,9 +9,9 @@
     <div class="collapse navbar-collapse yamm" id="navigation">
       <div class="button navbar-right">
         <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="registration"
-          routerLinkActive="active">Registration</button>
+          routerLinkActive="active">Đăng ký</button>
         <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="login"
-          routerLinkActive="active">Login</button>
+          routerLinkActive="active">Đăng nhập</button>
           <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="isLoggedIn"  (click)="logout()"
           routerLinkActive="active">Đăng xuất</button>
         <a routerLink="myHomeList" routerLinkActive="active" class="navbar-btn nav-button wow fadeInRight"
@@ -20,17 +20,14 @@
       </div>
       <ul class="main-nav nav navbar-nav navbar-right">
         <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-          <a href="index.html">Home</a>
+          <a href="index.html">Trang chủ</a>
         </li>
 
-        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="properties.html">Properties</a></li>
-        <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="property.html">Property</a></li>
+
         <li class="dropdown yamm-fw" data-wow-delay="0.1s">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template
-          </a>
         </li>
 
-        <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="contact.html">Contact</a></li>
+        <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="contact.html">Liên hệ</a></li>
       </ul>
     </div>
   </div>
