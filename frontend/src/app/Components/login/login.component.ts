@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
 import {LoginService} from './login.service';
 import {Router} from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { TokenStorageService } from '../token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -11,28 +13,31 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  email: '';
-  password: '';
+  loginSytem: boolean = false;
+  email!: string;
+  password!: string;
   result: Observable<any>;
   submitted: boolean = false;
   constructor(
     private loginService: LoginService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService,
   ) { }
 
   ngOnInit(): void {
-    this.getToken();
-    this.submitted = true;
-    console.log(this.result);
   }
+
   getToken(){
+    this.submitted = true;
     this.loginService.login(this.email, this.password).subscribe(
       data => {
+        this.toastr.success("Đăng nhập thành công !")
         localStorage.setItem('AccessToken', data.token);
-        console.log('token',data.token);
         this.router.navigate(['homes']);
+        window.location.reload()
     },
-    error => console.log(error));
+    error => this.toastr.error("Tài khoản hoặc mật khẩu không đúng") )
 
 }
+
 }

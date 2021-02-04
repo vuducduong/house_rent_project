@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Expr\FuncCall;
@@ -44,17 +45,19 @@ class UserController extends Controller
             'password'=>'required|string|min:6',
         ]);
 
-        $statusCode = 201;
-        if($validator->fails()){
-            $statusCode=400;
-            return response()->json($validator->errors()->toJson(),$statusCode);
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $user = new User();
-        $user->fill($request->all());
-        $user->password = Hash::make($request->password);
-        $user->save();
-        return response()->json($user);
+        $user = User::create([
+            'email' => $request->get('email'),
+            'name' => $request->get('name'),
+            'password' => Hash::make($request->get('password')),
+        ]);
+
+        $token = JWTAuth::fromUser($user);
+
+        return response()->json(compact('user', 'token'), 201);
     }
 
     /**
@@ -106,4 +109,5 @@ class UserController extends Controller
         $user = JWTAuth::toUser($request->token);
         return response()->json(['result' => $user]);
     }
+    
 }

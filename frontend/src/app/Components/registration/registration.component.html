@@ -17,7 +17,7 @@
           <form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
             <div class="form-group  form_input_login">
               <label for="userName">Tên người dùng</label>
-              <input id="userName" type="text" name="name" class="form-control input_form_login" required [(ngModel)]="name" #userName="ngModel">
+              <input id="userName" type="text" name="name" class="form-control input_form_login" required [(ngModel)]="user.name" #userName="ngModel">
             </div>
             <div *ngIf="submitted">
               <div *ngIf="userName.errors" style="color: red">
@@ -26,7 +26,7 @@
             </div>
             <div class="form-group  form_input_login">
               <label>Email</label>
-              <input type="text" id="email" name="email" required class="form-control input_form_login" email [(ngModel)]="email" #userEmail="ngModel">
+              <input type="text" id="email" name="email" required class="form-control input_form_login" email [(ngModel)]="user.email" #userEmail="ngModel">
             </div>
             <div *ngIf="submitted">
               <div *ngIf="userEmail.errors" style="color: red">
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group form_input_login">
               <label>Mật khẩu</label>
-              <input type="password" id="password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8" [(ngModel)]="password" #passLogin="ngModel">
+              <input type="password" id="password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8" [(ngModel)]="user.password" #passLogin="ngModel">
             </div>
             <div *ngIf="submitted">
               <div *ngIf="passLogin.errors" style="color: red">
@@ -50,7 +50,7 @@
               <input type="password" id="confirm_password" name="password" class="form-control input_form_login" required minlength="6" maxlength="8">
             </div> -->
             <div class="div_submit" style="text-align: center;">
-              <button class="btn btn-success" (click)="onSubmit()">Đăng ký</button>
+              <button class="btn btn-default" (click)="onSubmit()">Đăng ký</button>
             </div>
           </form>
         </div>
