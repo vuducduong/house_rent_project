@@ -51,6 +51,9 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatSortModule} from "@angular/material/sort";
 import {ToastrModule} from "ngx-toastr";
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {AngularFireStorageModule,} from "@angular/fire/storage";
 
 @NgModule({
   declarations: [
@@ -108,7 +111,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
   bootstrap: [AppComponent]
