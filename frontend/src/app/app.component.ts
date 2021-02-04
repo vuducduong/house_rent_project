@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit{
-  isLoggedIn = localStorage.getItem('AccessToken');
+  isLoggedIn = localStorage.getItem('token');
 
   title = 'frontend';
 

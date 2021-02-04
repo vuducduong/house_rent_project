@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from '../token-storage.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -32,7 +33,9 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.email, this.password).subscribe(
       data => {
         this.toastr.success("Đăng nhập thành công !")
-        localStorage.setItem('AccessToken', data.token);
+        localStorage.setItem('token', data[1]);
+        localStorage.setItem('id', data[0].id)
+        console.log('token',data.token);
         this.router.navigate(['homes']);
         window.location.reload()
     },

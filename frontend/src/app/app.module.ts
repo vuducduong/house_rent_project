@@ -14,6 +14,7 @@ import { CreateHomeComponent } from './Components/host/create-home/create-home.c
 
 import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
 
+import { UsersComponent } from './Components/users/users.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -52,6 +53,13 @@ import {MatSortModule} from "@angular/material/sort";
 import {ToastrModule} from "ngx-toastr";
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {AngularFireStorageModule,} from "@angular/fire/storage";
+
+import { UpdateHomeComponent } from './Components/host/update-home/update-home.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +70,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CreateHomeComponent,
     HomeDetailComponent,
 
+    UsersComponent,
+ 
+    UpdateHomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -109,7 +120,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     OverlayModule,
     PortalModule,
     ScrollingModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
   ],
   providers: [],
   bootstrap: [AppComponent]

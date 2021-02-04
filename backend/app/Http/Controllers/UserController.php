@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
 use PhpParser\Node\Expr\FuncCall;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -19,7 +21,15 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users=User::all();
+        return response()->json($users);
+        // $users=User::find($id);
+        // $users=BD::table('users')
+        // ->join('houses','users.id','=','houses.users_id')
+        // ->select('users.*')
+        // ->where('users.id','=',$id)
+        // ->get();
+        // return response()->json($users);
     }
 
     /**
@@ -27,8 +37,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        
     }
 
     /**
@@ -68,7 +79,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user=User::find($id);
+        return response()->json($user);
     }
 
     /**
@@ -79,7 +91,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
@@ -91,7 +103,26 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // $user=User::find($id);
+        // $user->address = $request->address;
+        // $user->phone = $request->phone;
+        // $user->avatar = $request->avatar;
+        // $user->save();
+        // return response()->json($user);
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'address' => 'required',
+            'phone' => 'required|string|min:6|max:20',
+            'avatar' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+        return response()->json($user);
     }
 
     /**
