@@ -35,11 +35,11 @@
             <div class="col-sm-6 col-md-3 p0">
               <div class="box-two proerty-item" *ngFor = "let house of houses">
                 <div class="item-thumb">
-                  <a href="property-1.html"><img src="{{house.image}}"></a>
+                  <a (click)="viewHouse(house.id)"><img src="{{house.image}}"></a>
                 </div>
 
                 <div class="item-entry overflow" >
-                  <h5><a (click)="viewHouse(house.id)" >{{house.name}}</a></h5>
+                  <h5><button (click)="viewHouse(house.id)" >{{house.name}}</button></h5>
                   <div class="dot-hr"></div>
                   <span class="pull-left"><b> Type :</b>{{house.type}}</span>
                   <br>

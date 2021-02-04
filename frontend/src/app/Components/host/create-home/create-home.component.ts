@@ -3,7 +3,6 @@ import {House} from '../host';
 import { ActivatedRoute, Router } from "@angular/router";
 import { HostService } from "../host.service";
 import { ToastrService } from 'ngx-toastr';
-import { NotificationService } from 'src/app/notification.service';
 import { Observable } from 'rxjs';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, map } from 'rxjs/operators';
@@ -33,7 +32,7 @@ export class CreateHomeComponent implements OnInit {
     private notificationService: ToastrService,
     private storage: AngularFireStorage) {}
 
-  
+
 
   ngOnInit(): void {
     this.house = new House();

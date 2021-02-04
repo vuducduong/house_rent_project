@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { NotificationService } from 'src/app/notification.service';
+import { User } from '../users/user';
 import { RegistrationService } from './registration.service';
 
 @Component({
@@ -11,40 +11,42 @@ import { RegistrationService } from './registration.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  name!: string;
-  email!: string;
-  password!: string;
+
+  user: User = new User();
   submitted: boolean = false;
   constructor(private userService: RegistrationService,
     private router: Router,
-    private notificationService: ToastrService)
+    private toastrService: ToastrService)
  { }
 
   ngOnInit(): void {
   }
 
+
   onSubmit(){
     this.submitted = true;
     this.register();
   }
-  showToasterSuccess() {
-    this.notificationService.success('Đăng ký thành công.', 'Thông báo !');
-  }
-  showToasterError() {
-    this.notificationService.error(
-      'Đăng ký thất bại',
-      'email của quý khách đã có người sử dụng'
-    );
-  }
+
+
 
   register(){
-    this.userService.register({
-      name: this.name,
-      email: this.email,
-      password: this.password,
-    }).subscribe((data)=>{
-      this.showToasterSuccess();
-      this.router.navigate(['login']);
-    });
+    this.userService
+      .register(this.user).subscribe( data => {
+          this.toastrService.success("Đăng ký thành công")
+          this.user = new User();
+          this.router.navigate(['login']);
+        },
+      error => this.toastrService.error("Đăng ký thất bại"))
   }
+
+  // this.loginService.login(this.email, this.password).subscribe(
+  //   data => {
+  //     this.toastr.success("Đăng nhập thành công !")
+  //     localStorage.setItem('AccessToken', data.token);
+  //     this.router.navigate(['homes']);
+  // },
+  // error => this.toastr.error("Tài khoản hoặc mật khẩu không đúng") )
+
+
 }

@@ -18,7 +18,7 @@ export class UpdateHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.id = this.route.snapshot.params.id;
 
     this.house = new House();
 
