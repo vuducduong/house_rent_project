@@ -35,6 +35,7 @@ Route::post('login',[LoginController::class, 'login']);
 
         // MyHomeList
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
+        Route::post('/createHome','\App\Http\Controllers\HouseController@store');
     });
 // });
 Route::prefix('user')->group(function(){

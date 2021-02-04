@@ -28,7 +28,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -39,7 +39,10 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $myHome = new House();
+        $myHome->fill($request->all());
+        $myHome->save();
+        return response()->json($myHome);
     }
 
     /**
@@ -88,9 +91,9 @@ class HouseController extends Controller
      * @param  \App\Models\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function destroy(House $house)
+    public function destroy($id)
     {
-        //
+       
     }
 
 

@@ -16,7 +16,7 @@ private baseUrl="http://127.0.0.1:8000/api/user"
     return this.http.get(`${this.baseUrl}/${id}`)
   }
 
-  updateUser(id: any, value:any){
+  updateUser(id: any, value: any){
     return this.http.put(`${this.baseUrl}/${id}`,value)
   }
 

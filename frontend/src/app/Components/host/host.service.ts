@@ -1,5 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import {Observable} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +15,10 @@ export class HostService {
   getmyHomeList(){
     return this.http.get(`${this.baseUrl}`)
   }
+
+  createHouse(value: any){
+    return this.http.post(`${this.baseUrl}/createHome`,value);
+  }
+  
 
 }
