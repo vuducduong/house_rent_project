@@ -28,7 +28,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
@@ -80,9 +80,12 @@ class HouseController extends Controller
      * @param  \App\Models\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, House $house)
+    public function update(Request $request, $id)
     {
-        //
+        $house = House::find($id);
+        $house->fill($request->all());
+        $house->save();
+        return response()->json($house);
     }
 
     /**
@@ -93,7 +96,7 @@ class HouseController extends Controller
      */
     public function destroy($id)
     {
-       
+
     }
 
 
