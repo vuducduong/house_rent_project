@@ -1,36 +1,31 @@
-import { UsersComponent } from './Components/users/users.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
-import { HomeComponent } from './Components/home/home.component';
-import { CreateHomeComponent } from './Components/host/create-home/create-home.component';
-import { HostComponent } from './Components/host/host.component';
-import { UpdateHomeComponent } from './Components/host/update-home/update-home.component';
-import { LoginComponent } from './Components/login/login.component';
-import { RegistrationComponent } from './Components/registration/registration.component';
+import { HomeDetailComponent } from './core/home/home-detail/home-detail.component';
+import { HomeComponent } from './core/home/home.component';
+import { CreateHouseComponent } from './components/house/create-house/create-house.component';
+import { UpdateHouseComponent } from './components/house/update-house/update-house.component';
+import { RegisterComponent } from './authentication/register/register.component';
+import { HouseComponent } from './components/house/house-detail/house.component';
+import { UpdateProfileComponent } from './authentication/update-profile/update-profile.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
-  {path:'',component: HomeComponent},
+  {path:'thuenha.com.vn',component: HomeComponent},
 
 
 //MyHomeList
-  {path:'myHomeList/createHome',component:CreateHomeComponent},
-  {path:'myHomeList/edit/:id',component:UpdateHomeComponent},
+  {path:'create-house',component:CreateHouseComponent},
+  {path:'edit-house/:id',component:UpdateHouseComponent},
 
+  {path:'house',component: HouseComponent},
 
-
-  {path:'homes',component: HomeComponent},
-
-  {path:'myHomeList',component: HostComponent},
-  
-  {path:'houseDetail/:id',component: HomeDetailComponent},
+  {path:'house-detail/:id',component: HomeDetailComponent},
 
   {path: 'login', component: LoginComponent},
 
-  {path:'myHomeList/acc',component:UsersComponent},
+  {path: 'register', component: RegisterComponent},
 
-  {path: 'registration', component: RegistrationComponent},
-
+  {path: 'update-profile', component: UpdateProfileComponent}
 
 ];
 
