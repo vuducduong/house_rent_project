@@ -2,50 +2,132 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="673db4c3-282f-4cb8-aa3f-45fb83fd8733" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/assets/contact-2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/House_rent_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/House_rent_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/HouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/HouseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2021_02_02_083536_add_users_id_to_houses_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/host.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/host/host.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/login/login.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/users/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/Components/users/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/auth/auth.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home-detail/home-detail.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home-detail/home-detail.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home-detail/home-detail.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home-detail/home-detail.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/home/home.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/create-home/create-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/host.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/host/update-home/update-home.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/login/login.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/registration/registration.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/registration/registration.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/registration/registration.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/registration/registration.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/registration/registration.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/registration/registration.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/token-storage.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/token-storage.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/user.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/user.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/user.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/Components/users/users.component.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication.service.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/illuminate/http" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/collections" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/macroable" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/queue" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/auth" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/session" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/container" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/console" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/pipeline" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
   </component>
   <component name="ProjectId" id="1o1ohJdc1XXLySWsQ6Rr2zothy3" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,6 +139,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/frontend/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -68,6 +151,8 @@
       <option name="presentableId" value="Default" />
       <updated>1612463584377</updated>
       <workItem from="1612463593317" duration="173000" />
+      <workItem from="1612516925626" duration="797000" />
+      <workItem from="1612706740180" duration="376000" />
     </task>
     <servers />
   </component>

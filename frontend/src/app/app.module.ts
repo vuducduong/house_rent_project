@@ -6,16 +6,14 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './Components/home/home.component';
-import { LoginComponent } from './Components/login/login.component';
+import { HomeComponent } from './core/home/home.component';
+import { LoginComponent } from './authentication/login/login.component';
 
-import { HostComponent } from './Components/host/host.component';
-import { CreateHomeComponent } from './Components/host/create-home/create-home.component';
+import { CreateHouseComponent } from './components/house/create-house/create-house.component';
 
-import { HomeDetailComponent } from './Components/home/home-detail/home-detail.component';
+import { HomeDetailComponent } from './core/home/home-detail/home-detail.component';
 
-import { UsersComponent } from './Components/users/users.component';
-import { RegistrationComponent } from './Components/registration/registration.component';
+import { RegisterComponent} from './authentication/register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
@@ -57,7 +55,11 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import {AngularFireStorageModule,} from "@angular/fire/storage";
 
-import { UpdateHomeComponent } from './Components/host/update-home/update-home.component';
+import { UpdateHouseComponent } from './components/house/update-house/update-house.component';
+import { HeaderComponent } from './core/header/header.component';
+import { FooterComponent } from './core/footer/footer.component';
+import { UpdateProfileComponent } from './authentication/update-profile/update-profile.component';
+import { HouseComponent } from './components/house/house-detail/house.component';
 
 
 @NgModule({
@@ -65,14 +67,19 @@ import { UpdateHomeComponent } from './Components/host/update-home/update-home.c
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegistrationComponent,
-    HostComponent,
-    CreateHomeComponent,
+    RegisterComponent,
+    HouseComponent,
+    CreateHouseComponent,
     HomeDetailComponent,
 
-    UsersComponent,
- 
-    UpdateHomeComponent,
+
+    UpdateHouseComponent,
+
+    HeaderComponent,
+
+    FooterComponent,
+
+    UpdateProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +87,12 @@ import { UpdateHomeComponent } from './Components/host/update-home/update-home.c
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
+     ToastrModule.forRoot(
+   {timeOut: 800
+     ,preventDuplicates: true,
+  positionClass: 'toast-top-left',
+}
+    ),
     NgbModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
@@ -122,7 +134,7 @@ import { UpdateHomeComponent } from './Components/host/update-home/update-home.c
     ScrollingModule,
     MatFormFieldModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud")
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
   ],
   providers: [],
   bootstrap: [AppComponent]

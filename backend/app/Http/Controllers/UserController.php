@@ -39,7 +39,7 @@ class UserController extends Controller
      */
     public function create(Request $request)
     {
-        
+
     }
 
     /**
@@ -50,6 +50,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        dd(1);
         $validator = Validator::make($request->all(),[
             'name'=> 'required|string|max:255',
             'email'=> 'required|string|email|max:255|unique:users',
@@ -91,7 +92,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        
+
     }
 
     /**
@@ -140,5 +141,5 @@ class UserController extends Controller
         $user = JWTAuth::toUser($request->token);
         return response()->json(['result' => $user]);
     }
-    
+
 }
