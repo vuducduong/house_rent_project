@@ -15,6 +15,7 @@ export class AuthenticationService {
     login(email: string, password: string): Observable<any> {
       const reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
+         'Access-Control-Allow-Origin': '*',
       });
       var data = {
         'email': email,
