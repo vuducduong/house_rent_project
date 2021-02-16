@@ -33,14 +33,14 @@ id!: any
 
   getToken() {
     if(localStorage.getItem('token')){
-      this.router.navigate(['myHomeList/acc']);
+      this.router.navigate(['update-profile']);
     }
   }
 
   loadData(){
     this.id = localStorage.getItem('id');
 
-    this.userService.getUser(this.id).subscribe(
+    this.authService.getUser(this.id).subscribe(
       data => {
 
         this.user = data;
@@ -51,7 +51,7 @@ id!: any
   }
 
   updateUser() {
-    this.userService.updateUser(this.id, this.user).subscribe(
+    this.authService.updateUser(this.id, this.user).subscribe(
       data => {
         console.log(data)
         this.user = new User();
@@ -62,7 +62,7 @@ id!: any
     }
 
     cancel(){
-      this.router.navigate(['myHomeList']);
+      this.router.navigate(['thuenha.com.vn']);
 
     }
 }

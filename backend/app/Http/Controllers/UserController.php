@@ -110,16 +110,16 @@ class UserController extends Controller
         // $user->avatar = $request->avatar;
         // $user->save();
         // return response()->json($user);
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'address' => 'required',
-            'phone' => 'required|string|min:6|max:20',
-            'avatar' => 'required',
-        ]);
+        // $validator = Validator::make($request->all(), [
+        //     'name' => 'required|string|max:255',
+        //     'address' => 'required',
+        //     'phone' => 'required|string|min:6|max:20',
+        //     'avatar' => 'required',
+        // ]);
 
-        if ($validator->fails()) {
-            return response()->json($validator->errors()->toJson(), 400);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json($validator->errors()->toJson(), 400);
+        // }
         $user = User::find($id);
         $user->fill($request->all());
         $user->save();

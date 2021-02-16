@@ -37,11 +37,11 @@
 
                   <hr>
                   <h2>Thông tin cá nhân </h2>
-                  <form>
+                  <form  >
                       <div class="row">
                           <div class="col-sm-6">
                               <div class="form-group"> Tên người dùng :
-                                  <input type="text" class="form-control" placeholder="Enter name" name="name"
+                                  <input type="text" class="form-control"  name="name"
                                       [(ngModel)]="user.name" required #name='ngModel'
                                       [class.is-invalid]="name.invalid && name.touched">
                                   <div *ngIf="name.errors && (name.valid || name.touched)">
@@ -73,13 +73,10 @@
                           </div>
                           <div class="col-sm-6">
                               <div class="form-group"> Email :
-                                  <input type="text" class="form-control" placeholder="Enter name" name="email"
-                                      [(ngModel)]="user.email" required #name='ngModel'
-                                      [class.is-invalid]="name.invalid && name.touched">
-                                  <div *ngIf="email.errors && (email.valid || email.touched)">
-                                      <small class="text-danger" *ngIf="email.errors.required">Tên người dùng không
-                                          được để trống</small>
-                                  </div>
+                                  <input disabled type="text" class="form-control" name="email"
+                                      [(ngModel)]="user.email" >
+                                      
+                                  
                               </div>
                           </div>
                           <div class="col-sm-6">
@@ -88,7 +85,7 @@
                               </div>
                           </div>
                           <div class="col-sm-12 text-center">
-                              <button (click)="updateUser()" type="submit" class="btn btn-primary">Cập nhật</button>
+                              <button   (click)="updateUser()" type="submit" class="btn btn-primary">Cập nhật</button>
                               <div class="col-sm-6">
                               <button type='submit' (click)="cancel()" class="btn btn-primary">Trở về </button>
                               </div>
