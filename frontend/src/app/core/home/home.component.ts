@@ -29,7 +29,7 @@ houses!:any
   }
 
   viewHouse(id: any){
-    this.router.navigate(['houseDetail/'+id])
+    this.router.navigate(['house-detail/'+id])
   }
 
 }
