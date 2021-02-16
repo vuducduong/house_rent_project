@@ -46,14 +46,15 @@
                                             <label>Tên căn nhà :</label>
                                             <input id="name" name="name" type="text"
                                                 class="form-control form_input_create" required [(ngModel)]="house.name"
-                                                #name="ngModel" placeholder="Super villa ...">
+                                                #namehouse="ngModel" placeholder="Super villa ...">
                                         </div>
                                         <div >
-                                            <div *ngIf="name.errors" style="color: red">
-                                                <p class="text-danger form_input_create" *ngIf="name.errors.required">
+                                            <div *ngIf="namehouse.errors" style="color: red">
+                                                <p class="text-danger form_input_create" *ngIf="namehouse.errors.required">
                                                     *Vui lòng nhập tên căn nhà !</p>
                                             </div>
                                         </div>
+
 
                                         <div class="form-group form_input_create">
                                             <label>Giá căn nhà :</label>

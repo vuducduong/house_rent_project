@@ -14,28 +14,29 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse yamm" id="navigation">
           <div class="button navbar-right">
-            <button class="navbar-btn nav-button wow bounceInRight login" routerLink="login"
+            <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="login"
             routerLinkActive="active">Đăng nhập</button>
-            <button class="navbar-btn nav-button wow bounceInRight login"  routerLink="register"
+            <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="register"
             routerLinkActive="active">Đăng ký</button>
 
-            <div class="user-info-dropdown">
-              <div class="dropdown">
-                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                  <span class="user-icon">
-                    <img src="vendors/images/photo1.jpg" alt="">
-                  </span>
-                  <span class="user-name">Ross C. Lopez</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list" style="">
-                  <a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
-                  <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-                  <a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-                  <a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
-                </div>
-              </div>
-            </div>
+            <button class="dropdown ymm-sw " *ngIf="isLoggedIn" data-wow-delay="0.1s">
+              <a href="index.html" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Trang ca nhan <b class="caret"></b></a>
+              <ul class="dropdown-menu navbar-nav">
+                  <li>
+                      <a href="index-2.html">Chinh sua trang ca nhan</a>
+                  </li>
+                  <li>
+                      <a href="index-3.html">Home Style 3</a>
+                  </li>
+                  <li>
+                      <a href="index-4.html">Doi mat khau</a>
+                  </li>
+                  <li>
+                      <a (click)="logOut()">Đăng xuất</a>
+                  </li>
 
+              </ul>
+            </button>
 
           </div>
           <ul class="main-nav nav navbar-nav navbar-right">

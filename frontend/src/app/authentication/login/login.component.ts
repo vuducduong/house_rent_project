@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticationService } from 'src/app/service/authentication.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,11 +14,11 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm: FormGroup;
   loginSytem: boolean = false;
   email!: string;
   password!: string;
   result: Observable<any>;
-  submitted: boolean = false;
   constructor(
     private authService: AuthenticationService,
     private router: Router,
@@ -25,10 +26,16 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loginForm = new FormGroup(
+      {
+        'email': new FormControl(null, [Validators.required, Validators.email]),
+        'password': new FormControl(null, Validators.required),
+      }
+    )
   }
 
   getToken(){
-    this.submitted = true;
+    console.log();
     this.authService.login(this.email, this.password).subscribe(
       data => {
         localStorage.setItem('token', data[1]);
@@ -38,6 +45,10 @@ export class LoginComponent implements OnInit {
     },
     error => this.toastr.error("Tài khoản hoặc mật khẩu không đúng") )
 
+}
+
+get passWord(){
+  return this.loginForm.get('password')
 }
 
 }
