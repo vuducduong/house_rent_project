@@ -1,5 +1,6 @@
 import { Component, Host, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { House } from 'src/app/model/houses/houses';
 import { HouseService } from '../../../service/house.service';
 
@@ -11,10 +12,11 @@ import { HouseService } from '../../../service/house.service';
 export class UpdateHouseComponent implements OnInit {
   id!: number;
   house!: House;
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private houseService: HouseService
+    private houseService: HouseService,
   ) { }
 
   ngOnInit(): void {
@@ -25,7 +27,7 @@ export class UpdateHouseComponent implements OnInit {
     this.houseService.getHouse(this.id).subscribe(
       data => {
         // @ts-ignore
-        this.house = data;
+        this.house = data.houses;
       },error => console.log(error)
 
     )
@@ -34,11 +36,11 @@ export class UpdateHouseComponent implements OnInit {
     this.houseService.updateHouse(this.id, this.house).subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['myHomeList']);
+        this.router.navigate(['house']);
       }, error => console.log(error));
   }
   cancel(){
-    this.router.navigate(['myHomeList']);
+    this.router.navigate(['house']);
 
   }
 
