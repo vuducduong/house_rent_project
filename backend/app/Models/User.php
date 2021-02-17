@@ -57,12 +57,19 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsToMany(Role::class);
     }
 
+
     public function getJWTIdentifier()
     {
         // TODO: Implement getJWTIdentifier() method.
         return $this->getKey();
     }
 
+
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
     public function getJWTCustomClaims()
     {
         // TODO: Implement getJWTCustomClaims() method.
