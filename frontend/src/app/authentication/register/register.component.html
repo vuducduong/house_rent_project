@@ -36,7 +36,7 @@
 
             <div class="form-group">
               <label>Mật khẩu</label>
-              <input type="text" formControlName="password" class="form-control">
+              <input type="password" formControlName="password" class="form-control">
               <div *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)"
               class="alert alert-danger">
               <div *ngIf="registerForm.get('password').errors.required">Vui lòng nhập mật khẩu</div>

@@ -35,11 +35,16 @@ export class LoginComponent implements OnInit {
   }
 
   getToken(){
-    console.log();
-    this.authService.login(this.email, this.password).subscribe(
+    console.log(this.loginForm.value.email);
+    console.log(this.loginForm.value.password);
+    this.authService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe(
       data => {
-        localStorage.setItem('token', data[1]);
-        localStorage.setItem('id', data[0].id)
+        console.log('data', data);
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('id', data.user.id);
+        setTimeout( () => {
+          window.location.reload();
+        }, 1000);
         this.toastr.success("Đăng nhập thành công !")
         this.router.navigate(['thuenha.com.vn']);
     },

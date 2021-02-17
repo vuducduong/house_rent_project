@@ -54,7 +54,7 @@ id!: any
     this.authService.updateUser(this.id, this.user).subscribe(
       data => {
         console.log(data)
-        this.user = new User();
+        // this.user = new User();
         this.loadData();
       this.toastr.success("Cập nhật thông tin thành công");
     }, error => {this.toastr.error('Cập nhật thông tin không thành công')})

@@ -15,7 +15,12 @@ export class AuthenticationService {
     login(email: string, password: string): Observable<any> {
       const reqHeader = new HttpHeaders({
         'Content-Type': 'application/json',
-         'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Origin': '*',
+
+        // 'Access-Control-Allow-Methods': 'HEAD, GET, POST, PUT, PATCH, DELETE',
+        //  'Access-Control-Allow-Headers': '*'
+
+
       });
       var data = {
         'email': email,
@@ -25,6 +30,7 @@ export class AuthenticationService {
     }
 
     register(user: Object): Observable<Object>{
+      console.log('user', user);
       return this.http.post(`http://127.0.0.1:8000/api/register`, user);
     }
 
