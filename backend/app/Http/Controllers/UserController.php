@@ -23,13 +23,6 @@ class UserController extends Controller
     {
         $users=User::all();
         return response()->json($users);
-        // $users=User::find($id);
-        // $users=BD::table('users')
-        // ->join('houses','users.id','=','houses.users_id')
-        // ->select('users.*')
-        // ->where('users.id','=',$id)
-        // ->get();
-        // return response()->json($users);
     }
 
     /**
@@ -104,22 +97,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $user=User::find($id);
-        // $user->address = $request->address;
-        // $user->phone = $request->phone;
-        // $user->avatar = $request->avatar;
-        // $user->save();
-        // return response()->json($user);
-        // $validator = Validator::make($request->all(), [
-        //     'name' => 'required|string|max:255',
-        //     'address' => 'required',
-        //     'phone' => 'required|string|min:6|max:20',
-        //     'avatar' => 'required',
-        // ]);
-
-        // if ($validator->fails()) {
-        //     return response()->json($validator->errors()->toJson(), 400);
-        // }
+        
         $user = User::find($id);
         $user->fill($request->all());
         $user->save();

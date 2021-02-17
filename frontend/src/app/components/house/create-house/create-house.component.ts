@@ -36,6 +36,7 @@ export class CreateHouseComponent implements OnInit {
 
   ngOnInit(): void {
     this.house = new House();
+    this.id= localStorage.getItem("id")
 
   }
 
@@ -45,7 +46,8 @@ export class CreateHouseComponent implements OnInit {
   }
 
   createHouse(){
-    this.house.image =this.srcImg
+    this.house.users_id=this.id;
+    this.house.image =this.srcImg;
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
       (data: any) => {

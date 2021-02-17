@@ -11,6 +11,7 @@ export class HouseComponent implements OnInit {
 
   myHomeLists !:any
   id!:any
+  house: any;
 
   constructor(
     private houseService: HouseService,
@@ -19,13 +20,15 @@ export class HouseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    // this.id = this.route.snapshot.params['id'];
     this.loadData()
+    
 
 
   }
   loadData(){
-    this.houseService.getmyHomeList().subscribe(
+    this.id = localStorage.getItem('id');
+    this.houseService.getHouse(this.id).subscribe(
       data=>{
         this.myHomeLists = data
       },error=>{
@@ -35,6 +38,6 @@ export class HouseComponent implements OnInit {
   }
 
   getInfo() {
-    this.router.navigate(['myHomeList/acc']);
+    this.router.navigate(['house']);
   }
 }

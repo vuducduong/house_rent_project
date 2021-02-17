@@ -23,7 +23,7 @@ export class HouseService {
     return this.http.put(`${this.baseUrl}/${id}`, value);
   }
   getHouse(id: number){
-    return this.http.get(`${this.baseUrl}/${id}`);
+    return this.http.get(`${this.baseUrl}/list/${id}`);
   }
 
 
