@@ -13,7 +13,7 @@ import { AuthenticationService } from 'src/app/service/authentication.service';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  user: User = new User();
+  user: User;
   constructor(private authService: AuthenticationService,
     private router: Router,
     private toastrService: ToastrService)
@@ -35,10 +35,14 @@ export class RegisterComponent implements OnInit {
 
 
   register(){
+    this.user = new User(
+      this.registerForm.value.name,
+      this.registerForm.value.email,
+      this.registerForm.value.password,
+      )
     this.authService
       .register(this.user).subscribe( data => {
           this.toastrService.success("Đăng ký thành công")
-          this.user = new User();
           this.router.navigate(['login']);
         },
     error => this.toastrService.error("Đăng ký thất bại")
