@@ -51,7 +51,9 @@ export class UpdateHouseComponent implements OnInit {
     this.houseService.updateHouse(this.id, this.house).subscribe(
       data => {
         console.log(data);
+
         this.toastrService.success("Chinh sua thành công");
+
         this.router.navigate(['house']);
       }, error => console.log(error));
   }
