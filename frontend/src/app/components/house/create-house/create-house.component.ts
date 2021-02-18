@@ -54,7 +54,7 @@ export class CreateHouseComponent implements OnInit {
         console.log(data);
         this.showToasterSuccess();
         this.house = new House();
-        this.router.navigate(['myHomeList']);
+        this.router.navigate(['house']);
       },
       (error: any) => {
         console.log(error)
@@ -62,7 +62,7 @@ export class CreateHouseComponent implements OnInit {
     )
   }
   cancel(){
-    this.router.navigate(['myHomeList']);
+    this.router.navigate(['house']);
 
   }
 

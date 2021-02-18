@@ -14,7 +14,9 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $booking = Booking::all();
+        return response()->json($booking);
+
     }
 
     /**
@@ -35,7 +37,11 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $booking= new Booking();
+        $booking->fill($request->all());
+        $booking->save();
+        return response()->json($booking);
+
     }
 
     /**

@@ -32,16 +32,16 @@
 
                 <div class="section">
                     <div class="page-subheader sorting pl0 pr-10">
-
+        
                         <ul class="sort-by-list pull-left">
                             <li  style="font-size: 20px;" class="">
-                                <a routerLink="createHome" routerLinkActive="active"  data-orderby="property_price" data-order="DESC">
+                                <a routerLink="create-house" routerLinkActive="active"  data-orderby="property_price" data-order="DESC">
                                   Thêm mới                                </a>
                             </li>
                         </ul>
-
+        
                     </div>
-
+        
                 </div>
 
 
@@ -60,13 +60,16 @@
                                     <!-- <span class="pull-left"><b> Area :</b> 120m </span> -->
                                     <span class="proerty-price pull-right">{{list.pricePerDay}} VND</span>
                                     <p style="display: none;"> Mô tả  : {{list.description}}</p>
+                                    <div >
+                                     <span class="pull-left" ><b> Status :</b>{{list.status}}</span>
+                                    </div>
                                     <div class="property-icon">
                                         <img src="assets/img/icon/bed.png">{{list.amountOfbedrooms}}|
                                         <img src="assets/img/icon/shawer.png">{{list.amountOfbathrooms}})|
 
 
                                         <div class="dealer-action pull-right">
-                                            <a routerLink="edit/{{list.id}}" routerLinkActive="active" class="button">Sửa </a>
+                                            <a routerLink="edit-house/{{list.id}}" routerLinkActive="active" class="button">Sửa </a>
                                         </div>
                                     </div>
 

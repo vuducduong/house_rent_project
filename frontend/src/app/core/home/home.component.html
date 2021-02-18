@@ -201,7 +201,7 @@
           <a class="layout-list" href="javascript:void(0);"> <i class="fa fa-th-list"></i> </a>
           <a class="layout-grid active" href="javascript:void(0);"> <i class="fa fa-th"></i> </a>
         </div>
-
+        
         <div class="col-md-12 ">
           <div id="list-type" class="proerty-th">
             <div class="col-sm-6 col-md-3 p0" *ngFor = "let house of houses">
@@ -222,7 +222,7 @@
                   <div class="property-icon">
                     <img src="assets/img/icon/bed.png">{{house.amountOfbedrooms}}|
                     <img src="assets/img/icon/shawer.png">{{house.amountOfbathrooms}}|
-                    <button class="btn btn-warning" type="button">Thuê nhà</button>
+                    <a routerLink="booking/edit-house/{{house.id}}" routerLinkActive="active" class="btn btn-warning" type="button">Thuê nhà</a>
                   </div>
                 </div>
               </div>

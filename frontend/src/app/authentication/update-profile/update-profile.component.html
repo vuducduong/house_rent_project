@@ -37,16 +37,16 @@
 
                   <hr>
                   <h2>Thông tin cá nhân </h2>
-                  <form  >
+                  <form [formGroup]="profileForm" >
                       <div class="row">
                           <div class="col-sm-6">
                               <div class="form-group"> Tên người dùng :
                                   <input type="text" class="form-control"  formControlName="name"
                                       [(ngModel)]="user.name" required
                                       >
-                                  <div *ngIf="loginForm.get('name').invalid && (loginForm.get('name').dirty || loginForm.get('name').touched)" class="alert alert-danger">
-                                      <small class="text-danger" *ngIf="loginForm.get('name').errors.required" >Tên người dùng không
-                                          được để trống</small>
+                                  <div *ngIf="profileForm.get('name').invalid && (profileForm.get('name').dirty || profileForm.get('name').touched)" class="alert alert-danger">
+                                      <div class="text-danger" *ngIf="profileForm.get('name').errors.required" >Tên người dùng không
+                                          được để trống</div>
                                   </div>
                               </div>
                           </div>
@@ -55,9 +55,9 @@
                                   <input type="text" class="form-control" formControlName="address" 
                                       [(ngModel)]="user.address" required 
                                       >
-                                  <div *ngIf="loginForm.get('address').invalid && (loginForm.get('address').dirty || loginForm.get('address').touched)" class="alert alert-danger">
-                                      <small class="text-danger" *ngIf="loginForm.get('address').errors.required">Địa chỉ người dùng
-                                          không được để trống</small>
+                                  <div *ngIf="profileForm.get('address').invalid && (profileForm.get('address').dirty || profileForm.get('address').touched)" class="alert alert-danger">
+                                      <div class="text-danger" *ngIf="profileForm.get('address').errors.required">Địa chỉ người dùng
+                                          không được để trống</div>
                                   </div>
                               </div>
                           </div>
@@ -65,15 +65,15 @@
                               <div class="form-group">Số điện thoại :
                                   <input type="number" class="form-control" formControlName="phone" [(ngModel)]="user.phone"
                                       required >
-                                  <div *ngIf="loginForm.get('address').invalid && (loginForm.get('phone').dirty || loginForm.get('phone').touched)" class="alert alert-danger">
-                                      <small class="text-danger" *ngIf="loginForm.get('phone').errors.required">Số điện thoại người
-                                          dùng không được để trống</small>
+                                  <div *ngIf="profileForm.get('phone').invalid && (profileForm.get('phone').dirty || profileForm.get('phone').touched)" class="alert alert-danger">
+                                      <div class="text-danger" *ngIf="loginForm.get('phone').errors.required">Số điện thoại người
+                                          dùng không được để trống</div>
                                   </div>
                               </div>
                           </div>
                           <div class="col-sm-6">
                               <div class="form-group"> Email :
-                                  <input disabled type="text" class="form-control" name="email"
+                                  <input disabled type="text" class="form-control" formControlName="email"
                                       [(ngModel)]="user.email" >
                                       
                                   
@@ -85,7 +85,7 @@
                               </div>
                           </div>
                           <div class="col-sm-12 text-center">
-                              <button   (click)="updateUser()" type="submit" class="btn btn-primary">Cập nhật</button>
+                              <button  (click)="updateUser()" type="submit" class="btn btn-primary">Cập nhật</button>
                               <div class="col-sm-6">
                               <button type='submit' (click)="cancel()" class="btn btn-primary">Trở về </button>
                               </div>

@@ -34,7 +34,7 @@ export class UpdateHouseComponent implements OnInit {
     this.houseService.updateHouse(this.id, this.house).subscribe(
       data => {
         console.log(data);
-        this.router.navigate(['myHomeList']);
+        this.router.navigate(['house']);
       }, error => console.log(error));
   }
   cancel(){

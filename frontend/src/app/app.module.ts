@@ -60,6 +60,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { UpdateProfileComponent } from './authentication/update-profile/update-profile.component';
 import { HouseComponent } from './components/house/house-detail/house.component';
+import { BookingComponent } from './core/home/booking/booking.component';
 
 
 @NgModule({
@@ -80,6 +81,8 @@ import { HouseComponent } from './components/house/house-detail/house.component'
     FooterComponent,
 
     UpdateProfileComponent,
+
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -134,7 +137,7 @@ import { HouseComponent } from './components/house/house-detail/house.component'
     ScrollingModule,
     MatFormFieldModule,
     AngularFireStorageModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
   ],
   providers: [],
   bootstrap: [AppComponent]

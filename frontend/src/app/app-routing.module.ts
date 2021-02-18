@@ -1,3 +1,4 @@
+import { BookingComponent } from './core/home/booking/booking.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeDetailComponent } from './core/home/home-detail/home-detail.component';
@@ -14,9 +15,9 @@ const routes: Routes = [
 
 
 //MyHomeList
-  {path:'create-house',component:CreateHouseComponent},
-  {path:'edit-house/:id',component:UpdateHouseComponent},
-
+  {path:'house/create-house',component:CreateHouseComponent},
+  {path:'house/edit-house/:id',component:UpdateHouseComponent},
+  
   {path:'house',component: HouseComponent},
 
   {path:'house-detail/:id',component: HomeDetailComponent},
@@ -25,7 +26,9 @@ const routes: Routes = [
 
   {path: 'register', component: RegisterComponent},
 
-  {path: 'update-profile', component: UpdateProfileComponent}
+  {path: 'update-profile', component: UpdateProfileComponent},
+
+  {path: 'thuenha.com.vn/booking/edit-house/:id', component: BookingComponent},
 
 ];
 
