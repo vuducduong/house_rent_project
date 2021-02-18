@@ -53,12 +53,12 @@ export class UpdateHouseComponent implements OnInit {
         console.log(data);
         this.toastrService.success("Chinh sua thành công");
         this.router.navigate(['house']);
-      }, error => console.log(error));
+      }, error => 
+      this.toastrService.error("Chinh sua thất bại")
+      );
   }
   cancel(){
-    this.toastrService.error("Chinh sua thất bại")
     this.router.navigate(['house']);
-
   }
 
 
