@@ -60,7 +60,10 @@ import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { UpdateProfileComponent } from './authentication/update-profile/update-profile.component';
 import { HouseComponent } from './components/house/house-detail/house.component';
+
 import { BookingComponent } from './core/home/booking/booking.component';
+
+import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
 
 
 @NgModule({
@@ -82,7 +85,11 @@ import { BookingComponent } from './core/home/booking/booking.component';
 
     UpdateProfileComponent,
 
+
     BookingComponent,
+
+    ChangePasswordComponent,
+
   ],
   imports: [
     BrowserModule,
