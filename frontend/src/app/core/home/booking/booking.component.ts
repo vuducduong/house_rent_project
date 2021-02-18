@@ -40,7 +40,7 @@ house!: any;
   }
 
   createBooking(){
-    this.booking.house_id=this.id;
+    
 
     this.booking.users_id=this.id;
     this.booking.image =this.srcImg;
@@ -56,14 +56,7 @@ house!: any;
         console.log(error)
       }
     )
-    this.houseService.updateHouse(this.id, this.house).subscribe(
-      
-      data => {
-        this.house.status= "dang muon thue";
-        console.log(data);
-
-        this.router.navigate(['house']);
-      }, error => console.log(error));
+    
   }
 
   showToasterSuccess(){

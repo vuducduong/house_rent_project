@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::post('register',[UserController::class,'store']);
+Route::put('change-password/{id}',[UserController::class,'changePassword']);
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -50,5 +51,6 @@ Route::prefix('booking')->group(function(){
     Route::get('/','BookingController@index');
     Route::post('/','BookingController@store');
 });
+
 
 //  });
