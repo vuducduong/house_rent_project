@@ -52,15 +52,16 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
   submit(){
+    // @ts-ignore
     this.authService.changePassword(this.id, this.changePasswordForm.value.password, this.changePasswordForm.value.newPassword, this.changePasswordForm.value.newPasswordConfirm).subscribe(
       data => {
         this.toastr.success('Đổi mật khẩu thành công');
-        this.router.navigate(['thuenha.com.vn']);
+        this.router.navigate(['home']);
       },
       error => this.toastr.error("Mật khẩu không đúng") )
   }
 
   back(){
-    this.router.navigate(['thuenha.com.vn'])
+    this.router.navigate(['home']);
   }
 }
