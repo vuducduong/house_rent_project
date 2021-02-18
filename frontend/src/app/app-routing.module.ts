@@ -11,13 +11,13 @@ import { UpdateProfileComponent } from './authentication/update-profile/update-p
 import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
-  {path:'thuenha.com.vn',component: HomeComponent},
+  {path:'',component: HomeComponent},
 
 
 //MyHomeList
   {path:'house/create-house',component:CreateHouseComponent},
   {path:'house/edit-house/:id',component:UpdateHouseComponent},
-  
+
   {path:'house',component: HouseComponent},
 
   {path:'house-detail/:id',component: HomeDetailComponent},
