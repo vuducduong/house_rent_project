@@ -64,7 +64,6 @@ import { ChangePasswordComponent } from './authentication/change-password/change
 
 import { BookingComponent } from './core/home/booking/booking.component';
 
-import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
 
 
 @NgModule({
