@@ -27,7 +27,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('login',[LoginController::class, 'login']);
-// Route::group(['middleware' => ['jwt']], function (){
+//  Route::group(['middleware' => ['jwt']], function (){
 
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
@@ -47,3 +47,5 @@ Route::prefix('user')->group(function(){
     Route::get('/{id}','UserController@show');
     Route::put('/{id}','UserController@update');
 });
+
+//  });

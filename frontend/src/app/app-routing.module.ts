@@ -11,12 +11,12 @@ import { LoginComponent } from './authentication/login/login.component';
 import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
 
 const routes: Routes = [
-  {path:'thuenha.com.vn',component: HomeComponent},
+  {path:'',component: HomeComponent},
 
 
 //MyHomeList
-  {path:'create-house',component:CreateHouseComponent},
-  {path:'edit-house/:id',component:UpdateHouseComponent},
+  {path:'house/create-house',component:CreateHouseComponent},
+  {path:'house/edit-house/:id',component:UpdateHouseComponent},
 
   {path:'house',component: HouseComponent},
 

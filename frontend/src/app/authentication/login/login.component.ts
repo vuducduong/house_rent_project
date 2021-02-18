@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
           window.location.reload();
         }, 1000);
         this.toastr.success("Đăng nhập thành công !")
-        this.router.navigate(['thuenha.com.vn']);
+        this.router.navigate(['']);
     },
     error => this.toastr.error("Tài khoản hoặc mật khẩu không đúng") )
 
