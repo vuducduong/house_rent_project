@@ -140,5 +140,21 @@ class UserController extends Controller
         $user = JWTAuth::toUser($request->token);
         return response()->json(['result' => $user]);
     }
+    public function changePassword(Request $request, $id){
+        $user = User::find($id);
+        $password = $user->password;
+        $currentPassword = Hash::check($request->password,$password);
+        $newPassword = $request->newPassword === $request->newPasswordConfirm ;
+        if($currentPassword){
+            if($newPassword){
+                $user->password = Hash::make($request->newPassword);
+                $user->save();
+                return response()->json('Đổi mật khẩu thành công');
+            }else{
+                return response()->json('Nhập lại mật khẩu không đúng',401);
+            }
+        }
+        return response()->json('Mật khẩu hiện tại không chính xác', 400);
+    }
 
 }

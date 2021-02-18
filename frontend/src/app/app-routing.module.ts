@@ -8,6 +8,7 @@ import { RegisterComponent } from './authentication/register/register.component'
 import { HouseComponent } from './components/house/house-detail/house.component';
 import { UpdateProfileComponent } from './authentication/update-profile/update-profile.component';
 import { LoginComponent } from './authentication/login/login.component';
+import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
 
 const routes: Routes = [
   {path:'thuenha.com.vn',component: HomeComponent},
@@ -25,8 +26,9 @@ const routes: Routes = [
 
   {path: 'register', component: RegisterComponent},
 
-  {path: 'update-profile', component: UpdateProfileComponent}
+  {path: 'update-profile', component: UpdateProfileComponent},
 
+  {path: 'change-password', component: ChangePasswordComponent}
 ];
 
 @NgModule({

@@ -38,9 +38,9 @@
               <label>Mật khẩu</label>
               <input type="password" formControlName="password" class="form-control">
               <div *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)"
-              class="alert alert-danger">
-              <div *ngIf="registerForm.get('password').errors.required">Vui lòng nhập mật khẩu</div>
-              <div *ngIf="registerForm.get('password').errors.minlength">Độ dài mật khẩu từ 6-8 kí tự</div>
+                class="alert alert-danger">
+                <div *ngIf="registerForm.get('password').errors.required">Vui lòng nhập mật khẩu</div>
+                <div *ngIf="registerForm.get('password').errors.minlength">Độ dài mật khẩu từ 6-8 kí tự</div>
               </div>
             </div>
 
