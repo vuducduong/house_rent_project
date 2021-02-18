@@ -134,7 +134,7 @@ import { HouseComponent } from './components/house/house-detail/house.component'
     ScrollingModule,
     MatFormFieldModule,
     AngularFireStorageModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
   ],
   providers: [],
   bootstrap: [AppComponent]

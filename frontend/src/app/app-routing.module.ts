@@ -11,13 +11,14 @@ import { LoginComponent } from './authentication/login/login.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
+  {path:'home',component: HomeComponent},
 
 
 //MyHomeList
+  {path:'house',component: HouseComponent},
   {path:'house/create-house',component:CreateHouseComponent},
   {path:'house/edit-house/:id',component:UpdateHouseComponent},
 
-  {path:'house',component: HouseComponent},
 
   {path:'house-detail/:id',component: HomeDetailComponent},
 
