@@ -46,4 +46,15 @@ export class AuthenticationService {
   updateUser(id: any, value: any){
     return this.http.put(`${this.baseUrl}/${id}`,value)
   }
+
+  changePassword(id: any, password: string, newPassword: string, newPasswordConfirm: string): Observable<any> {
+    var data = {
+      "password": password,
+      "newPassword": newPassword,
+      "newPasswordConfirm": newPasswordConfirm
+    }
+    console.log(data)
+    return this.http.put(`http://127.0.0.1:8000/api/change-password/${id}`, data)
+  }
+
 }
