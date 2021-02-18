@@ -1,3 +1,4 @@
+import { BookingComponent } from './core/home/booking/booking.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeDetailComponent } from './core/home/home-detail/home-detail.component';
@@ -27,6 +28,12 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
 
   {path: 'update-profile', component: UpdateProfileComponent},
+
+
+
+  {path: 'thuenha.com.vn/booking/edit-house/:id', component: BookingComponent},
+
+
 
   {path: 'change-password', component: ChangePasswordComponent}
 ];

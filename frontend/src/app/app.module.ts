@@ -62,6 +62,10 @@ import { UpdateProfileComponent } from './authentication/update-profile/update-p
 import { HouseComponent } from './components/house/house-detail/house.component';
 import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
 
+import { BookingComponent } from './core/home/booking/booking.component';
+
+import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
+
 
 @NgModule({
   declarations: [
@@ -82,7 +86,15 @@ import { ChangePasswordComponent } from './authentication/change-password/change
 
     UpdateProfileComponent,
 
+
+
+    BookingComponent,
+
     ChangePasswordComponent,
+
+
+    ChangePasswordComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -137,7 +149,7 @@ import { ChangePasswordComponent } from './authentication/change-password/change
     ScrollingModule,
     MatFormFieldModule,
     AngularFireStorageModule,
-    // AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
   ],
   providers: [],
   bootstrap: [AppComponent]

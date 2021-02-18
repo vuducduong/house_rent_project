@@ -36,6 +36,7 @@ export class CreateHouseComponent implements OnInit {
 
   ngOnInit(): void {
     this.house = new House();
+    this.id= localStorage.getItem("id")
 
   }
 
@@ -45,14 +46,15 @@ export class CreateHouseComponent implements OnInit {
   }
 
   createHouse(){
-    this.house.image =this.srcImg
+    this.house.users_id=this.id;
+    this.house.image =this.srcImg;
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
       (data: any) => {
         console.log(data);
         this.showToasterSuccess();
         this.house = new House();
-        this.router.navigate(['myHomeList']);
+        this.router.navigate(['house']);
       },
       (error: any) => {
         console.log(error)
@@ -60,7 +62,7 @@ export class CreateHouseComponent implements OnInit {
     )
   }
   cancel(){
-    this.router.navigate(['myHomeList']);
+    this.router.navigate(['house']);
 
   }
 

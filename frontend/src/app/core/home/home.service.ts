@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class HomeService {
-private baseUrl="http://127.0.0.1:8000/api/house"
+private baseUrl="http://127.0.0.1:8000/api/house";
+private Url="http://127.0.0.1:8000/api/booking"
   constructor(private http:HttpClient) { }
 
   getHouseList(){
@@ -20,5 +21,9 @@ private baseUrl="http://127.0.0.1:8000/api/house"
   }
   getHouse(id: any){
     return this.http.get(`${this.baseUrl}/${id}`)
+  }
+
+  booking(value: any){
+    return this.http.post(`${this.Url}`,value)
   }
 }

@@ -18,7 +18,6 @@ class House extends Model
         'description',
         'status',
         'image',
-        'bookings_id',
         'users_id',
         
     ];

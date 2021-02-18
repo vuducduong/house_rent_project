@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-
-class AddBookingsIdToHousesTable extends Migration
+class AddColumnUsersIdToBookings extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +13,9 @@ class AddBookingsIdToHousesTable extends Migration
      */
     public function up()
     {
-
         Schema::table('houses', function (Blueprint $table) {
-            $table->unsignedBigInteger('bookings_id')->nullable();
-            $table->foreign('bookings_id')->references('id')->on('bookings');
+            $table->unsignedBigInteger('users_id')->nullable();
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
@@ -29,7 +27,7 @@ class AddBookingsIdToHousesTable extends Migration
     public function down()
     {
         Schema::table('houses', function (Blueprint $table) {
-
+            //
         });
     }
 }
