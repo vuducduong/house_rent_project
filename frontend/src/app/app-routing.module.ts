@@ -30,7 +30,9 @@ const routes: Routes = [
   {path: 'update-profile', component: UpdateProfileComponent},
 
 
+
   {path: 'thuenha.com.vn/booking/edit-house/:id', component: BookingComponent},
+
 
 
   {path: 'change-password', component: ChangePasswordComponent}
