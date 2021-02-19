@@ -25,7 +25,7 @@ class House extends Model
         return $this->hasMany(HouseImages::class);
     }
     function bookings(){
-        return $this->beLongTo(Booking::class);
+        return $this->hasMany(Booking::class);
     }
     function users(){
         return $this->beLongTo(User::class);
