@@ -54,7 +54,8 @@ class HouseController extends Controller
     public function show($id)
     {
         $house = House::find($id);
-    $images = DB::table('house_images')->where('houses_id','=',$id)->get();
+    $images = DB::table('house_images')->where('houses_id','=',$id)
+    ->get();
     $data = [
         "houses" => $house,
         "houseImages" => $images,
