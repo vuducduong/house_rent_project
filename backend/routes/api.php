@@ -18,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('registration',[UserController::class,'store']);
-Route::post('login',[LoginController::class, 'login']);
-//  Route::group(['middleware' => ['jwt']], function (){
 
 
 Route::post('register',[UserController::class,'store']);
@@ -35,7 +32,13 @@ Route::post('login',[LoginController::class, 'login']);
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
+
+        Route::get('/getHouse/{id}','HouseController@getHouse');
         Route::put('/{id}', [HouseController::class, 'update']);
+        Route::post('/search',[HouseController::class, 'search']);
+
+
+
 
         // MyHomeList
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
@@ -54,6 +57,7 @@ Route::prefix('booking')->group(function(){
     Route::get('/','BookingController@index');
     Route::post('/','BookingController@store');
 });
+
 
 
 //  });

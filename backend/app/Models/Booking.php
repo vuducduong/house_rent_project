@@ -11,13 +11,13 @@ class Booking extends Model
     protected $fillable = [
         'startDay',
         'endDay',
-        'pricePerDay',
+        'status_booking',
         'users_id',
         'house_id'
         
     ];
     function houses(){
-        return $this->hasMany(House::class);
+        return $this->beLongTo(House::class);
     }
     function users(){
         return $this->beLongTo(User::class);

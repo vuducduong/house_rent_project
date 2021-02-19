@@ -10,24 +10,26 @@ import { House } from 'src/app/model/houses/houses';
 
 
 
-
 @Component({
   selector: 'app-create-house',
   templateUrl: './create-house.component.html',
   styleUrls: ['./create-house.component.css']
 })
 export class CreateHouseComponent implements OnInit {
+
   house!: any;
   id!: any;
   submitted: boolean = false;
 
 
   selectedImages: any[] = [];
+
   title = "cloudsSorage";
   selectedFile: File = null;
   fb: any;
   downloadURL: Observable<string>;
   srcImg: any;
+
   currentUser: any;
   imageService: any;
 
@@ -42,6 +44,7 @@ export class CreateHouseComponent implements OnInit {
 
   ngOnInit(): void {
     this.house = new House();
+
     this.id = localStorage.getItem("id")
 
   }
@@ -54,6 +57,7 @@ export class CreateHouseComponent implements OnInit {
   createHouse() {
     this.house.users_id = this.id;
     this.house.image = this.srcImg;
+
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
       (data: any) => {
@@ -67,7 +71,9 @@ export class CreateHouseComponent implements OnInit {
       }
     )
   }
-  cancel() {
+
+  cancel(){
+
     this.router.navigate(['house']);
 
   }
@@ -105,6 +111,7 @@ export class CreateHouseComponent implements OnInit {
       )
       .subscribe((url: any) => {
         if (url) {
+
 
           console.log(url);
         }
@@ -162,4 +169,5 @@ export class CreateHouseComponent implements OnInit {
   }
 
 }
+
 

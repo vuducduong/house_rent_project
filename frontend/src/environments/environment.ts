@@ -13,17 +13,8 @@ export const environment = {
     messagingSenderId: "147819685883",
     appId: "1:147819685883:web:43d5b56c368ef42b260d5e",
     measurementId: "G-8P4X52P5Q7"
-  },
-  // firebaseConfig2 :{
-  //   apiKey: "AIzaSyBjgYEgFoygGkymBtIqiiC3X8U5zsyB8x0",
-  //   authDomain: "pro2-3fec7.firebaseapp.com",
-  //   databaseUrl:"https://pro2-3fec7-default-rtdb.firebaseio.com/",
-  //   projectId: "pro2-3fec7",
-  //   storageBucket: "pro2-3fec7.appspot.com",
-  //   messagingSenderId: "1006670274471",
-  //   appId: "1:1006670274471:web:29d78391ba3dd2011a6082",
-  //   measurementId: "G-NVRZZCNGE2"
-  // }
+  }
+  
 };
 
 /*

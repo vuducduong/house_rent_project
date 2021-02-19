@@ -7,9 +7,11 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class HouseService {
+
   getUserProfile(id: any) {
     throw new Error('Method not implemented.');
   }
+
   private baseUrl="http://127.0.0.1:8000/api/house"
 
   constructor(private http:HttpClient) { }
@@ -30,5 +32,12 @@ export class HouseService {
     return this.http.get(`${this.baseUrl}/list/${id}`);
   }
 
+  getHouses(id: number){
+    return this.http.get(`${this.baseUrl}/${id}`);
+  }
 
+  getHouseById(id: any){
+    return this.http.get(`${this.baseUrl}/getHouse/${id}`)
+
+  }
 }

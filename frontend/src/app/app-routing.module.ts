@@ -13,6 +13,8 @@ import { ChangePasswordComponent } from './authentication/change-password/change
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
+  // {path:'home',component: HomeComponent},
+
 
 
 //MyHomeList
@@ -31,7 +33,8 @@ const routes: Routes = [
 
 
 
-  {path: 'thuenha.com.vn/booking/edit-house/:id', component: BookingComponent},
+  {path: 'booking/edit-house/:id', component: BookingComponent, pathMatch: 'full'},
+
 
 
 

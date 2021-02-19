@@ -26,4 +26,5 @@ private Url="http://127.0.0.1:8000/api/booking"
   booking(value: any){
     return this.http.post(`${this.Url}`,value)
   }
+
 }

@@ -7,6 +7,10 @@ import {Observable} from 'rxjs';
 })
 export class AuthenticationService {
 
+  // changePassword(id: any, password: any, newPassword: any, newPasswordConfirm: any) {
+  //   throw new Error('Method not implemented.');
+  // }
+
   constructor(private http: HttpClient,
     ) { }
 
