@@ -32,6 +32,7 @@ Route::post('login',[LoginController::class, 'login']);
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
+
         Route::get('/getHouse/{id}','HouseController@getHouse');
         Route::put('/{id}', [HouseController::class, 'update']);
         Route::post('/search',[HouseController::class, 'search']);
@@ -43,12 +44,14 @@ Route::post('login',[LoginController::class, 'login']);
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
         Route::post('/createHome','\App\Http\Controllers\HouseController@store');
     });
+
 // });
 Route::prefix('user')->group(function(){
     Route::get('/','UserController@index');
     Route::get('/{id}','UserController@show');
     Route::put('/{id}','UserController@update');
 });
+
 
 Route::prefix('booking')->group(function(){
     Route::get('/','BookingController@index');

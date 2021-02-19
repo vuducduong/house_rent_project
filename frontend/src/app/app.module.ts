@@ -95,11 +95,13 @@ import { BookingDetailComponent } from './core/home/booking/booking-detail/booki
 
 
 
-    ChangePasswordComponent,
+
+    
 
 
 
     BookingDetailComponent,
+
 
 
   ],
