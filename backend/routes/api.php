@@ -48,10 +48,12 @@ Route::prefix('user')->group(function(){
     Route::get('/{id}','UserController@show');
     Route::put('/{id}','UserController@update');
 });
+
 Route::prefix('booking')->group(function(){
     Route::get('/','BookingController@index');
     Route::post('/','BookingController@store');
 });
+
 
 
 //  });
