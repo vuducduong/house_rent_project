@@ -111,4 +111,9 @@ class HouseController extends Controller
         ->get();
         return response()->json($list);
     }
+
+    public function getHouse($id){
+        $house = House::find($id);
+        return response()->json($house);
+    }
 }

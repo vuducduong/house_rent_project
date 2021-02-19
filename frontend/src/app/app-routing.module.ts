@@ -29,7 +29,7 @@ const routes: Routes = [
 
   {path: 'update-profile', component: UpdateProfileComponent},
 
-  {path: 'booking/edit-house/:id', component: BookingComponent},
+  {path: 'booking/edit-house/:id', component: BookingComponent, pathMatch: 'full'},
 
   {path: 'change-password', component: ChangePasswordComponent}
 ];
