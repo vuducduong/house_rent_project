@@ -27,4 +27,9 @@ private Url="http://127.0.0.1:8000/api/booking"
     return this.http.post(`${this.Url}`,value)
   }
 
+  getBooking(id: any){
+    return this.http.get(`${this.Url}/${id}`)
+  }
+  
+
 }
