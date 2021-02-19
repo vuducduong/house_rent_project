@@ -14,10 +14,10 @@ class Booking extends Model
         'status_booking',
         'users_id',
         'house_id'
-        
+
     ];
     function houses(){
-        return $this->beLongTo(House::class);
+        return $this->hasMany(House::class);
     }
     function users(){
         return $this->beLongTo(User::class);

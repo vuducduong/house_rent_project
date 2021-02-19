@@ -18,10 +18,10 @@ class HouseController extends Controller
     public function index()
     {
         $houses= House::all();
-        $house = DB::table('houses')
+        $houses = DB::table('houses')
         ->orderBy('status', 'desc')
         ->get();
-       
+
         // -> order by(CASE status
         // WHEN 'Đang muốn thuê !'   THEN 1
         // WHEN 'Chống'   THEN 2
@@ -125,6 +125,7 @@ class HouseController extends Controller
     {
         $search = $request->search;
         $houses = House::where('name', 'LIKE', "%$search%")->orWhere('address', 'LIKE', "%$search%")->get();
+
         return response()->json($houses);
     }
 
