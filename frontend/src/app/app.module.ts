@@ -94,9 +94,6 @@ import { BookingComponent } from './core/home/booking/booking.component';
 
 
 
-    ChangePasswordComponent,
-
-
   ],
   imports: [
     BrowserModule,

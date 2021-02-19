@@ -1,5 +1,6 @@
 import { HomeService } from './../home.service';
 import { Component, OnInit } from '@angular/core';
+
 import { Router, ActivatedRoute } from '@angular/router';
 import { Booking } from './booking';
 import { ToastrService } from 'ngx-toastr';
@@ -22,6 +23,7 @@ house!: any;
     private bookingService: HomeService,
     private router : Router,
     private notificationService: ToastrService,
+
     private houseService: HouseService,
     private route: ActivatedRoute
 
@@ -37,6 +39,7 @@ house!: any;
         'endDay': new FormControl(null, Validators.required),
       }
     )
+
     
     this.id1 = this.route.snapshot.params['id'];
     console.log(this.id1)
@@ -72,11 +75,13 @@ house!: any;
         console.log(data);
         this.showToasterSuccess();
         this.booking = new Booking();
+
         this.router.navigate(['']);
       },
       (error: any) => {
         console.log(error)
       }
+
       
     )
     
