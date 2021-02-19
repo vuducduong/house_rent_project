@@ -1,4 +1,5 @@
 import { Component, Host, OnInit } from '@angular/core';
+
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,6 +18,7 @@ export class UpdateHouseComponent implements OnInit {
   id!: number;
   house!: House;
   editForm: FormGroup;
+
   submitted: boolean = false;
 
   title = "cloudsSorage";
@@ -31,6 +33,7 @@ export class UpdateHouseComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private houseService: HouseService,
+
     private toastrService: ToastrService,
     private storage: AngularFireStorage,
     private formbuilder: FormBuilder
@@ -40,6 +43,7 @@ export class UpdateHouseComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
 
     this.house = new House();
+
 
     this.houseService.getHouses(this.id).subscribe(
       data => {
@@ -75,6 +79,16 @@ export class UpdateHouseComponent implements OnInit {
       }, error => 
       this.toastrService.error("Chinh sua thất bại")
       );
+  }
+
+  changeState(){
+    this.house.status = "Đã có người thuê"
+    console.log(this.house)
+    this.houseService.updateHouse(this.id, this.house).subscribe(
+      data => {
+        console.log(data);
+        
+      }, error => console.log(error));
   }
   cancel(){
     this.router.navigate(['house']);

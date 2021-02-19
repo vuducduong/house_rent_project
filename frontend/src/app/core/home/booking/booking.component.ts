@@ -1,11 +1,13 @@
 import { HomeService } from './../home.service';
 import { Component, OnInit } from '@angular/core';
+
 import { Router, ActivatedRoute } from '@angular/router';
 import { Booking } from './booking';
 import { ToastrService } from 'ngx-toastr';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
+import { ConfirmedValidator } from 'src/app/authentication/change-password/validator';
 
 @Component({
   selector: 'app-booking',
@@ -13,7 +15,7 @@ import { House } from 'src/app/model/houses/houses';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-  bookingForm: FormGroup;
+  bookingForm: FormGroup = new FormGroup({});;
   [x: string]: any;
 booking!: any;
 id!: any;
@@ -22,11 +24,22 @@ house!: any;
     private bookingService: HomeService,
     private router : Router,
     private notificationService: ToastrService,
+
     private houseService: HouseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private fb: FormBuilder
 
 
-  ) { }
+  ) {
+    this.bookingForm = fb.group({
+      startDay: ['',[Validators.required]],
+      endDay: ['', [Validators.required]],
+
+    }, {
+
+    })
+
+   }
 
   ngOnInit(): void {
     this.booking = new Booking();
@@ -37,6 +50,7 @@ house!: any;
         'endDay': new FormControl(null, Validators.required),
       }
     )
+
 
     this.id1 = this.route.snapshot.params['id'];
     console.log(this.id1)
@@ -60,23 +74,23 @@ house!: any;
     this.house.status = "Đang muốn thuê !"
     console.log(this.house)
     this.houseService.updateHouse(this.id1, this.house).subscribe(
-
       data => {
         console.log(data);
 
       }, error => console.log(error));
-
 
     this.bookingService.booking(this.booking).subscribe(
       (data: any) => {
         console.log(data);
         this.showToasterSuccess();
         this.booking = new Booking();
+
         this.router.navigate(['']);
       },
       (error: any) => {
         console.log(error)
       }
+
     )
     this.houseService.updateHouse(this.id, this.house).subscribe(
 
@@ -88,7 +102,7 @@ house!: any;
       }, error => console.log(error));
 
 
-    
+
 
   }
 

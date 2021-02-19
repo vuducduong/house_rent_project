@@ -180,24 +180,31 @@
                             </div>
                             <!-- End step 2 -->
 
-                            <!-- <div >
+                            <div >
                                 <h4 class="info-text">Cung cấp thêm ảnh cho chúng tôi ? </h4>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="picture-container">
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
-                                                <input type="file" id="file" #userPhoto
-                                                    (change)="onFileSelected($event)" name="img"
-                                                     autocomplete="off" id="wizard-picture" />
+                                                <input  multiple
+                                                (change)="showPreview($event)"type="file" id="file" #userPhoto
+                                                    name="image"
+                                                    [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
+
+
                                         </div>
                                         <div class="picture-container">
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
-                                                <input type="file" id="file" #userPhoto
-                                                    (change)="onFileSelected($event)" name="img"
-                                                     autocomplete="off" id="wizard-picture" />
+<
+
+                                                <input   multiple
+                                                (change)="showPreview($event)" type="file" id="file" #userPhoto
+                                                     name="image"
+
+                                                    [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
                                         </div>
                                     </div>
@@ -205,22 +212,28 @@
                                         <div class="picture-container">
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
-                                                <input type="file" id="file" #userPhoto
-                                                    (change)="onFileSelected($event)" name="img"
-                                                     autocomplete="off" id="wizard-picture" />
+
+                                                <input   multiple
+                                                (change)="showPreview($event)" type="file" id="file" #userPhoto
+                                                     name="image"
+
+                                                    [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
                                         </div>
                                         <div class="picture-container">
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
-                                                <input type="file" id="file" #userPhoto
-                                                    (change)="onFileSelected($event)" name="img"
-                                                     autocomplete="off" id="wizard-picture" />
+
+                                                <input   multiple
+                                                (change)="showPreview($event)" type="file" id="file" #userPhoto
+                                                    name="image"
+
+                                                    [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                             <!--  End step 3 -->
 
 

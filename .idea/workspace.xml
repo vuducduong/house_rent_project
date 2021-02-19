@@ -2,32 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fad8e1b0-ee72-4fb8-82aa-dc78701aa8a9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/House_rent_project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking-detail/booking-detail.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking-detail/booking-detail.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking-detail/booking-detail.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking-detail/booking-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/BookingController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/HouseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/HouseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/Booking.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/Models/House.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/House.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/backend/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/database/migrations/2021_02_01_083712_create_bookings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/database/migrations/2021_02_01_083712_create_bookings_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/change-password/change-password.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/change-password/change-password.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/change-password/change-password.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/change-password/change-password.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/authentication/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/authentication/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/house/create-house/create-house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/house/create-house/create-house.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/house/create-house/create-house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/house/create-house/create-house.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/house/house-detail/house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/house/house-detail/house.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/components/house/house-detail/house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/house/house-detail/house.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/house/update-house/update-house.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/house/update-house/update-house.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/components/house/update-house/update-house.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/components/house/update-house/update-house.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/core/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/home/booking/booking.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/core/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/home/home.component.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/core/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/core/home/home.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/core/home/home.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/service/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/authentication.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/service/house.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/service/house.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613720042280</updated>
-      <workItem from="1613720050576" duration="2033000" />
+      <workItem from="1613720050576" duration="2692000" />
     </task>
     <servers />
   </component>

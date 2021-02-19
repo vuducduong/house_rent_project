@@ -19,13 +19,13 @@ class House extends Model
         'status',
         'image',
         'users_id',
-        
+
     ];
     function houseImages(){
         return $this->hasMany(HouseImages::class);
     }
     function bookings(){
-        return $this->hasMany(Booking::class);
+        return $this->beLongTo(Booking::class);
     }
     function users(){
         return $this->beLongTo(User::class);

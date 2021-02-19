@@ -1,3 +1,4 @@
+import { BookingDetailComponent } from './core/home/booking/booking-detail/booking-detail.component';
 import { BookingComponent } from './core/home/booking/booking.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -32,7 +33,10 @@ const routes: Routes = [
   {path: 'update-profile', component: UpdateProfileComponent},
 
 
+
   {path: 'booking/edit-house/:id', component: BookingComponent, pathMatch: 'full'},
+
+  {path: 'house/booking-detail/:id', component: BookingDetailComponent},
 
 
 

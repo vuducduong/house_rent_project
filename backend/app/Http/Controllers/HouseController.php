@@ -18,6 +18,14 @@ class HouseController extends Controller
     public function index()
     {
         $houses= House::all();
+        $houses = DB::table('houses')
+        ->orderBy('status', 'desc')
+        ->get();
+
+        // -> order by(CASE status
+        // WHEN 'Đang muốn thuê !'   THEN 1
+        // WHEN 'Chống'   THEN 2
+        // ELSE 10 END) ASC, status DESC
         return response()->json($houses);
     }
 
@@ -54,7 +62,8 @@ class HouseController extends Controller
     public function show($id)
     {
         $house = House::find($id);
-    $images = DB::table('house_images')->where('houses_id','=',$id)->get();
+    $images = DB::table('house_images')->where('houses_id','=',$id)
+    ->get();
     $data = [
         "houses" => $house,
         "houseImages" => $images,
@@ -110,12 +119,15 @@ class HouseController extends Controller
         ->where('users.id','=',$id)
         ->get();
         return response()->json($list);
+
     }
     public function search(Request $request)
     {
         $search = $request->search;
         $houses = House::where('name', 'LIKE', "%$search%")->orWhere('address', 'LIKE', "%$search%")->get();
-        return response()->json($houses);}
+
+        return response()->json($houses);
+    }
 
     public function getHouse($id){
         $house = House::find($id);

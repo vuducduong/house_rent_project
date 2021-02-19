@@ -10,6 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 
 
+
 @Component({
   selector: 'app-create-house',
   templateUrl: './create-house.component.html',
@@ -21,13 +22,14 @@ export class CreateHouseComponent implements OnInit {
   id!:any;
   submitted: boolean = false;
 
-  value : any = ['Con trong', 'Da cho thue']
 
-// name!: any;
-// price!:any;
-// type!: any;
-// description!: any;
 
+
+
+
+
+
+  selectedImages: any[] = [];
 
   title = "cloudsSorage";
   selectedFile: File = null;
@@ -35,9 +37,12 @@ export class CreateHouseComponent implements OnInit {
   downloadURL: Observable<string>;
   srcImg: any;
 
+  currentUser: any;
+  imageService: any;
+
   constructor(
     private houseService: HouseService,
-    private router : Router,
+    private router: Router,
     private route: ActivatedRoute,
     private notificationService: ToastrService,
     private storage: AngularFireStorage,
@@ -62,12 +67,13 @@ export class CreateHouseComponent implements OnInit {
     })
 
     this.house = new House();
-    this.id= localStorage.getItem("id")
+
+    this.id = localStorage.getItem("id")
 
   }
 
-  onSubmit(){
-    this.submitted=true;
+  onSubmit() {
+    this.submitted = true;
     this.createHouse();
   }
 
@@ -75,6 +81,7 @@ export class CreateHouseComponent implements OnInit {
     this.house.users_id=this.id;
     this.house.image =this.srcImg;
     console.log(this.house.status)
+
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
       (data: any) => {
@@ -88,7 +95,9 @@ export class CreateHouseComponent implements OnInit {
       }
     )
   }
+
   cancel(){
+
     this.router.navigate(['house']);
 
   }
@@ -99,8 +108,8 @@ export class CreateHouseComponent implements OnInit {
 
   showToasterError() {
     this.notificationService.error(
-      'Thêm mới không thành công',
-      'email của quý khách đã có người sử dụng'
+      'Thêm mới không thành công'
+
     );
   }
 
@@ -127,11 +136,63 @@ export class CreateHouseComponent implements OnInit {
       .subscribe((url: any) => {
         if (url) {
 
-           console.log(url);
+
+          console.log(url);
         }
       });
   }
 
-  
+
+
+  showPreview(event: any) {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+      reader.readAsDataURL(event.target.files[0]);
+      this.selectedImages = event.target.files;
+      console.log(this.selectedImages);
+    } else {
+      this.selectedImages = [];
+    }
+    this.createImage();
+
   }
+
+
+
+  createImage() {
+
+    if (this.selectedImages.length !== 0) {
+      for (let i = 0; i < this.selectedImages.length; i++) {
+        let selectedImage = this.selectedImages[i];
+        var n = Date.now();
+        const filePath = `RoomsImages/${n}`;
+        const fileRef = this.storage.ref(filePath);
+        const task = this.storage.upload(`RoomsImages/${n}`, File);
+        task
+          .snapshotChanges()
+          .pipe(
+            finalize(() => {
+              this.downloadURL = fileRef.getDownloadURL();
+              this.downloadURL.subscribe((url: any) => {
+                if (url) {
+                  this.fb = url;
+                }
+                this.srcImg = url;
+                console.log(this.fb);
+              });
+            })
+          ).subscribe((url: any) => {
+            if (url) {
+
+              console.log(url);
+            }
+          });
+      }
+
+
+    }
+  }
+
+}
+
 
