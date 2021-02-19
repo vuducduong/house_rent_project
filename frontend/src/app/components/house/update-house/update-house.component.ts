@@ -1,6 +1,6 @@
 import { Component, Host, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Observable } from 'rxjs';
@@ -32,7 +32,8 @@ export class UpdateHouseComponent implements OnInit {
     private router: Router,
     private houseService: HouseService,
     private toastrService: ToastrService,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private formbuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -44,18 +45,19 @@ export class UpdateHouseComponent implements OnInit {
       data => {
         // @ts-ignore
         this.house = data.houses;
+        console.log(this.house)
       },error => console.log(error)
 
     )
-    this.editForm = new FormGroup({
-      'name': new FormControl(null, [Validators.required, Validators.maxLength(255)]),
-      'type': new FormControl(null, Validators.required),
-      'pricePerDay': new FormControl(null, Validators.required),
-      'address': new FormControl(null, Validators.required),
-      'amountOfbedrooms': new FormControl(null, Validators.required),
-      'amountOfbathrooms': new FormControl(null, Validators.required),
-      'description': new FormControl(null, Validators.required),
-      'status': new FormControl(null, Validators.required),
+    this.editForm = this.formbuilder.group({
+      name:['',[Validators.required, Validators.maxLength(255)]],
+      type: ['', Validators.required],
+      pricePerDay: ['', Validators.required],
+      address: ['', Validators.required],
+      amountOfbedrooms: ['', Validators.required],
+      amountOfbathrooms: ['', Validators.required],
+      description: ['', Validators.required],
+      status: ['', Validators.required],
 
     })
   }

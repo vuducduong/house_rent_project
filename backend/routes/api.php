@@ -34,6 +34,7 @@ Route::post('login',[LoginController::class, 'login']);
         Route::get('/{id}','HouseController@show');
         Route::get('/getHouse/{id}','HouseController@getHouse');
         Route::put('/{id}', [HouseController::class, 'update']);
+        Route::post('/search',[HouseController::class, 'search']);
 
 
 
