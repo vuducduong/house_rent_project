@@ -52,6 +52,7 @@ export class ChangePasswordComponent implements OnInit {
     }
   }
   submit(){
+
     // @ts-ignore
     this.authService.changePassword(this.id, this.changePasswordForm.value.password, this.changePasswordForm.value.newPassword, this.changePasswordForm.value.newPasswordConfirm).subscribe(
       data => {
@@ -62,6 +63,7 @@ export class ChangePasswordComponent implements OnInit {
   }
 
   back(){
+
     this.router.navigate(['home']);
   }
 }
