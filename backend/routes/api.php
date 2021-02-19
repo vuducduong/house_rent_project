@@ -21,6 +21,17 @@ use Illuminate\Support\Facades\Route;
 Route::post('registration',[UserController::class,'store']);
 Route::post('login',[LoginController::class, 'login']);
 //  Route::group(['middleware' => ['jwt']], function (){
+
+
+Route::post('register',[UserController::class,'store']);
+Route::put('change-password/{id}',[UserController::class,'changePassword']);
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+Route::post('login',[LoginController::class, 'login']);
+//  Route::group(['middleware' => ['jwt']], function (){
+
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
@@ -28,5 +39,21 @@ Route::post('login',[LoginController::class, 'login']);
 
         // MyHomeList
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
+        Route::post('/createHome','\App\Http\Controllers\HouseController@store');
     });
+
+// });
+Route::prefix('user')->group(function(){
+    Route::get('/','UserController@index');
+    Route::get('/{id}','UserController@show');
+    Route::put('/{id}','UserController@update');
+});
+
+
+Route::prefix('booking')->group(function(){
+    Route::get('/','BookingController@index');
+    Route::post('/','BookingController@store');
+});
+
+
 //  });
