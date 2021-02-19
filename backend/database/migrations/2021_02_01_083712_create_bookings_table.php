@@ -17,7 +17,7 @@ class CreateBookingsTable extends Migration
             $table->id();
             $table->string('startDay');
             $table->string('endDay');
-            $table->string('pricePerDay');
+            $table->string('status_booking')->default('Đang chờ');
             $table->timestamps();
         });
     }

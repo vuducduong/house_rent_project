@@ -32,6 +32,7 @@ Route::post('login',[LoginController::class, 'login']);
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
+        Route::get('/getHouse/{id}','HouseController@getHouse');
         Route::put('/{id}', [HouseController::class, 'update']);
         Route::post('/search',[HouseController::class, 'search']);
 
@@ -48,7 +49,6 @@ Route::prefix('user')->group(function(){
     Route::get('/{id}','UserController@show');
     Route::put('/{id}','UserController@update');
 });
-
 
 Route::prefix('booking')->group(function(){
     Route::get('/','BookingController@index');
