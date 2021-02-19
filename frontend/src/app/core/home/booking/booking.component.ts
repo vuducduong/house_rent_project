@@ -57,7 +57,7 @@ house!: any;
       }
     )
     this.houseService.updateHouse(this.id, this.house).subscribe(
-      
+
       data => {
         this.house.status= "dang muon thue";
         console.log(data);
