@@ -52,8 +52,8 @@
                           </div>
                           <div class="col-sm-6">
                               <div class="form-group"> Địa chỉ :
-                                  <input type="text" class="form-control" formControlName="address" 
-                                      [(ngModel)]="user.address" required 
+                                  <input type="text" class="form-control" formControlName="address"
+                                      [(ngModel)]="user.address" required
                                       >
                                   <div *ngIf="profileForm.get('address').invalid && (profileForm.get('address').dirty || profileForm.get('address').touched)" class="alert alert-danger">
                                       <div class="text-danger" *ngIf="profileForm.get('address').errors.required">Địa chỉ người dùng
@@ -75,8 +75,8 @@
                               <div class="form-group"> Email :
                                   <input disabled type="text" class="form-control" formControlName="email"
                                       [(ngModel)]="user.email" >
-                                      
-                                  
+
+
                               </div>
                           </div>
                           <div class="col-sm-6">
@@ -87,7 +87,7 @@
                           <div class="col-sm-12 text-center">
                               <button  (click)="updateUser()" type="submit" class="btn btn-primary">Cập nhật</button>
                               <div class="col-sm-6">
-                              <button type='submit' (click)="cancel()" class="btn btn-primary">Trở về </button>
+                              <button type='submit' routerLink="/house" routerLinkActive="active" class="btn btn-primary">Trở về </button>
                               </div>
 
                           </div>
