@@ -74,7 +74,7 @@
                                         </div>
                                         
                                     </div>
-                                    <div>
+                                    <div *ngIf="list.status=='Đang muốn thuê !'">
                                         <a routerLink="booking-detail/{{list.id}}" routerLinkActive="active" class="button btn btn-success">Xem Thông Tin </a>
                                         <!-- <div *ngIf='Đang muốn thuê !; else rentHouse'> ban co the thue nha</div>
                                         <ng-template #rentHouse> Nha nay da co ng thue </ng-template> -->
@@ -83,6 +83,7 @@
                                     
                                 </div>
                             </div>
+                            
                         </div>
 
 
@@ -90,4 +91,5 @@
 
         </div>
     </div>
+    <button type='button' (click)="back()" class='btn btn-primary '>Trở về</button>
 </div>

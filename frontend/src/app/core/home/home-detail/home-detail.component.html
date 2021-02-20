@@ -131,7 +131,7 @@
                                     </div>
                                     <div class="col-xs-8 col-sm-8 ">
                                         <h3 class="dealer-name">
-                                            <h3>{{user.name}}</h3>
+                                            <h3>{{house.users.name}}</h3>
                                                    
                                         </h3>
                                         
@@ -141,9 +141,9 @@
 
                                 <div class="clear">
                                     <ul class="dealer-contacts">                                       
-                                        <li><i class="pe-7s-map-marker strong"> </i> {{user.address}}</li>
-                                        <li><i class="pe-7s-mail strong"> </i> {{user.email}}</li>
-                                        <li><i class="pe-7s-call strong"> </i> {{user.phone}}</li>
+                                        <li><i class="pe-7s-map-marker strong"> </i> {{house.users.address}}</li>
+                                        <li><i class="pe-7s-mail strong"> </i> {{house.users.email}}</li>
+                                        <li><i class="pe-7s-call strong"> </i> {{house.users.phone}}</li>
                                     </ul>
                                     <p>Duis mollis  blandit tempus porttitor curabiturDuis mollis  blandit tempus porttitor curabitur , est non…</p>
                                 </div>
@@ -155,6 +155,8 @@
                 </aside>
             </div>
         </div>
+        <button type='button' (click)="back()" class='btn btn-primary '>Trở về</button>.   
+        <a routerLink="booking/edit-house/{{house.id}}" routerLinkActive="active" class="btn btn-success" type="button">Thuê nhà</a>
     </div>
     <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="assets/js/jquery-1.10.2.min.js"></script>
