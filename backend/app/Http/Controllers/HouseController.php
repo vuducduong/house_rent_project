@@ -65,7 +65,7 @@ class HouseController extends Controller
     ->select('users.name','users.email','users.phone','users.address','houses.*')
     ->where('houses.id','=',$id)
     ->first();
-    
+
     $data = [
         "houses" => $house,
         "houseImages" => $images,

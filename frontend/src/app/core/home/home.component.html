@@ -203,10 +203,11 @@
 
         <div class="col-md-12 " >
           <div id="list-type" class="proerty-th">
-            <div class="col-sm-6 col-md-3 p0" *ngFor = "let house of houses" >
-                <div *ngIf="house.status=='Còn trống'">
-              <div class="box-two proerty-item" >
-                <div class="item-thumb" >
+
+            <div class="col-sm-6 col-md-3 p0" *ngFor = "let house of houses">
+              <div class="box-two proerty-item" *ngIf="house.status=='Còn trống'">
+                <div class="item-thumb">
+
                   <a (click)="viewHouse(house.id)"><img src="{{house.image}}"></a>
                 </div>
 
@@ -228,7 +229,7 @@
                     
                   </div>
 
-                </div>
+               
                 </div>
             </div>
         </div>
