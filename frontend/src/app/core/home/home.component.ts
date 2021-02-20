@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-houses!:any
+houses!: any;
+  searchText;
   constructor(
     private homeService: HomeService,
     private router: Router
@@ -20,16 +21,16 @@ houses!:any
 
   loadData(){
     this.homeService.getHouseList().subscribe(
-      data=>{
-        this.houses= data
-      },error=>{
-        console.log(error)
+      data => {
+        this.houses = data;
+      }, error => {
+        console.log(error);
       }
-    )
+    );
   }
 
   viewHouse(id: any){
-    this.router.navigate(['house-detail/'+id])
+    this.router.navigate(['house-detail/' + id]);
   }
 
 }

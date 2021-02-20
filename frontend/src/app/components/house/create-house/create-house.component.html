@@ -32,7 +32,7 @@
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
                                                 <input type="file" id="file" #userPhoto
-                                                    (change)="onFileSelected($event)" name="image"
+                                                    (change)="onFileSelected($event)" formControlName="image"
                                                    autocomplete="off" id="wizard-picture" />
                                             </div>
                                         </div>
@@ -189,7 +189,7 @@
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
                                                 <input  multiple
                                                 (change)="showPreview($event)"type="file" id="file" #userPhoto
-                                                    name="image"
+                                                    formControlName="image"
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
 
@@ -202,7 +202,7 @@
 
                                                 <input   multiple
                                                 (change)="showPreview($event)" type="file" id="file" #userPhoto
-                                                     name="image"
+                                                         formControlName="image"
 
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
@@ -215,7 +215,7 @@
 
                                                 <input   multiple
                                                 (change)="showPreview($event)" type="file" id="file" #userPhoto
-                                                     name="image"
+                                                         formControlName="image"
 
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
@@ -226,7 +226,7 @@
 
                                                 <input   multiple
                                                 (change)="showPreview($event)" type="file" id="file" #userPhoto
-                                                    name="image"
+                                                         formControlName="image"
 
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
