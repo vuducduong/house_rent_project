@@ -20,12 +20,13 @@
 
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                     <li data-thumb="assets/img/property-1/property1.jpg"> 
-                                        <div class="item" *ngFor="let image of house.houseImages"><img [src]="image.image" height="750px" width="750px" ></div>
+                                        <div class="item" *ngFor="let image of house.houseImages"><img [src]="image.image" height="550px" width="550px" ></div>
+                                    
                                     </li>
                                                           
                                 </ul>
                                 <br>
-                            
+                            <br>
                             </div>
                         </div>
                     </div>
@@ -163,6 +164,6 @@
         </div>
         
         <button type='button' (click)="back()" class='btn btn-primary '>Trở về</button>.   
-        <a routerLink="booking/edit-house/{{house.id}}" routerLinkActive="active" class="btn btn-success" type="button">Thuê nhà</a>
+        <a routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-success" type="button">Thuê nhà</a>
     </div>
     
