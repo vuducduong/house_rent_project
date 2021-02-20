@@ -1,7 +1,7 @@
 import { AuthenticationService } from 'src/app/service/authentication.service';
 import { HomeService } from '../home.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-detail',
@@ -15,7 +15,8 @@ user!: any;
   constructor(
     private houseService:HomeService,
     private route: ActivatedRoute,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -47,5 +48,7 @@ user!: any;
         console.log(error)
       });
   }
-
+  back(){
+    this.router.navigate(['']);
+  }
 }

@@ -19,7 +19,7 @@ class HouseController extends Controller
     {
         $houses= House::all();
         $houses = DB::table('houses')
-        ->orderBy('status', 'desc')
+        ->orderBy('status', 'asc')
         ->get();
 
         // -> order by(CASE status
@@ -64,9 +64,15 @@ class HouseController extends Controller
         $house = House::find($id);
     $images = DB::table('house_images')->where('houses_id','=',$id)
     ->get();
+    $users= DB:: table('houses')
+    ->join('users','houses.users_id','=','users.id')
+    ->select('users.name','users.email','users.phone','users.address','houses.*')
+    ->where('houses.id','=',$id)
+    ->first();
     $data = [
         "houses" => $house,
         "houseImages" => $images,
+        "users" => $users
     ];
     return response()->json($data);
     }
@@ -116,6 +122,7 @@ class HouseController extends Controller
         $list = DB::table('users')
         ->join('houses','users.id','=','houses.users_id')
         ->select('users.name','houses.*')
+        ->orderBy('status', 'desc')
         ->where('users.id','=',$id)
         ->get();
         return response()->json($list);
