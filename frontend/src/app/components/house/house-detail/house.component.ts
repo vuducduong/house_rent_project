@@ -63,8 +63,10 @@ export class HouseComponent implements OnInit {
   getInfo() {
     this.router.navigate(['house']);
   }
+
   back(){
     this.router.navigate(['']);
   }
+
 
 }

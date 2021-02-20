@@ -52,7 +52,15 @@ house!: any;
         this.router.navigate(['house'])
       }, error => console.log(error));
   }
-
+  notChangeState(){
+    this.house.status = "Còn trống"
+    console.log(this.house)
+    this.service.updateHouse(this.id1, this.house).subscribe(
+      data => {
+        console.log(data);
+        this.router.navigate(['house'])
+      }, error => console.log(error));
+  }
 
   loadData(){
     this.houseService.getBooking(this.id).subscribe(

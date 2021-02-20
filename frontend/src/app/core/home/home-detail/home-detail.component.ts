@@ -16,7 +16,9 @@ user!: any;
     private houseService:HomeService,
     private route: ActivatedRoute,
     private authService: AuthenticationService,
+
     private router : Router
+
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,7 @@ user!: any;
       data => {
 
         this.user = data;
-        console.log(this.user);
+        console.log(data);
       },
       error =>{ 
         console.log(error)
