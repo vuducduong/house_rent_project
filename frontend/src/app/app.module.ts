@@ -64,6 +64,7 @@ import { HouseComponent } from './components/house/house-detail/house.component'
 import { ChangePasswordComponent } from './authentication/change-password/change-password.component';
 
 import { BookingComponent } from './core/home/booking/booking.component';
+import { BookingDetailComponent } from './core/home/booking/booking-detail/booking-detail.component';
 
 
 
@@ -91,6 +92,15 @@ import { BookingComponent } from './core/home/booking/booking.component';
     BookingComponent,
 
     ChangePasswordComponent,
+
+
+
+
+    
+
+
+
+    BookingDetailComponent,
 
 
 

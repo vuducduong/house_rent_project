@@ -55,6 +55,7 @@ Route::prefix('user')->group(function(){
 
 Route::prefix('booking')->group(function(){
     Route::get('/','BookingController@index');
+    Route::get('/{id}','BookingController@show');
     Route::post('/','BookingController@store');
 });
 

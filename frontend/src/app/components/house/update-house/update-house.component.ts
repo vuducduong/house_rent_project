@@ -80,6 +80,16 @@ export class UpdateHouseComponent implements OnInit {
       this.toastrService.error("Chinh sua thất bại")
       );
   }
+
+  changeState(){
+    this.house.status = "Đã có người thuê"
+    console.log(this.house)
+    this.houseService.updateHouse(this.id, this.house).subscribe(
+      data => {
+        console.log(data);
+        
+      }, error => console.log(error));
+  }
   cancel(){
     this.router.navigate(['house']);
   }

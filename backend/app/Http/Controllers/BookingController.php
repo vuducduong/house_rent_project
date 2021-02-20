@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class BookingController extends Controller
 {
@@ -50,9 +52,17 @@ class BookingController extends Controller
      * @param  \App\Models\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show($id)
     {
-        //
+        $booking = Booking::find($id);
+        $booking = DB::table('bookings')
+        ->join('users','users.id','=','bookings.users_id')
+        ->join('houses','houses.id','=','bookings.house_id')
+        ->select('users.name','users.email','users.phone','users.address','bookings.startDay','bookings.endDay')
+        ->where('houses.id','=',$id)
+        ->first();
+        return response()->json($booking);
+        
     }
 
     /**

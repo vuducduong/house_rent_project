@@ -4,9 +4,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Booking } from './booking';
 import { ToastrService } from 'ngx-toastr';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
+import { ConfirmedValidator } from 'src/app/authentication/change-password/validator';
 
 @Component({
   selector: 'app-booking',
@@ -14,7 +15,7 @@ import { House } from 'src/app/model/houses/houses';
   styleUrls: ['./booking.component.css']
 })
 export class BookingComponent implements OnInit {
-  bookingForm: FormGroup;
+  bookingForm: FormGroup = new FormGroup({});;
   [x: string]: any;
 booking!: any;
 id!: any;
@@ -25,10 +26,20 @@ house!: any;
     private notificationService: ToastrService,
 
     private houseService: HouseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private fb: FormBuilder
 
 
-  ) { }
+  ) {
+    this.bookingForm = fb.group({
+      startDay: ['',[Validators.required]],
+      endDay: ['', [Validators.required]],
+
+    }, {
+
+    })
+
+   }
 
   ngOnInit(): void {
     this.booking = new Booking();
@@ -40,14 +51,14 @@ house!: any;
       }
     )
 
-    
+
     this.id1 = this.route.snapshot.params['id'];
     console.log(this.id1)
     this.house = new House();
 
     this.houseService.getHouseById(this.id1).subscribe(
       data => {
-       
+
         this.house = data;
         console.log(this.house)
       },error => console.log(error)
@@ -57,19 +68,17 @@ house!: any;
 
   createBooking(){
     this.booking.house_id=this.id1
-    
+
     this.booking.users_id=this.id;
     this.booking.image =this.srcImg;
     this.house.status = "Đang muốn thuê !"
     console.log(this.house)
     this.houseService.updateHouse(this.id1, this.house).subscribe(
-
       data => {
         console.log(data);
-        
+
       }, error => console.log(error));
-    
-    
+
     this.bookingService.booking(this.booking).subscribe(
       (data: any) => {
         console.log(data);
@@ -82,9 +91,19 @@ house!: any;
         console.log(error)
       }
 
-      
     )
-    
+    this.houseService.updateHouse(this.id, this.house).subscribe(
+
+      data => {
+        this.house.status= "dang muon thue";
+        console.log(data);
+
+        this.router.navigate(['house']);
+      }, error => console.log(error));
+
+
+
+
   }
 
   showToasterSuccess(){
