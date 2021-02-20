@@ -9,10 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 houses!: any;
-  searchText;
   constructor(
     private homeService: HomeService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -31,6 +30,17 @@ houses!: any;
 
   viewHouse(id: any){
     this.router.navigate(['house-detail/' + id]);
+  }
+
+  search(event){
+    let name = event.target.value;
+    this.homeService.getHouserByName(name).subscribe(res => {
+      this.houses = res;
+      console.log(res);
+    }, error => {
+      console.log(error);
+    }
+    );
   }
 
 }
