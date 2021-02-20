@@ -65,7 +65,7 @@ class HouseController extends Controller
     ->select('users.name','users.email','users.phone','users.address','houses.*')
     ->where('houses.id','=',$id)
     ->first();
-    
+
     $data = [
         "houses" => $house,
         "houseImages" => $images,
@@ -129,8 +129,7 @@ class HouseController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        $houses = House::where('name', 'LIKE', "%$search%")->orWhere('address', 'LIKE', "%$search%")->get();
-
+        $houses = House::where('name', 'LIKE', "%$search%")->get();
         return response()->json($houses);
     }
 

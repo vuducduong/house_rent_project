@@ -37,7 +37,7 @@ export class HouseService {
   }
 
   getHouseById(id: any){
-    return this.http.get(`${this.baseUrl}/getHouse/${id}`)
+    return this.http.get(`${this.baseUrl}/getHouse/${id}`);
 
   }
 }
