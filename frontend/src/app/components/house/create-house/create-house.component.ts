@@ -6,6 +6,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, map } from 'rxjs/operators';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -16,10 +17,16 @@ import { House } from 'src/app/model/houses/houses';
   styleUrls: ['./create-house.component.css']
 })
 export class CreateHouseComponent implements OnInit {
-
-  house!: any;
-  id!: any;
+  house!:any;
+  createForm: FormGroup;
+  id!:any;
   submitted: boolean = false;
+
+
+
+
+
+
 
 
   selectedImages: any[] = [];
@@ -38,11 +45,27 @@ export class CreateHouseComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private notificationService: ToastrService,
-    private storage: AngularFireStorage) { }
+    private storage: AngularFireStorage,
+    private formBuilder: FormBuilder
+
+    )
+    {}
 
 
 
   ngOnInit(): void {
+    this.createForm = this.formBuilder.group({
+      name:['',[ Validators.required]],
+      type:['',[ Validators.required]],
+      pricePerDay: ['',[ Validators.required]],
+      description: ['',[ Validators.required]],
+      address: ['',[ Validators.required]],
+      status: ['',[ Validators.required]],
+      amountOfbedrooms: ['',[ Validators.required]],
+      amountOfbathrooms:['',[ Validators.required]],
+
+    })
+
     this.house = new House();
 
     this.id = localStorage.getItem("id")
@@ -54,9 +77,10 @@ export class CreateHouseComponent implements OnInit {
     this.createHouse();
   }
 
-  createHouse() {
-    this.house.users_id = this.id;
-    this.house.image = this.srcImg;
+  createHouse(){
+    this.house.users_id=this.id;
+    this.house.image =this.srcImg;
+    console.log(this.house.status)
 
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
@@ -119,6 +143,7 @@ export class CreateHouseComponent implements OnInit {
   }
 
 
+
   showPreview(event: any) {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -158,7 +183,7 @@ export class CreateHouseComponent implements OnInit {
             })
           ).subscribe((url: any) => {
             if (url) {
-    
+
               console.log(url);
             }
           });

@@ -70,7 +70,7 @@ id!: any
     }
 
     cancel(){
-      this.router.navigate(['thuenha.com.vn']);
+      this.router.navigate(['']);
 
     }
 }

@@ -64,5 +64,9 @@ export class HouseComponent implements OnInit {
     this.router.navigate(['house']);
   }
   
+  back(){
+    this.router.navigate(['']);
+  }
+
 
 }

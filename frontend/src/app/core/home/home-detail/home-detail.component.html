@@ -20,14 +20,18 @@
 
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                     <li data-thumb="assets/img/property-1/property1.jpg"> 
-                                        <div class="item" *ngFor="let image of house.houseImages"><img [src]="image.image" ></div>
+                                        <div class="item" *ngFor="let image of house.houseImages"><img [src]="image.image" height="750px" width="750px" ></div>
                                     </li>
                                                           
                                 </ul>
+                                <br>
+                            
                             </div>
                         </div>
                     </div>
                     <div class="single-property-wrapper">
+
+                        
 
                         <div class="section">
                             <h4 class="s-property-title">Description</h4>
@@ -131,7 +135,7 @@
                                     </div>
                                     <div class="col-xs-8 col-sm-8 ">
                                         <h3 class="dealer-name">
-                                            <h3>{{user.name}}</h3>
+                                            <h3>{{house.users.name}}</h3>
                                                    
                                         </h3>
                                         
@@ -141,9 +145,9 @@
 
                                 <div class="clear">
                                     <ul class="dealer-contacts">                                       
-                                        <li><i class="pe-7s-map-marker strong"> </i> {{user.address}}</li>
-                                        <li><i class="pe-7s-mail strong"> </i> {{user.email}}</li>
-                                        <li><i class="pe-7s-call strong"> </i> {{user.phone}}</li>
+                                        <li><i class="pe-7s-map-marker strong"> </i> {{house.users.address}}</li>
+                                        <li><i class="pe-7s-mail strong"> </i> {{house.users.email}}</li>
+                                        <li><i class="pe-7s-call strong"> </i> {{house.users.phone}}</li>
                                     </ul>
                                     <p>Duis mollis  blandit tempus porttitor curabiturDuis mollis  blandit tempus porttitor curabitur , est non…</p>
                                 </div>
@@ -151,42 +155,14 @@
                             </div>
                         </div>
                     </div>
-
+                    
+                    
                 </aside>
+                
             </div>
         </div>
+        
+        <button type='button' (click)="back()" class='btn btn-primary '>Trở về</button>.   
+        <a routerLink="booking/edit-house/{{house.id}}" routerLinkActive="active" class="btn btn-success" type="button">Thuê nhà</a>
     </div>
-    <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
-    <script src="assets/js/jquery-1.10.2.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/bootstrap-select.min.js"></script>
-    <script src="assets/js/bootstrap-hover-dropdown.js"></script>
-    <script src="assets/js/easypiechart.min.js"></script>
-    <script src="assets/js/jquery.easypiechart.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/wow.js"></script>
-    <script src="assets/js/icheck.min.js"></script>
-    <script src="assets/js/price-range.js"></script>
-    <script type="text/javascript" src="assets/js/lightslider.min.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <script>
-                        $(document).ready(function () {
-
-                            $('#image-gallery').lightSlider({
-                                gallery: true,
-                                item: 1,
-                                thumbItem: 9,
-                                slideMargin: 0,
-                                speed: 500,
-                                auto: true,
-                                loop: true,
-                                onSliderLoad: function () {
-                                    $('#image-gallery').removeClass('cS-hidden');
-                                }
-                            });
-                        });
-    </script>
-
-                        
-                       
+    

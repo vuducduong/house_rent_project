@@ -34,10 +34,10 @@ house!: any;
     this.bookingForm = fb.group({
       startDay: ['',[Validators.required]],
       endDay: ['', [Validators.required]],
-     
+
     }, {
-      
-    }) 
+
+    })
 
    }
 
@@ -51,14 +51,14 @@ house!: any;
       }
     )
 
-    
+
     this.id1 = this.route.snapshot.params['id'];
     console.log(this.id1)
     this.house = new House();
 
     this.houseService.getHouseById(this.id1).subscribe(
       data => {
-       
+
         this.house = data;
         console.log(this.house)
       },error => console.log(error)
@@ -68,7 +68,7 @@ house!: any;
 
   createBooking(){
     this.booking.house_id=this.id1
-    
+
     this.booking.users_id=this.id;
     this.booking.image =this.srcImg;
     this.house.status = "Đang muốn thuê !"
@@ -76,8 +76,9 @@ house!: any;
     this.houseService.updateHouse(this.id1, this.house).subscribe(
       data => {
         console.log(data);
-        
+
       }, error => console.log(error));
+
     this.bookingService.booking(this.booking).subscribe(
       (data: any) => {
         console.log(data);
@@ -90,9 +91,11 @@ house!: any;
         console.log(error)
       }
 
-      
     )
     
+
+
+
   }
 
   showToasterSuccess(){
