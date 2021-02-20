@@ -20,14 +20,15 @@
             routerLinkActive="active">Đăng ký</button>
             <ul class="main-nav  navbar-nav navbar-right">
             <li class="dropdown ymm-sw " *ngIf="isLoggedIn" data-wow-delay="0.1s">
-              <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200">Trang cá nhân <b class="caret"></b></a>
+              <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200" >{{user.name}} <b class="caret"></b></a>
 
               <ul class="dropdown-menu navbar-nav">
                   <li>
-                      <a routerLink="update-profile" routerLinkActive="active">Chỉnh sửa trang cá nhân</a>
+                    <a routerLink="house" routerLinkActive="active">Trang cá nhân</a>
+
                   </li>
                   <li>
-                      <a routerLink="house" routerLinkActive="active">Danh sách nhà cho thuê</a>
+                    <a routerLink="update-profile" routerLinkActive="active">Chỉnh sửa trang cá nhân</a>
                   </li>
                   <li>
                       <a routerLink="change-password">Đổi mật khẩu</a>
