@@ -14,8 +14,8 @@ class AddHouseIdColumnToBookingsTable extends Migration
     public function up()
     {
         Schema::table('bookings', function (Blueprint $table) {
-            $table->unsignedBigInteger('houses_id')->nullable();
-            $table->foreign('houses_id')->references('id')->on('houses');
+            $table->unsignedBigInteger('house_id')->nullable();
+            $table->foreign('house_id')->references('id')->on('houses');
           });
     }
 

@@ -16,7 +16,7 @@
 }
 .modal-header {
     border: 0 none;
-    
+
 }
 .wizard-card .wizard-header h3 b{
     text-transform: uppercase;
@@ -136,7 +136,7 @@
     overflow: hidden;
     border-radius: 50%;
     border: 1px solid #333333;
-    width: 60px; 
+    width: 60px;
     float: left;
 }
 .logo-container .brand{
@@ -189,7 +189,7 @@ label{
     z-index: 3;
 }
 .wizard-card{
-padding: 10px 0px; 
+padding: 10px 0px;
 border: 1px solid #eee;
     transition: all 0.2s;
     -webkit-transition: all 0.2s;
@@ -242,7 +242,7 @@ margin: 35px auto;
 
 .wizard-card .picture-src{
     width: 100%;
-    
+
 }
 .wizard-card .tab-content{
     min-height: 340px;
@@ -290,7 +290,7 @@ margin: 35px auto;
 .wizard-card .nav-pills > li > a:hover, .wizard-card .nav-pills > li > a:focus{
     background-color: #999999;
     cursor: default;
-} 
+}
 .wizard-card .btn{
     text-transform: uppercase;
 }

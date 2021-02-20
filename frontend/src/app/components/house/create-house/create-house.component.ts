@@ -20,7 +20,6 @@ export class CreateHouseComponent implements OnInit {
   house!:any;
   createForm: FormGroup;
   id!:any;
-  submitted: boolean = false;
 
 
 
@@ -63,6 +62,7 @@ export class CreateHouseComponent implements OnInit {
       status: ['',[ Validators.required]],
       amountOfbedrooms: ['',[ Validators.required]],
       amountOfbathrooms:['',[ Validators.required]],
+      image:['',[ Validators.required]],
 
     })
 
@@ -73,7 +73,6 @@ export class CreateHouseComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
     this.createHouse();
   }
 

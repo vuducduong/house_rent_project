@@ -8,7 +8,7 @@
 
             </div>
         </div>
-        <div class="clearfix">
+        <!-- <div class="clearfix"> -->
             <div class="wizard-container">
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
 
@@ -23,7 +23,7 @@
 
                         </ul>
 
-                        <div class="tab-content">
+                        <div>
 
                             <div>
                                 <div class="row p-b-15  ">
@@ -34,7 +34,14 @@
                                                 <input type="file" id="file" #userPhoto
                                                     (change)="onFileSelected($event)" formControlName="image"
                                                    autocomplete="off" id="wizard-picture" />
+
+                                             </div>
+                                             <div
+                                             *ngIf="createForm.get('image').invalid && (createForm.get('image').dirty || createForm.get('image').touched)"
+                                                class="alert alert-danger">
+                                        <div *ngIf="createForm.get('image').errors.required">Vui lòng thêm ảnh </div>
                                             </div>
+
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -92,7 +99,7 @@
                                             <div class="form-group">
                                                 <label>Mô tả căn nhà :</label>
                                                 <textarea formControlName="description" [(ngModel)]="house.description"
-                                                    class="form-control"></textarea>
+                                                    class="text"></textarea>
                                                     <div
                                                     *ngIf="createForm.get('description').invalid && (createForm.get('description').dirty || createForm.get('description').touched)"
                                                        class="alert alert-danger">
@@ -180,7 +187,7 @@
                             </div>
                             <!-- End step 2 -->
 
-                            <div >
+                            <!-- <div >
                                 <h4 class="info-text">Cung cấp thêm ảnh cho chúng tôi ? </h4>
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -191,6 +198,7 @@
                                                 (change)="showPreview($event)"type="file" id="file" #userPhoto
                                                     formControlName="image"
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
+
                                             </div>
 
 
@@ -198,11 +206,11 @@
                                         <div class="picture-container">
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
-<
 
                                                 <input   multiple
                                                 (change)="showPreview($event)" type="file" id="file" #userPhoto
                                                          formControlName="image"
+
 
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
@@ -217,6 +225,7 @@
                                                 (change)="showPreview($event)" type="file" id="file" #userPhoto
                                                          formControlName="image"
 
+
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
                                         </div>
@@ -226,14 +235,15 @@
 
                                                 <input   multiple
                                                 (change)="showPreview($event)" type="file" id="file" #userPhoto
-                                                         formControlName="image"
+
+                                                    formControlName="image"
 
                                                     [(ngModel)]="house.image" autocomplete="off" id="wizard-picture" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!--  End step 3 -->
 
 
@@ -241,22 +251,19 @@
 
                         </div>
 
-                        <div>
-                            <div class="pull-right">
 
-                                <input type='button' (click)="onSubmit()" class='btn btn-finish btn-primary '
-                                name='finish' value='
-                            Hoàn thành' />
-
-                            </div>
-
-
-                            <div class="clearfix"></div>
-                        </div>
                     </form>
                 </div>
+                <div>
+                  <div class="pull-right">
+                      <button (click)="onSubmit()" class='btn btn-finish btn-primary '> Hoàn thành</button>
+                  </div>
+
+
+                  <div class="clearfix"> </div>
+              </div>
                 <!-- End submit form -->
             </div>
         </div>
     </div>
-</div>
+<!-- </div> -->

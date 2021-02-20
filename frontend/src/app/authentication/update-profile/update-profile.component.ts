@@ -20,7 +20,7 @@ id!: any
     private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService,
-    
+
 
   ) { }
 
@@ -69,8 +69,10 @@ id!: any
 
     }
 
+
     cancel(){
-      this.router.navigate(['thuenha.com.vn']);
+      this.router.navigate(['']);
 
     }
+
 }
