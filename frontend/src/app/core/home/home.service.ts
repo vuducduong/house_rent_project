@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService {
 private baseUrl="http://127.0.0.1:8000/api/house";
-private Url="http://127.0.0.1:8000/api/booking"
+private Url="http://127.0.0.1:8000/api/booking";
+
   constructor(private http:HttpClient) { }
 
   getHouseList(){
@@ -30,6 +32,12 @@ private Url="http://127.0.0.1:8000/api/booking"
   getBooking(id: any){
     return this.http.get(`${this.Url}/${id}`)
   }
-  
+  getHouserByName(name: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/search`, {
+      params: {
+        search: name
+      }
+    })
+  }
 
 }
