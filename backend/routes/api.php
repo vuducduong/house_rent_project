@@ -43,6 +43,7 @@ Route::post('login',[LoginController::class, 'login']);
         // MyHomeList
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
         Route::post('/createHome','\App\Http\Controllers\HouseController@store');
+        Route::get('/images/{id}','\App\Http\Controllers\HouseController@showImage');
     });
 
 // });

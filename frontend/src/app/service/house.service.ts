@@ -40,4 +40,7 @@ export class HouseService {
     return this.http.get(`${this.baseUrl}/getHouse/${id}`)
 
   }
+  uploadImage(id:any){
+    return this.http.get(`${this.baseUrl}/images/${id}`);
+  }
 }

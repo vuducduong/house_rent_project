@@ -133,4 +133,18 @@ class HouseController extends Controller
         $house = House::find($id);
         return response()->json($house);
     }
+
+
+
+    public function showImage($id)
+    {
+        $house = House::find($id);
+    $images = DB::table('house_images')->where('houses_id','=',$id)
+    ->get();
+    $data = [
+        "houses" => $house,
+        "houseImages" => $images,
+    ];
+    return response()->json($data);
+    }
 }

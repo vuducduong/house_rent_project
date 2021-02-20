@@ -12,6 +12,8 @@ export class HomeDetailComponent implements OnInit {
 house!:any;
 id!:any;
 user!: any;
+public imagesUrl;
+
   constructor(
     private houseService:HomeService,
     private route: ActivatedRoute,
@@ -21,6 +23,7 @@ user!: any;
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.loadData();
+    this.imagesUrl = ['IMAGE_URL1.jpg', 'IMAGE_URL2.jpg', 'IMAGE_URL3.jpg'];
   }
 
   loadData(){

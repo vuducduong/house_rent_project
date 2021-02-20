@@ -25,7 +25,7 @@ export class HouseComponent implements OnInit {
     // this.id = this.route.snapshot.params['id'];
     
     this.id1 = this.route.snapshot.params['id'];
-    console.log(this.id1)
+    // console.log(this.id1)
     this.house = new House();
 
     this.houseService.getHouseById(this.id1).subscribe(

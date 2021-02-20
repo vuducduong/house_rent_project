@@ -17,15 +17,11 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./create-house.component.css']
 })
 export class CreateHouseComponent implements OnInit {
-  house!:any;
+  house!: any;
   createForm: FormGroup;
-  id!:any;
+  id!: any;
   submitted: boolean = false;
-
-
-
-
-
+  image!: any;
 
 
 
@@ -48,21 +44,20 @@ export class CreateHouseComponent implements OnInit {
     private storage: AngularFireStorage,
     private formBuilder: FormBuilder
 
-    )
-    {}
+  ) { }
 
 
 
   ngOnInit(): void {
     this.createForm = this.formBuilder.group({
-      name:['',[ Validators.required]],
-      type:['',[ Validators.required]],
-      pricePerDay: ['',[ Validators.required]],
-      description: ['',[ Validators.required]],
-      address: ['',[ Validators.required]],
-      status: ['',[ Validators.required]],
-      amountOfbedrooms: ['',[ Validators.required]],
-      amountOfbathrooms:['',[ Validators.required]],
+      name: ['', [Validators.required]],
+      type: ['', [Validators.required]],
+      pricePerDay: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      status: ['', [Validators.required]],
+      amountOfbedrooms: ['', [Validators.required]],
+      amountOfbathrooms: ['', [Validators.required]],
 
     })
 
@@ -77,9 +72,10 @@ export class CreateHouseComponent implements OnInit {
     this.createHouse();
   }
 
-  createHouse(){
-    this.house.users_id=this.id;
-    this.house.image =this.srcImg;
+  createHouse() {
+    this.house.users_id = this.id;
+    this.house.house_id = this.id;
+    this.house.image = this.srcImg;
     console.log(this.house.status)
 
     console.log(this.house);
@@ -96,7 +92,28 @@ export class CreateHouseComponent implements OnInit {
     )
   }
 
-  cancel(){
+
+  // uploadImage(){
+  //   this.house.house_id = this.id;
+  //   this.house.image = this.srcImg;
+
+  //   console.log(this.house);
+  //   this.houseService.uploadImage(this.house).subscribe(
+  //     (data: any) => {
+  //       console.log(data);
+  //       // this.showToasterSuccess();
+  //       // this.house = new House();
+  //       // this.router.navigate(['house']);
+  //     },
+  //     (error: any) => {
+  //       console.log(error)
+  //     }
+  //   )
+
+
+  // }
+
+  cancel() {
 
     this.router.navigate(['house']);
 
@@ -161,36 +178,39 @@ export class CreateHouseComponent implements OnInit {
 
   createImage() {
 
-    if (this.selectedImages.length !== 0) {
-      for (let i = 0; i < this.selectedImages.length; i++) {
-        let selectedImage = this.selectedImages[i];
-        var n = Date.now();
-        const filePath = `RoomsImages/${n}`;
-        const fileRef = this.storage.ref(filePath);
-        const task = this.storage.upload(`RoomsImages/${n}`, File);
-        task
-          .snapshotChanges()
-          .pipe(
-            finalize(() => {
-              this.downloadURL = fileRef.getDownloadURL();
-              this.downloadURL.subscribe((url: any) => {
-                if (url) {
-                  this.fb = url;
-                }
-                this.srcImg = url;
-                console.log(this.fb);
-              });
-            })
-          ).subscribe((url: any) => {
+    // if (this.selectedImages.length !== 0) {
+    //   for (let i = 0; i < this.selectedImages.length; i++) {
+    //     let selectedImage = this.selectedImages[i];
+    var n = Date.now();
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, File);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe((url: any) => {
             if (url) {
-
-              console.log(url);
+              this.fb = url;
             }
+            this.srcImg = url;
+            console.log(this.fb);
           });
-      }
+        })
+      ).subscribe((url: any) => {
+        if (url) {
 
-
-    }
+          console.log(url);
+        }
+      });
   }
+ 
+
 
 }
+
+
+//   }
+
+// }
