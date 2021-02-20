@@ -65,18 +65,19 @@ export class CreateHouseComponent implements OnInit {
       image:['',[ Validators.required]],
 
     })
-
     this.house = new House();
 
     this.id = localStorage.getItem("id")
-
+    
   }
+
 
   onSubmit() {
     this.createHouse();
   }
 
   createHouse(){
+
     this.house.users_id=this.id;
     this.house.image =this.srcImg;
     console.log(this.house.status)
