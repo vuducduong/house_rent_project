@@ -1,4 +1,6 @@
-<nav class="navbar navbar-default ">
+
+
+<nav  class="navbar navbar-default ">
   <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -8,21 +10,36 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+          <a style="margin-left:  100px;" class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+          <ul class="main-nav nav navbar-nav navbar-right">
+            <li>
+              <a routerLink="" routerLinkActive="active"  data-delay="200">
+    
+              <svg class="appWrapper-Header-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+                <defs><path d="M0 0h22.624v24.578H0z"></path></defs>
+                <g fill="none" fill-rule="evenodd"><g transform="translate(3.692 2.615)">
+                  <path class="svg-fill" fill="#000" d="M21.188 23.142h-5.42v-5.115c0-1.23-.45-2.386-1.27-3.255a4.34 4.34 0 0 0-3.186-1.384 4.34 4.34 0 0 0-3.186 1.384 4.719 4.719 0 0 0-1.27 3.255v5.115h-5.42V9.559L11.313 1.7l9.876 7.858v13.583zm1.235-14.437L11.608.101A.55.55 0 0 0 11.313 0a.575.575 0 0 0-.297.1L.202 8.706A.548.548 0 0 0 0 9.134v14.918c0 .275.236.526.496.526h7.3c.26 0 .497-.25.497-.526v-6.025c0-.863.312-1.669.878-2.27a2.92 2.92 0 0 1 2.141-.933 2.92 2.92 0 0 1 2.141.933c.567.601.879 1.407.879 2.27v6.025c0 .275.236.526.496.526h7.3c.26 0 .496-.25.496-.526V9.134a.552.552 0 0 0-.201-.429z"></path>
+                </g><path stroke="#FFF" stroke-width=".5" d="M1 1h28v28H1z" opacity=".01"></path></g>
+              </svg>
+              <span color="#717071" class="sc-htpNat ilDvFU">Trang chủ</span>
+            </a>
+    
+            </li>
+        </ul>
       </div>
-
+    
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse yamm" id="navigation">
-          <div class="button navbar-right">
+      <div  class="collapse navbar-collapse yamm" id="navigation">
+          <div    class="button navbar-right">
             <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="login"
             routerLinkActive="active">Đăng nhập</button>
             <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="register"
             routerLinkActive="active">Đăng ký</button>
             <ul class="main-nav  navbar-nav navbar-right">
             <li class="dropdown ymm-sw " *ngIf="isLoggedIn" data-wow-delay="0.1s">
-              <a href="index.html" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200" >{{user.name}} <b class="caret"></b></a>
+              <a  class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200" >{{user.name}} <b class="caret"></b></a>
 
-              <ul class="dropdown-menu navbar-nav">
+              <ul   class="dropdown-menu navbar-nav">
                   <li>
                     <a routerLink="house" routerLinkActive="active">Trang cá nhân</a>
 
@@ -41,26 +58,10 @@
             </li>
             </ul>
 
-            <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="isLoggedIn" routerLink="house/create-house"
+            <button   class="navbar-btn nav-button wow bounceInRight login" *ngIf="isLoggedIn" routerLink="house/create-house"
             routerLinkActive="active">Đăng tin</button>
           </div>
-          <ul class="main-nav nav navbar-nav navbar-right">
-              <li class="dropdown ymm-sw " data-wow-delay="0.1s">
-
-                  <a routerLink="" routerLinkActive="active" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Home </a>
-
-              </li>
-
-              <!-- <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="properties.html">Properties</a></li> -->
-              <!-- <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="" href="property.html">Property</a></li> -->
-              <!-- <li class="dropdown yamm-fw" data-wow-delay="0.4s"> -->
-
-                  <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template </a> -->
-
-              <!-- </li> -->
-
-              <!-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contact</a></li> -->
-          </ul>
+         
       </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
