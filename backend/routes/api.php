@@ -43,8 +43,10 @@ Route::post('login',[LoginController::class, 'login']);
         // MyHomeList
         Route::get('/list/{id}','\App\Http\Controllers\HouseController@myHomeList');
         Route::post('/createHome','\App\Http\Controllers\HouseController@store');
-        Route::get('/images/{id}','\App\Http\Controllers\HouseController@showImage');
+        // Route::post('/images/{id}','\App\Http\Controllers\HouseController@uploadImages');
     });
+
+    Route::post('/images','\App\Http\Controllers\HouseImageController@store');
 
 // });
 Route::prefix('user')->group(function(){

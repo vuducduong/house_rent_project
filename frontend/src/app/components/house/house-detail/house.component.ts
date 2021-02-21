@@ -3,10 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { House } from 'src/app/model/houses/houses';
 import { HouseService } from 'src/app/service/house.service';
 
+
 @Component({
   selector: 'app-host',
   templateUrl: './house.component.html',
-  styleUrls: ['./house.component.css']
+  styleUrls: ['./house.component.css'],
+  
+
 })
 export class HouseComponent implements OnInit {
 
@@ -15,10 +18,12 @@ export class HouseComponent implements OnInit {
   id1!: any;
   house: any;
 
+
   constructor(
     private houseService: HouseService,
     private router : Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+   
   ) { }
 
   ngOnInit(): void {
@@ -63,6 +68,10 @@ export class HouseComponent implements OnInit {
   getInfo() {
     this.router.navigate(['house']);
   }
-  
+
+  back(){
+    this.router.navigate(['']);
+  }
+
 
 }

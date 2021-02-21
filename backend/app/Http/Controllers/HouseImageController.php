@@ -36,7 +36,10 @@ class HouseImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $images = new HouseImage();
+        $images->fill($request->all());
+        $images->save();
+        return response()->json($images);
     }
 
     /**

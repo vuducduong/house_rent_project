@@ -7,7 +7,7 @@
                 <div class="blog-asside-right">
                     <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
                         <div class="panel-heading">
-                            <h1 class="panel-title"><a  style="color: white;" (click)="getInfo()" >Thông tin cá nhân</a></h1>
+                            <h1 class="panel-title"><a  style="color: white;" (click)="getInfo()" >Danh sách nhà cho thuê </a></h1>
                         </div>
                         <div class="panel-body search-widget">
 
@@ -35,9 +35,14 @@
         
                         <ul class="sort-by-list pull-left">
                             <li  style="font-size: 20px;" class="">
-                                <a routerLink="create-house" routerLinkActive="active"  data-orderby="property_price" data-order="DESC">
-                                  Thêm mới                                </a>
+                                
+                           
+                            <div style="margin-left: 80px;" class="col-sm-4 col-sm-offset-2">
+                                <input style="width: 150px; height: 50px; font-size: 20px;" type='button' 
+                                  class="btn btn-finish btn-primary pull-right " value=" Thêm mới"  routerLink="create-house" routerLinkActive="active"  data-orderby="property_price" data-order="DESC">
+                              </div>
                             </li>
+                             
                         </ul>
         
                     </div>
@@ -58,15 +63,15 @@
                                     <h5><a href=""> {{list.name}}</a></h5>
                                     <div class="dot-hr"></div>
                                     <!-- <span class="pull-left"><b> Area :</b> 120m </span> -->
-                                    <span class="proerty-price pull-right">{{list.pricePerDay}} VND</span>
+                                    <span  class="proerty-price pull-right">{{list.pricePerDay}}</span>
                                     <p style="display: none;"> Mô tả  : {{list.description}}</p>
                                     <div >
                                         
                                      <span class="pull-left" ><b> Status :</b>{{list.status}}</span>
                                     </div>
                                     <div class="property-icon">
-                                        <img src="assets/img/icon/bed.png">{{list.amountOfbedrooms}}|
-                                        <img src="assets/img/icon/shawer.png">{{list.amountOfbathrooms}})|
+                                        <img src="assets/img/icon/bed.png">{{list.amountOfbedrooms}}
+                                        <img src="assets/img/icon/shawer.png">{{list.amountOfbathrooms}}
 
 
                                         <div class="dealer-action pull-right">
@@ -74,7 +79,7 @@
                                         </div>
                                         
                                     </div>
-                                    <div>
+                                    <div *ngIf="list.status=='Đang muốn thuê !'">
                                         <a routerLink="booking-detail/{{list.id}}" routerLinkActive="active" class="button btn btn-success">Xem Thông Tin </a>
                                         <!-- <div *ngIf='Đang muốn thuê !; else rentHouse'> ban co the thue nha</div>
                                         <ng-template #rentHouse> Nha nay da co ng thue </ng-template> -->
@@ -83,6 +88,7 @@
                                     
                                 </div>
                             </div>
+                            
                         </div>
 
 
@@ -90,4 +96,6 @@
 
         </div>
     </div>
+
 </div>
+<button type='button' (click)="back()" class='btn btn-primary '>Trở về</button>

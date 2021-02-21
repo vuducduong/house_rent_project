@@ -7,6 +7,7 @@ import { finalize, map } from 'rxjs/operators';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { HouseImage } from 'src/app/model/house_images/house_images';
 
 
 
@@ -22,6 +23,8 @@ export class CreateHouseComponent implements OnInit {
   id!: any;
   submitted: boolean = false;
   image!: any;
+  id1!: any;
+
 
 
 
@@ -59,6 +62,7 @@ export class CreateHouseComponent implements OnInit {
       amountOfbedrooms: ['', [Validators.required]],
       amountOfbathrooms: ['', [Validators.required]],
 
+
     })
 
     this.house = new House();
@@ -68,16 +72,15 @@ export class CreateHouseComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
     this.createHouse();
   }
 
   createHouse() {
     this.house.users_id = this.id;
-    this.house.house_id = this.id;
     this.house.image = this.srcImg;
-    console.log(this.house.status)
 
+    
+    console.log(this.house.status)
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
       (data: any) => {
@@ -90,20 +93,31 @@ export class CreateHouseComponent implements OnInit {
         console.log(error)
       }
     )
+
+    // this.image.houses_id = this.id1;
+    // this.id1 = this.route.snapshot.params['id'];
+
+    // console.log(this.image);
+    // this.houseService.uploadImage(this.image).subscribe(
+    //   (data: any) => {
+    //     console.log(data);
+    //     this.image = new HouseImage();
+    //   },
+    //   (error: any) => {
+    //     console.log(error)
+    //   }
+    // );
   }
 
 
   // uploadImage(){
-  //   this.house.house_id = this.id;
-  //   this.house.image = this.srcImg;
+  //   this.image.houses_id = this.id;
+  //   this.id1 = this.route.snapshot.params['id'];
 
-  //   console.log(this.house);
-  //   this.houseService.uploadImage(this.house).subscribe(
+  //   console.log(this.image);
+  //   this.houseService.uploadImage(this.image).subscribe(
   //     (data: any) => {
   //       console.log(data);
-  //       // this.showToasterSuccess();
-  //       // this.house = new House();
-  //       // this.router.navigate(['house']);
   //     },
   //     (error: any) => {
   //       console.log(error)
@@ -205,8 +219,6 @@ export class CreateHouseComponent implements OnInit {
         }
       });
   }
- 
-
 
 }
 

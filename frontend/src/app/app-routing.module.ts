@@ -34,7 +34,7 @@ const routes: Routes = [
 
 
 
-  {path: 'booking/edit-house/:id', component: BookingComponent, pathMatch: 'full'},
+  {path: 'house-detail/:id/booking/edit-house', component: BookingComponent, pathMatch: 'full'},
 
   {path: 'house/booking-detail/:id', component: BookingDetailComponent},
 

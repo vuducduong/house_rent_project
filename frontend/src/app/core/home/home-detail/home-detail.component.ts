@@ -1,7 +1,7 @@
 import { AuthenticationService } from 'src/app/service/authentication.service';
 import { HomeService } from '../home.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-detail',
@@ -12,18 +12,20 @@ export class HomeDetailComponent implements OnInit {
 house!:any;
 id!:any;
 user!: any;
-public imagesUrl;
+
 
   constructor(
     private houseService:HomeService,
     private route: ActivatedRoute,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+
+    private router : Router
+
   ) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.loadData();
-    this.imagesUrl = ['IMAGE_URL1.jpg', 'IMAGE_URL2.jpg', 'IMAGE_URL3.jpg'];
   }
 
   loadData(){
@@ -44,11 +46,13 @@ public imagesUrl;
       data => {
 
         this.user = data;
-        console.log(this.user);
+        console.log(data);
       },
       error =>{ 
         console.log(error)
       });
   }
-
+  back(){
+    this.router.navigate(['']);
+  }
 }
