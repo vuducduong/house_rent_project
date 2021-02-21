@@ -64,10 +64,11 @@ house!: any;
       },error => console.log(error)
 
     )
+    
   }
 
   createBooking(){
-    // this.booking.house_id=this.id1
+    this.booking.house_id=this.id1
 
     this.booking.users_id=this.id;
     this.booking.image =this.srcImg;
@@ -83,12 +84,13 @@ house!: any;
       (data: any) => {
         console.log(data);
         this.showToasterSuccess();
+        
         this.booking = new Booking();
-
+        
         this.router.navigate(['']);
       },
       (error: any) => {
-        console.log(error)
+        this.showToasterError();
       }
 
     )
@@ -107,5 +109,14 @@ house!: any;
       'Gửi yêu cầu không thành công'
     );
   }
+
+  dateTime(){
+    var a = new Date(this.booking.startDay).getTime();
+    var b = new Date(this.booking.endDay).getTime();
+    this.day = (b - a)/(1000*60*60*24);
+    this.monney=this.day*this.house.pricePerDay
+    console.log(this.monney)
+  }
+
 
 }

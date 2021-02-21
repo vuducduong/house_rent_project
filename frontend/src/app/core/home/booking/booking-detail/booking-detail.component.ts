@@ -67,7 +67,7 @@ house!: any;
       data=>{
         this.booking=data
         this.getUserById()
-        console.log(this.id)
+        console.log(data)
       },error=>{
         console.log(error);
       }
