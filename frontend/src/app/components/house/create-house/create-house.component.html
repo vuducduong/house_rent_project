@@ -92,8 +92,8 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label>Mô tả căn nhà :</label>
-                                            <textarea formControlName="description" [(ngModel)]="house.description"
-                                                class="text"></textarea>
+                                            <textarea formControlName="description" [(ngModel)]="house.description" id="text"
+                                            class="form-control"></textarea>
                                             <div *ngIf="createForm.get('description').invalid && (createForm.get('description').dirty || createForm.get('description').touched)"
                                                 class="alert alert-danger">
                                                 <div *ngIf="createForm.get('description').errors.required">Vui lòng thêm
