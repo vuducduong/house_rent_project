@@ -178,7 +178,7 @@
 
         
         <button type='button' (click)="back()" class='btn btn-finish btn-primary  '>Trở về</button>.   
-        <a routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
+        <a *ngIf="house.houses.users_id!=user_id" routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
 
        
     </div>

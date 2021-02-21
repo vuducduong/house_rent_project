@@ -64,7 +64,7 @@ class HouseController extends Controller
     ->get();
     $users= DB:: table('houses')
     ->join('users','houses.users_id','=','users.id')
-    ->select('users.name','users.email','users.phone','users.address')
+    ->select('users.name','users.email','users.phone','users.address','users.id')
     ->where('houses.id','=',$id)
     ->first();
 
