@@ -7,7 +7,7 @@
                 <div class="blog-asside-right">
                     <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
                         <div class="panel-heading">
-                            <h1 class="panel-title"><a  style="color: white;" (click)="getInfo()" >Thông tin cá nhân</a></h1>
+                            <h1 class="panel-title"><a  style="color: white;" (click)="getInfo()" >Danh sách nhà cho thuê</a></h1>
                         </div>
                         <div class="panel-body search-widget">
 
@@ -32,16 +32,9 @@
 
                 <div class="section">
                     <div class="page-subheader sorting pl0 pr-10">
-        
-                        <ul class="sort-by-list pull-left">
-                            <li  style="font-size: 20px;" class="">
-                                <a routerLink="create-house" routerLinkActive="active" type="button"  data-orderby="property_price" data-order="DESC" class=" btn btn-primary ">
-                                  Thêm mới                                </a>
-                            </li>
-                        </ul>
-        
+
                     </div>
-        
+
                 </div>
 
 
@@ -61,7 +54,7 @@
                                     <span class="proerty-price pull-right">{{list.pricePerDay}} VND</span>
                                     <p style="display: none;"> Mô tả  : {{list.description}}</p>
                                     <div >
-                                        
+
                                      <span class="pull-left" ><b> Status :</b>{{list.status}}</span>
                                     </div>
                                     <div class="property-icon">
@@ -75,15 +68,16 @@
                                             <a *ngIf="list.status=='Đang muốn thuê !'" routerLink="booking-detail/{{list.id}}" routerLinkActive="active" class="button btn-primary">Xem Thông Tin </a>
                                         
                                         </div>
-                                        
+
                                     </div>
                                     
                                         
                                    
                                     
+
                                 </div>
                             </div>
-                            
+
                         </div>
 
 

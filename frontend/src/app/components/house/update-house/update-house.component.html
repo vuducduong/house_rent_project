@@ -89,8 +89,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                         <label>Mô tả căn nhà :</label>
-                        <textarea formControlName="description" [(ngModel)]="house.description"
-                                  class="form-control"></textarea>
+                        <textarea formControlName="description" [(ngModel)]="house.description" class="text"></textarea>
                         <div
                           *ngIf="editForm.get('description').invalid && (editForm.get('description').dirty || editForm.get('description').touched)"
                           class="alert alert-danger">
@@ -239,22 +238,19 @@
 
             </div>
 
-            <div>
-              <div class="pull-right">
 
-                <input type='button' (click)="onSubmit()" class='btn btn-finish btn-primary '
-                       name='finish' value='
-                            Hoàn thành'/>
-
-              </div>
-
-
-              <div class="clearfix"></div>
-            </div>
           </form>
-        </div>
-        <!-- End submit form -->
       </div>
+      <div>
+        <div class="pull-right">
+            <button (click)="onSubmit()" class='btn btn-finish btn-primary '> Hoàn thành</button>
+        </div>
+
+
+        <div class="clearfix"> </div>
     </div>
+      <!-- End submit form -->
   </div>
 </div>
+</div>
+<!-- </div> -->
