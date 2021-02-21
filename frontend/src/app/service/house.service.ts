@@ -7,6 +7,12 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class HouseService {
+  subscribe(arg0: (value: any) => any) {
+    throw new Error('Method not implemented.');
+  }
+  create(post: any) {
+    throw new Error('Method not implemented.');
+  }
 
   getUserProfile(id: any) {
     throw new Error('Method not implemented.');
@@ -39,5 +45,8 @@ export class HouseService {
   getHouseById(id: any){
     return this.http.get(`${this.baseUrl}/getHouse/${id}`);
 
+  }
+  uploadImage(value:any){
+    return this.http.get(`http://127.0.0.1:8000/api/images`,value);
   }
 }

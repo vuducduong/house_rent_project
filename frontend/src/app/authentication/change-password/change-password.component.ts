@@ -62,4 +62,9 @@ export class ChangePasswordComponent implements OnInit {
       error => this.toastr.error("Mật khẩu không đúng") )
   }
 
+
+  back(){
+    this.router.navigate(['home']);
+  }
+
 }

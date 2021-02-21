@@ -12,6 +12,7 @@ export class House {
     image!:any;
     
     users_id!:any;
+   
     
 
 }

@@ -1,12 +1,12 @@
-<!-- property area -->
+
 <div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
   <div class="container">
     <div class="wizard-footer">
-      <div class="pull-left">
+      <!-- <div class="pull-left">
         <input type='button' (click)="cancel()" class='btn btn-previous btn-default' name='previous'
                value='Trở về '/>
 
-      </div>
+      </div> -->
     </div>
     <div class="clearfix">
       <div class="wizard-container">
@@ -239,18 +239,20 @@
             </div>
 
 
+           
+          
           </form>
-      </div>
-      <div>
-        <div class="pull-right">
-            <button (click)="onSubmit()" class='btn btn-finish btn-primary '> Hoàn thành</button>
         </div>
+        <div>
+          <div style="margin-right: -150px;" class="col-sm-4 col-sm-offset-2">
+            <input style="width: 150px; height: 45px;" type='button' (click)="cancel()"
+              class="btn btn-finish btn-primary pull-right " value="Trở về ">
+          </div>
+          <div style="margin-left: 140px;" class="col-sm-4 col-sm-offset-1">
+            <input style="width: 150px; height: 45px;" type="button" (click)="onSubmit()"
+              class='btn btn-previous btn-default' value="Hoàn thành">
 
+          </div>
+        <!-- End submit form -->
+      </div>
 
-        <div class="clearfix"> </div>
-    </div>
-      <!-- End submit form -->
-  </div>
-</div>
-</div>
-<!-- </div> -->

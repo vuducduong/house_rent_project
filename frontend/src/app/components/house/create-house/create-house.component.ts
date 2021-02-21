@@ -6,7 +6,10 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, map } from 'rxjs/operators';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { HouseImage } from 'src/app/model/house_images/house_images';
+
 
 
 
@@ -17,13 +20,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./create-house.component.css']
 })
 export class CreateHouseComponent implements OnInit {
-  house!:any;
+  house!: any;
   createForm: FormGroup;
-  id!:any;
-
-
-
-
+  id!: any;
+  submitted: boolean = false;
+  image!: any;
+  id1!: any;
 
 
 
@@ -47,22 +49,21 @@ export class CreateHouseComponent implements OnInit {
     private storage: AngularFireStorage,
     private formBuilder: FormBuilder
 
-    )
-    {}
+  ) { }
 
 
 
   ngOnInit(): void {
     this.createForm = this.formBuilder.group({
-      name:['',[ Validators.required]],
-      type:['',[ Validators.required]],
-      pricePerDay: ['',[ Validators.required]],
-      description: ['',[ Validators.required]],
-      address: ['',[ Validators.required]],
-      status: ['',[ Validators.required]],
-      amountOfbedrooms: ['',[ Validators.required]],
-      amountOfbathrooms:['',[ Validators.required]],
-      image:['',[ Validators.required]],
+      name: ['', [Validators.required]],
+      type: ['', [Validators.required]],
+      pricePerDay: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      status: ['', [Validators.required]],
+      amountOfbedrooms: ['', [Validators.required]],
+      amountOfbathrooms: ['', [Validators.required]],
+
 
     })
     this.house = new House();
@@ -76,12 +77,14 @@ export class CreateHouseComponent implements OnInit {
     this.createHouse();
   }
 
-  createHouse(){
 
-    this.house.users_id=this.id;
-    this.house.image =this.srcImg;
+  createHouse() {
+    this.house.users_id = this.id;
+    this.house.image = this.srcImg;
+
+
+    
     console.log(this.house.status)
-
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
       (data: any) => {
@@ -94,9 +97,41 @@ export class CreateHouseComponent implements OnInit {
         console.log(error)
       }
     )
+
+    // this.image.houses_id = this.id1;
+    // this.id1 = this.route.snapshot.params['id'];
+
+    // console.log(this.image);
+    // this.houseService.uploadImage(this.image).subscribe(
+    //   (data: any) => {
+    //     console.log(data);
+    //     this.image = new HouseImage();
+    //   },
+    //   (error: any) => {
+    //     console.log(error)
+    //   }
+    // );
   }
 
-  cancel(){
+
+  // uploadImage(){
+  //   this.image.houses_id = this.id;
+  //   this.id1 = this.route.snapshot.params['id'];
+
+  //   console.log(this.image);
+  //   this.houseService.uploadImage(this.image).subscribe(
+  //     (data: any) => {
+  //       console.log(data);
+  //     },
+  //     (error: any) => {
+  //       console.log(error)
+  //     }
+  //   )
+
+
+  // }
+
+  cancel() {
 
     this.router.navigate(['house']);
 
@@ -161,38 +196,37 @@ export class CreateHouseComponent implements OnInit {
 
   createImage() {
 
-    if (this.selectedImages.length !== 0) {
-      for (let i = 0; i < this.selectedImages.length; i++) {
-        let selectedImage = this.selectedImages[i];
-        var n = Date.now();
-        const filePath = `RoomsImages/${n}`;
-        const fileRef = this.storage.ref(filePath);
-        const task = this.storage.upload(`RoomsImages/${n}`, File);
-        task
-          .snapshotChanges()
-          .pipe(
-            finalize(() => {
-              this.downloadURL = fileRef.getDownloadURL();
-              this.downloadURL.subscribe((url: any) => {
-                if (url) {
-                  this.fb = url;
-                }
-                this.srcImg = url;
-                console.log(this.fb);
-              });
-            })
-          ).subscribe((url: any) => {
+    // if (this.selectedImages.length !== 0) {
+    //   for (let i = 0; i < this.selectedImages.length; i++) {
+    //     let selectedImage = this.selectedImages[i];
+    var n = Date.now();
+    const filePath = `RoomsImages/${n}`;
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(`RoomsImages/${n}`, File);
+    task
+      .snapshotChanges()
+      .pipe(
+        finalize(() => {
+          this.downloadURL = fileRef.getDownloadURL();
+          this.downloadURL.subscribe((url: any) => {
             if (url) {
-
-              console.log(url);
+              this.fb = url;
             }
+            this.srcImg = url;
+            console.log(this.fb);
           });
-      }
+        })
+      ).subscribe((url: any) => {
+        if (url) {
 
-
-    }
+          console.log(url);
+        }
+      });
   }
 
 }
 
 
+//   }
+
+// }
