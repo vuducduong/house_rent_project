@@ -7,7 +7,9 @@
                 <div class="blog-asside-right">
                     <div class="panel panel-default sidebar-menu wow fadeInRight animated" >
                         <div class="panel-heading">
-                            <h1 class="panel-title"><a  style="color: white;" (click)="getInfo()" >Danh sách nhà cho thuê</a></h1>
+
+                            <h1 class="panel-title"><a  style="color: white;" (click)="getInfo()" >Danh sách nhà cho thuê </a></h1>
+
                         </div>
                         <div class="panel-body search-widget">
 
@@ -54,19 +56,21 @@
                                     
                                     <div class="dot-hr"></div>
                                     <!-- <span class="pull-left"><b> Area :</b> 120m </span> -->
-                                    <span class="proerty-price pull-right">{{list.pricePerDay}} VND</span>
+                                    <span  class="proerty-price pull-right">{{list.pricePerDay}}</span>
                                     <p style="display: none;"> Mô tả  : {{list.description}}</p>
                                     <div >
 
                                      <span class="pull-left" ><b> Trạng thái :</b><b>{{list.status}}</b></span>
                                     </div>
                                     <div class="property-icon">
+
                                         <img src="assets/img/icon/bed.png"> {{list.amountOfbedrooms}}    
                                         <img src="assets/img/icon/shawer.png"> {{list.amountOfbathrooms}}
 
 
                                         <div class="dealer-action pull-right">
                                             <a routerLink="edit-house/{{list.id}}" routerLinkActive="active" class="button">Sửa </a>
+
                                             
                                             
                                         
@@ -76,6 +80,11 @@
                                     
                                         
                                    
+                                    
+
+                                        </div>
+
+                                    </div>
                                     
 
                                 </div>

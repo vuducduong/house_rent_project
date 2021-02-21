@@ -128,6 +128,20 @@ class HouseController extends Controller
         return response()->json($list);
 
     }
+
+    // public function uploadImages($id){
+    //     $images = House::find($id);
+    //     $images = DB::table('houses')
+    //     ->join('house_images','houses_id','=','house_images.houses_id')
+    //     ->select('houses.id','house_images.*')
+    //     ->where('houses.id','=',$id)
+    //     ->get();
+    //     return response()->json($images);
+
+    // }
+
+
+     
     public function search(Request $request)
     {
         $search = $request->search;
@@ -139,4 +153,6 @@ class HouseController extends Controller
         $house = House::find($id);
         return response()->json($house);
     }
+
+   
 }
