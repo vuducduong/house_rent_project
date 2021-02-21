@@ -9,7 +9,7 @@
             </div>
         </div>
         <!-- <div class="clearfix"> -->
-            <div class="wizard-container">
+            <!-- <div class="wizard-container"> -->
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
 
                     <form [formGroup]="createForm">
@@ -18,12 +18,8 @@
                                 <br>ĐIỀN THÔNG TIN NHÀ CỦA BẠN <br>
                             </h3>
                         </div>
-
-                        <ul>
-
-                        </ul>
-
                         <div>
+                          <ul></ul>
 
                             <div>
                                 <div class="row p-b-15  ">
@@ -31,16 +27,11 @@
                                         <div class="picture-container">
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
-                                                <input type="file" id="file" #userPhoto
+                                                <input type="file" id="file"
                                                     (change)="onFileSelected($event)" formControlName="image"
-                                                   autocomplete="off" id="wizard-picture" />
+                                                   autocomplete="on" id="wizard-picture" />
 
                                              </div>
-                                             <div
-                                             *ngIf="createForm.get('image').invalid && (createForm.get('image').dirty || createForm.get('image').touched)"
-                                                class="alert alert-danger">
-                                        <div *ngIf="createForm.get('image').errors.required">Vui lòng thêm ảnh </div>
-                                            </div>
 
                                         </div>
                                     </div>
@@ -265,5 +256,5 @@
                 <!-- End submit form -->
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 <!-- </div> -->

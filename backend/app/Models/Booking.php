@@ -13,7 +13,7 @@ class Booking extends Model
         'endDay',
         'status_booking',
         'users_id',
-        'house_id'
+        'houses_id'
 
     ];
     function houses(){
