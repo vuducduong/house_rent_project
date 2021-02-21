@@ -3,10 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { House } from 'src/app/model/houses/houses';
 import { HouseService } from 'src/app/service/house.service';
 
+
 @Component({
   selector: 'app-host',
   templateUrl: './house.component.html',
-  styleUrls: ['./house.component.css']
+  styleUrls: ['./house.component.css'],
+  
+
 })
 export class HouseComponent implements OnInit {
 
@@ -15,17 +18,19 @@ export class HouseComponent implements OnInit {
   id1!: any;
   house: any;
 
+
   constructor(
     private houseService: HouseService,
     private router : Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+   
   ) { }
 
   ngOnInit(): void {
     // this.id = this.route.snapshot.params['id'];
     
     this.id1 = this.route.snapshot.params['id'];
-    console.log(this.id1)
+    // console.log(this.id1)
     this.house = new House();
 
     this.houseService.getHouseById(this.id1).subscribe(

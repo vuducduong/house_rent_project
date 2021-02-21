@@ -12,6 +12,8 @@ export class HomeDetailComponent implements OnInit {
 house!:any;
 id!:any;
 user!: any;
+
+
   constructor(
     private houseService:HomeService,
     private route: ActivatedRoute,
