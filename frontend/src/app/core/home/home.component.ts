@@ -34,7 +34,8 @@ houses!: any;
 
   search(event){
     let name = event.target.value;
-    this.homeService.getHouserByName(name).subscribe(res => {
+    console.log(name)
+    this.homeService.getSearchHouser(name).subscribe(res => {
       this.houses = res;
       console.log(res);
     }, error => {

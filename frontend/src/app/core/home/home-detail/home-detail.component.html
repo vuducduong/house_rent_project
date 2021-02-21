@@ -43,7 +43,7 @@
                         
 
                         <div class="section">
-                            <h4 class="s-property-title">Description</h4>
+                            <h4 class="s-property-title">Mô tả</h4>
                             <div class="s-property-content">
                                 <p>{{ house.houses.description }}</p>
                             </div>
@@ -52,30 +52,30 @@
 
                         <div class="section additional-details">
 
-                            <h4 class="s-property-title">Additional Details</h4>
+                            <h4 class="s-property-title">Chi tiết bổ sung</h4>
 
                             <ul class="additional-details-list clearfix">
                                 <li>
-                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Type</span>
+                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Loại nhà</span>
                                     <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{house.houses.type}}</span>
                                 </li>
 
                                 <li>
-                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Address</span>
+                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Địa chỉ</span>
                                     <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ house.houses.address }}</span>
                                 </li>
                                 <li>
-                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Status</span>
+                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Trạng thái nhà</span>
                                     <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{ house.houses.status }}</span>
                                 </li>
 
                                 <li>
-                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Amount Of bedrooms</span>
+                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Số lượng phòng ngủ</span>
                                     <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{house.houses.amountOfbedrooms}}</span>
                                 </li>
 
                                 <li>
-                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Amount Of bathrooms</span>
+                                    <span class="col-xs-6 col-sm-4 col-md-4 add-d-title">Số lượng phòng tắm</span>
                                     <span class="col-xs-6 col-sm-8 col-md-8 add-d-entry">{{house.houses.amountOfbathrooms}}</span>
                                 </li>
 
@@ -105,7 +105,7 @@
                                             <img src="assets/img/icon/sale-orange.png">
                                         </span>
                                         <span class="property-info-entry">
-                                            <span class="property-info-label">Status</span>
+                                            <span class="property-info-label">Trạng thái nhà</span>
                                             <span class="property-info-value">{{ house.houses.status }}</span>
                                         </span>
                                     </div>
@@ -115,7 +115,7 @@
                                             <img src="assets/img/icon/bed-orange.png">
                                         </span>
                                         <span class="property-info-entry">
-                                            <span class="property-info-label">Bedrooms</span>
+                                            <span class="property-info-label">Số lượng phòng ngủ</span>
                                             <span class="property-info-value">{{house.houses.amountOfbedrooms}}</span>
                                         </span>
                                     </div>
@@ -126,7 +126,7 @@
                                             <img src="assets/img/icon/shawer-orange.png">
                                         </span>
                                         <span class="property-info-entry">
-                                            <span class="property-info-label">Bathrooms</span>
+                                            <span class="property-info-label">Số lượng phòng tắm</span>
                                             <span class="property-info-value">{{house.houses.amountOfbathrooms}}</span>
                                         </span>
                                     </div>
@@ -134,7 +134,7 @@
 
                                 </div>
                                 <div class="dealer-section-space">
-                                    <span>Dealer information</span>
+                                    <span>THÔNG TIN ĐẠI LÝ</span>
                                 </div>
                                 <div class="clear">
                                     <div class="col-xs-4 col-sm-4 dealer-face">
@@ -156,9 +156,9 @@
                                     <ul class="dealer-contacts">                                       
                                         <li><i class="pe-7s-map-marker strong"> </i> {{house.users.address}}</li>
                                         <li><i class="pe-7s-mail strong"> </i> {{house.users.email}}</li>
-                                        <li><i class="pe-7s-call strong"> </i> {{house.users.phone}}</li>
+                                        <li><i class="pe-7s-call strong"> </i> +84 {{house.users.phone}}</li>
                                     </ul>
-                                    <p>Duis mollis  blandit tempus porttitor curabiturDuis mollis  blandit tempus porttitor curabitur , est non…</p>
+                                    
                                 </div>
 
                             </div>
@@ -172,8 +172,8 @@
         </div>
 
         
-        <button type='button' (click)="back()" class='btn btn-primary '>Trở về</button>.   
-        <a routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-success" type="button">Thuê nhà</a>
+        <button type='button' (click)="back()" class='btn btn-finish btn-primary  '>Trở về</button>.   
+        <a routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
 
        
     </div>

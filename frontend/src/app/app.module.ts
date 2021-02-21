@@ -159,6 +159,7 @@ import { BookingDetailComponent } from './core/home/booking/booking-detail/booki
     MatFormFieldModule,
     AngularFireStorageModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -63,10 +63,10 @@
                           </div>
                           <div class="col-sm-6">
                               <div class="form-group">Số điện thoại :
-                                  <input type="number" class="form-control" formControlName="phone" [(ngModel)]="user.phone"
+                                  <input type="text" class="form-control" formControlName="phone" [(ngModel)]="user.phone"
                                       required >
                                   <div *ngIf="profileForm.get('phone').invalid && (profileForm.get('phone').dirty || profileForm.get('phone').touched)" class="alert alert-danger">
-                                      <div class="text-danger" *ngIf="loginForm.get('phone').errors.required">Số điện thoại người
+                                      <div class="text-danger" *ngIf="profileForm.get('phone').errors.required">Số điện thoại người
                                           dùng không được để trống</div>
                                   </div>
                               </div>
@@ -85,7 +85,7 @@
                               </div>
                           </div>
                           <div class="col-sm-12 text-center">
-                              <button  (click)="updateUser()" type="submit" class="btn btn-primary">Cập nhật</button>
+                              <button  (click)="updateUser()" type="submit" class="btn btn-previous btn-default">Cập nhật</button>
                               <div class="col-sm-6">
 
                               <button type='submit' routerLink="/house" routerLinkActive="active" class="btn btn-primary">Trở về </button>

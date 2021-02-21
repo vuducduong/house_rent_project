@@ -42,7 +42,9 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $myHome = new House();
+        
         $myHome->fill($request->all());
         $myHome->save();
         return response()->json($myHome);
@@ -62,7 +64,7 @@ class HouseController extends Controller
     ->get();
     $users= DB:: table('houses')
     ->join('users','houses.users_id','=','users.id')
-    ->select('users.name','users.email','users.phone','users.address','houses.*')
+    ->select('users.name','users.email','users.phone','users.address')
     ->where('houses.id','=',$id)
     ->first();
 
@@ -71,7 +73,7 @@ class HouseController extends Controller
         "houseImages" => $images,
         "users" => $users
     ];
-    
+
     return response()->json($data);
     }
 
@@ -143,7 +145,7 @@ class HouseController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        $houses = House::where('name', 'LIKE', "%$search%")->get();
+        $houses = House::where('address', 'LIKE', "%$search%")->orWhere('pricePerDay', 'LIKE', "%$search%")->get();
         return response()->json($houses);
     }
 

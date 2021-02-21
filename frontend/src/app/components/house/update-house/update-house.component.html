@@ -89,8 +89,7 @@
                     <div class="col-sm-12">
                       <div class="form-group">
                         <label>Mô tả căn nhà :</label>
-                        <textarea formControlName="description" [(ngModel)]="house.description"
-                                  class="form-control"></textarea>
+                        <textarea formControlName="description" [(ngModel)]="house.description" class="text"></textarea>
                         <div
                           *ngIf="editForm.get('description').invalid && (editForm.get('description').dirty || editForm.get('description').touched)"
                           class="alert alert-danger">
@@ -238,6 +237,7 @@
 
 
             </div>
+
 
            
           
