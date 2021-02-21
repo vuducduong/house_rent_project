@@ -29,7 +29,7 @@
                                             <div class="picture">
                                                 <img src="" class="picture-src" id="wizardPicturePreview" title="" />
                                                 <input type="file" id="file"
-                                                    (change)="onFileSelected($event)" formControlName="image"
+                                                    (change)="onFileSelected($event)" name="image"
                                                    autocomplete="on" id="wizard-picture" />
 
                                              </div>
@@ -64,11 +64,15 @@
 
 
                                     <div class="form-group">
-                                        <label>Phân loại nhà :</label>
+                                        <label>Loại phòng :</label>
                                         <select class="form-control" formControlName="type" [(ngModel)]="house.type">
                                             <option value="">Chọn loại nhà</option>
-                                            <option>Nhà ở riêng lẻ</option>
-                                            <option>Nhà chung cư</option>
+                                            <option>Phòng đơn</option>
+                                            <option>Phòng đôi</option>
+                                            <option>Phòng tổng thống,</option>
+                                            <option>Phòng VIP</option>
+                                            <option>Phòng Luxury</option>
+
                                         </select>
                                         <div *ngIf="createForm.get('type').invalid && (createForm.get('type').dirty || createForm.get('type').touched)"
                                             class="alert alert-danger">
@@ -123,6 +127,7 @@
                                                 <option value="">Chọn trạng thái</option>
                                                 <option>Còn trống</option>
                                                 <option>Đã cho thuê</option>
+                                                <option>Đang nâng cấp</option>
                                             </select>
                                             <div *ngIf="createForm.get('status').invalid && (createForm.get('status').dirty || createForm.get('status').touched)"
                                                 class="alert alert-danger">
@@ -141,7 +146,13 @@
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
-                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                                <option>7</option>
+                                                <option>8</option>
+                                                <option>9</option>
+                                                <option>10</option>
+
                                             </select>
                                             <div *ngIf="createForm.get('amountOfbedrooms').invalid && (createForm.get('amountOfbedrooms').dirty || createForm.get('amountOfbedrooms').touched)"
                                                 class="alert alert-danger">
@@ -160,7 +171,6 @@
                                                 <option>1</option>
                                                 <option>2</option>
                                                 <option>3</option>
-                                                <option>4</option>
                                             </select>
                                             <div *ngIf="createForm.get('amountOfbathrooms').invalid && (createForm.get('amountOfbathrooms').dirty || createForm.get('amountOfbathrooms').touched)"
                                                 class="alert alert-danger">
@@ -228,10 +238,10 @@
               <div style="margin-left: 140px;" class="col-sm-4 col-sm-offset-1">
                 <input style="width: 150px; height: 45px;" type="button" (click)="onSubmit()"
                   class='btn btn-previous btn-default' value="Hoàn thành">
-  
+
               </div>
-            
-            
+
+
             <!-- End submit form -->
 
         </div>
