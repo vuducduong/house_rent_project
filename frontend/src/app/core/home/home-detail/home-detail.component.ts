@@ -12,6 +12,7 @@ export class HomeDetailComponent implements OnInit {
 house!:any;
 id!:any;
 user!: any;
+user_id!: any;
 
 
   constructor(
@@ -24,6 +25,8 @@ user!: any;
   ) { }
 
   ngOnInit(): void {
+    this.user_id = localStorage.getItem('id');
+    console.log(this.user_id)
     this.id = this.route.snapshot.params['id'];
     this.loadData();
   }
@@ -33,7 +36,7 @@ user!: any;
       data=>{
         this.house=data
         this.getUserById()
-        console.log(this.id)
+        // console.log(data)
       },error=>{
         console.log(error);
       }
@@ -46,7 +49,7 @@ user!: any;
       data => {
 
         this.user = data;
-        console.log(data);
+        // console.log(data);
       },
       error =>{ 
         console.log(error)
