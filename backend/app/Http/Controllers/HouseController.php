@@ -42,6 +42,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $myHome = new House();
         $myHome->fill($request->all());
         $myHome->save();
@@ -71,7 +72,7 @@ class HouseController extends Controller
         "houseImages" => $images,
         "users" => $users
     ];
-    
+
     return response()->json($data);
     }
 

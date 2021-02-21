@@ -6,7 +6,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, map } from 'rxjs/operators';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -65,18 +65,19 @@ export class CreateHouseComponent implements OnInit {
       image:['',[ Validators.required]],
 
     })
-
     this.house = new House();
 
     this.id = localStorage.getItem("id")
 
   }
 
+
   onSubmit() {
     this.createHouse();
   }
 
   createHouse(){
+
     this.house.users_id=this.id;
     this.house.image =this.srcImg;
     console.log(this.house.status)
