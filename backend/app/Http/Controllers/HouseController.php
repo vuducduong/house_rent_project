@@ -43,6 +43,7 @@ class HouseController extends Controller
     public function store(Request $request)
     {
         $myHome = new House();
+        
         $myHome->fill($request->all());
         $myHome->save();
         return response()->json($myHome);
@@ -62,7 +63,7 @@ class HouseController extends Controller
     ->get();
     $users= DB:: table('houses')
     ->join('users','houses.users_id','=','users.id')
-    ->select('users.name','users.email','users.phone','users.address','houses.*')
+    ->select('users.name','users.email','users.phone','users.address')
     ->where('houses.id','=',$id)
     ->first();
 

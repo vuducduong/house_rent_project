@@ -53,28 +53,28 @@
         <div class="col-md-12 " >
           <div id="list-type" class="proerty-th">
 
-            <div class="col-sm-6 col-md-3 p0" *ngFor = "let house of houses">
+            <div (click)="viewHouse(house.id)" class="col-sm-6 col-md-3 p0" *ngFor = "let house of houses">
               <div class="box-two proerty-item" *ngIf="house.status=='Còn trống'">
                 <div class="item-thumb">
 
-                  <a (click)="viewHouse(house.id)"><img src="{{house.image}}"></a>
+                  <a ><img src="{{house.image}}"></a>
                 </div>
 
                 <div class="item-entry overflow"  >
                   <h5><button (click)="viewHouse(house.id)" >{{house.name}}</button></h5>
                   <div class="dot-hr"></div>
-                  <span class="pull-left"><b> Type :</b>{{house.type}}</span>
+                  <span class="pull-left"><b> Loại nhà : </b>{{house.type}}</span>
                   <br>
                   
-                    <span class="pull-left" ><b> Status :</b>{{house.status}}</span>
+                    <span class="pull-left" ><b> Trạng thái : </b>{{house.status}}</span>
                   
                   
                   <span class="proerty-price pull-right">{{house.pricePerDay}}</span>
                   <p style="display: none;">{{house.description}}</p>
-                  <p style="display: none;">Address:{{house.address}}</p>
+                  <p style="display: none;">Địa chỉ:{{house.address}}</p>
                   <div class="property-icon">
-                    <img src="assets/img/icon/bed.png">{{house.amountOfbedrooms}}|
-                    <img src="assets/img/icon/shawer.png">{{house.amountOfbathrooms}}|
+                    <img src="assets/img/icon/bed.png"> {{house.amountOfbedrooms}}   
+                    <img src="assets/img/icon/shawer.png"> {{house.amountOfbathrooms}}
                     
                   </div>
 
