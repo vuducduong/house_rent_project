@@ -139,7 +139,7 @@
 
                                 </div>
                                 <div class="dealer-section-space">
-                                    <span>THÔNG TIN ĐẠI LÝ</span>
+                                    <span>THÔNG TIN NGƯỜI CHO THUÊ </span>
                                 </div>
                                 <div class="clear">
                                     <div class="col-xs-4 col-sm-4 dealer-face">
@@ -177,8 +177,9 @@
         </div>
 
 
+
         <button type='button' (click)="back()" class='btn btn-finish btn-primary  '>Trở về</button>.
-        <a routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
+        <a *ngIf="house.houses.users_id!=user_id" routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
 
 
     </div>
