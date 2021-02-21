@@ -130,7 +130,7 @@ class HouseController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        $houses = House::where('address', 'LIKE', "%$search%")->get();
+        $houses = House::where('address', 'LIKE', "%$search%")->orWhere('pricePerDay', 'LIKE', "%$search%")->get();
         return response()->json($houses);
     }
 

@@ -32,8 +32,10 @@ private Url="http://127.0.0.1:8000/api/booking";
   getBooking(id: any){
     return this.http.get(`${this.Url}/${id}`)
   }
-  getHouserByName(search: string, value: any) {
-    return this.http.post(`${this.baseUrl}/${search}`, value);
+  getHouserByName(value: any) {
+    return this.http.post(`${this.baseUrl}/search`, {
+      search: value
+    });
   }
 
 }
