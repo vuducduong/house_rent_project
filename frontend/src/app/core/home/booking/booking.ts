@@ -5,5 +5,5 @@ export class Booking{
 
     status_booking!: any;
     users_id!: any;
-    house_id!:any;
+    houses_id!:any;
 }

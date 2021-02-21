@@ -68,7 +68,7 @@ house!: any;
   }
 
   createBooking(){
-    this.booking.house_id=this.id1
+    this.booking.houses_id=this.id1
 
     this.booking.users_id=this.id;
     this.booking.image =this.srcImg;
