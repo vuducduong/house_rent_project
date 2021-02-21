@@ -42,6 +42,7 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $myHome = new House();
         $myHome->fill($request->all());
         $myHome->save();
@@ -71,7 +72,7 @@ class HouseController extends Controller
         "houseImages" => $images,
         "users" => $users
     ];
-    
+
     return response()->json($data);
     }
 
@@ -129,7 +130,7 @@ class HouseController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        $houses = House::where('name', 'LIKE', "%$search%")->get();
+        $houses = House::where('address', 'LIKE', "%$search%")->get();
         return response()->json($houses);
     }
 

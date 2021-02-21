@@ -6,7 +6,7 @@ import { AngularFireStorage } from '@angular/fire/storage';
 import { finalize, map } from 'rxjs/operators';
 import { HouseService } from 'src/app/service/house.service';
 import { House } from 'src/app/model/houses/houses';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -68,7 +68,7 @@ export class CreateHouseComponent implements OnInit {
     this.house = new House();
 
     this.id = localStorage.getItem("id")
-    
+
   }
 
 
