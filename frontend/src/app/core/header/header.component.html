@@ -31,7 +31,7 @@
                     <a routerLink="update-profile" routerLinkActive="active">Chỉnh sửa trang cá nhân</a>
                   </li>
                   <li>
-                      <a routerLink="change-password">Đổi mật khẩu</a>
+                      <a routerLink="change-password"  >Đổi mật khẩu</a>
                   </li>
                   <li>
                       <a (click)="logOut()">Đăng xuất</a>
@@ -41,7 +41,8 @@
             </li>
             </ul>
 
-
+            <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="isLoggedIn" routerLink="create-house"
+            routerLinkActive="active">Đăng tin</button>
           </div>
           <ul class="main-nav nav navbar-nav navbar-right">
               <li class="dropdown ymm-sw " data-wow-delay="0.1s">
@@ -50,15 +51,15 @@
 
               </li>
 
-              <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="properties.html">Properties</a></li>
-              <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="" href="property.html">Property</a></li>
-              <li class="dropdown yamm-fw" data-wow-delay="0.4s">
+              <!-- <li class="wow fadeInDown" data-wow-delay="0.2s"><a class="" href="properties.html">Properties</a></li> -->
+              <!-- <li class="wow fadeInDown" data-wow-delay="0.3s"><a class="" href="property.html">Property</a></li> -->
+              <!-- <li class="dropdown yamm-fw" data-wow-delay="0.4s"> -->
 
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template </a>
+                  <!-- <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Template </a> -->
 
-              </li>
+              <!-- </li> -->
 
-              <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contact</a></li>
+              <!-- <li class="wow fadeInDown" data-wow-delay="0.5s"><a href="contact.html">Contact</a></li> -->
           </ul>
       </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

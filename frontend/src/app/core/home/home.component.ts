@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-houses!:any
+houses!: any;
   constructor(
     private homeService: HomeService,
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -20,16 +20,27 @@ houses!:any
 
   loadData(){
     this.homeService.getHouseList().subscribe(
-      data=>{
-        this.houses= data
-      },error=>{
-        console.log(error)
+      data => {
+        this.houses = data;
+      }, error => {
+        console.log(error);
       }
-    )
+    );
   }
 
   viewHouse(id: any){
-    this.router.navigate(['house-detail/'+id])
+    this.router.navigate(['house-detail/' + id]);
+  }
+
+  search(event){
+    let name = event.target.value;
+    this.homeService.getHouserByName(name).subscribe(res => {
+      this.houses = res;
+      console.log(res);
+    }, error => {
+      console.log(error);
+    }
+    );
   }
 
 }

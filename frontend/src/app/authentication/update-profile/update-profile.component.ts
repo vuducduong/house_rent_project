@@ -69,5 +69,10 @@ id!: any
 
     }
 
-    
+
+    cancel(){
+      this.router.navigate(['']);
+
+    }
+
 }

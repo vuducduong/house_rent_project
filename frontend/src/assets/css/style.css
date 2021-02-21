@@ -752,7 +752,7 @@ label small{
 
 .navbar-default .navbar-nav > li > a.active:after{
 
-    background-color: #FDC600;
+    /* background-color: #FDC600; */
     bottom: -24px;
     content: "";
     height: 5px;
