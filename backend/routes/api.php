@@ -31,12 +31,11 @@ Route::post('login',[LoginController::class, 'login']);
 
     Route::prefix('house')->group(function(){
         Route::get('/','HouseController@index');
-        Route::post('/','HouseController@index');
         Route::get('/{id}','HouseController@show');
 
         Route::get('/getHouse/{id}','HouseController@getHouse');
         Route::put('/{id}', [HouseController::class, 'update']);
-        Route::post('/{search}',[HouseController::class, 'search']);
+        Route::post('/search',[HouseController::class, 'search']);
 
 
 
