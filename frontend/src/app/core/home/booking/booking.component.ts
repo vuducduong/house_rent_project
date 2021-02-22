@@ -72,13 +72,7 @@ house!: any;
 
     this.booking.users_id=this.id;
     this.booking.image =this.srcImg;
-    this.house.status = "Đang muốn thuê !"
-    console.log(this.house)
-    this.houseService.updateHouse(this.id1, this.house).subscribe(
-      data => {
-        console.log(data);
-
-      }, error => console.log(error));
+    
 
     this.bookingService.booking(this.booking).subscribe(
       (data: any) => {
@@ -94,6 +88,13 @@ house!: any;
       }
 
     )
+    this.house.status = "Đang muốn thuê !"
+    console.log(this.house)
+    this.houseService.updateHouse(this.id1, this.house).subscribe(
+      data => {
+        console.log(data);
+
+      }, error => console.log(error));
 
 
 
