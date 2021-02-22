@@ -20,7 +20,12 @@
 
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                     <li data-thumb="assets/img/property-1/property1.jpg"> 
-                                        <div class="item" *ngFor="let image of house.houseImages"><img [src]="image.image" height="550px" width="550px" ></div>
+
+                                        <div class="item" ><img [src]="house.houses.image" height="550px" width="550px" ></div>
+                                    
+                                    </li>
+
+                                        <!-- <div class="item" *ngFor="let image of house.houseImages"><img [src]="image.image" height="550px" width="550px" ></div>
                                         </li>
                                         <li data-thumb="assets/img/property-1/property1.jpg"> 
                                             <img src="assets/img/property-1/property1.jpg" />
@@ -30,7 +35,7 @@
                                         </li>
                                         <li data-thumb="assets/img/property-1/property3.jpg"> 
                                             <img src="assets/img/property-1/property3.jpg" />
-                                        </li>
+                                        </li> -->
                                                           
                                 </ul>
                                 <br>
@@ -139,7 +144,7 @@
                                 <div class="clear">
                                     <div class="col-xs-4 col-sm-4 dealer-face">
                                         <a href="">
-                                            <img src="assets/img/client-face1.png" class="img-circle">
+                                            <img src="assets/img/anhtrungtinh.jpg" class="img-circle">
                                         </a>
                                     </div>
                                     <div class="col-xs-8 col-sm-8 ">
@@ -173,7 +178,7 @@
 
         
         <button type='button' (click)="back()" class='btn btn-finish btn-primary  '>Trở về</button>.   
-        <a routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
+        <a *ngIf="house.houses.users_id!=user_id" routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
 
        
     </div>

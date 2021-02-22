@@ -57,7 +57,7 @@ class BookingController extends Controller
         $booking = Booking::find($id);
         $booking = DB::table('bookings')
         ->join('users','users.id','=','bookings.users_id')
-        ->join('houses','houses.id','=','bookings.house_id')
+        ->join('houses','houses.id','=','bookings.houses_id')
         ->select('users.name','users.email','users.phone','users.address','bookings.startDay','bookings.endDay')
         ->where('houses.id','=',$id)
         ->first();
