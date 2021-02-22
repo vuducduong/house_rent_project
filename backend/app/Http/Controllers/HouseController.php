@@ -44,7 +44,7 @@ class HouseController extends Controller
     {
         // dd($request->all());
         $myHome = new House();
-        
+
         $myHome->fill($request->all());
         $myHome->save();
         return response()->json($myHome);
@@ -141,7 +141,7 @@ class HouseController extends Controller
     // }
 
 
-     
+
     public function search(Request $request)
     {
         $search = $request->search;
@@ -154,5 +154,5 @@ class HouseController extends Controller
         return response()->json($house);
     }
 
-   
+
 }

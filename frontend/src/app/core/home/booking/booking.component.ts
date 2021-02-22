@@ -106,7 +106,7 @@ house!: any;
 
   showToasterError() {
     this.notificationService.error(
-      'Gửi yêu cầu không thành công'
+      'Gửi yêu cầu không thành công, bạn phải đăng nhập vào hệ thống'
     );
   }
 

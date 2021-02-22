@@ -75,6 +75,7 @@ export class CreateHouseComponent implements OnInit {
 
   onSubmit() {
     this.createHouse();
+
   }
 
 
@@ -83,7 +84,7 @@ export class CreateHouseComponent implements OnInit {
     this.house.image = this.srcImg;
 
 
-    
+
     console.log(this.house.status)
     console.log(this.house);
     this.houseService.createHouse(this.house).subscribe(
@@ -94,7 +95,7 @@ export class CreateHouseComponent implements OnInit {
         this.router.navigate(['house']);
       },
       (error: any) => {
-        console.log(error)
+        this.showToasterError();
       }
     )
 

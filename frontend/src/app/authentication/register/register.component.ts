@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
       )
     this.authService
       .register(this.user).subscribe( data => {
+        console.log(this.user)
           this.toastrService.success("Đăng ký thành công")
           this.router.navigate(['login']);
         },
