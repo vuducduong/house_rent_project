@@ -64,7 +64,7 @@ house!: any;
       },error => console.log(error)
 
     )
-    
+
   }
 
   createBooking(){
@@ -84,9 +84,9 @@ house!: any;
       (data: any) => {
         console.log(data);
         this.showToasterSuccess();
-        
+
         this.booking = new Booking();
-        
+
         this.router.navigate(['']);
       },
       (error: any) => {
@@ -94,7 +94,7 @@ house!: any;
       }
 
     )
-    
+
 
 
 
