@@ -50,6 +50,7 @@
                                     <a><img src="{{list.image}}"></a>
                                 </div>
                                 <div class="item-entry overflow">
+
                                     <h5> {{list.name}}
                                     </h5>
                                     <a *ngIf="list.status=='Đang muốn thuê !'" routerLink="booking-detail/{{list.id}}" routerLinkActive="active" style="color: orange;" >Đang có người muốn thuê nhà của bạn</a>
@@ -71,6 +72,7 @@
 
                                         <div class="dealer-action pull-right">
                                             <a routerLink="edit-house/{{list.id}}" routerLinkActive="active" class="button">Sửa </a>
+
 
                                         </div>
 
