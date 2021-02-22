@@ -14,8 +14,9 @@ import { House } from 'src/app/model/houses/houses';
 export class BookingDetailComponent implements OnInit {
 booking!: any;
 id!: any;
-user!: any;
+users!: any;
 id1!: any;
+id2!: any;
 house!: any;
   constructor(
     private houseService:HomeService,
@@ -28,6 +29,7 @@ house!: any;
 
   ngOnInit(): void {
     this.id1 = this.route.snapshot.params['id'];
+    
     console.log(this.id1)
     this.house = new House();
 
@@ -35,12 +37,13 @@ house!: any;
       data => {
        
         this.house = data;
-        console.log(this.house)
+        // console.log(this.house)
       },error => console.log(error)
 
     )
     this.id = this.route.snapshot.params['id'];
     this.loadData();
+    // this.id2= localStorage.getItem("id")
   }
 
   changeState(){
@@ -48,7 +51,7 @@ house!: any;
     console.log(this.house)
     this.service.updateHouse(this.id1, this.house).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.router.navigate(['house'])
       }, error => console.log(error));
   }
@@ -57,16 +60,19 @@ house!: any;
     console.log(this.house)
     this.service.updateHouse(this.id1, this.house).subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.router.navigate(['house'])
       }, error => console.log(error));
   }
 
   loadData(){
+    this.id = this.route.snapshot.params['id'];
+    // this.booking.users_id=this.id2
     this.houseService.getBooking(this.id).subscribe(
       data=>{
+        this.getUserById();
         this.booking=data
-        this.getUserById()
+        
         console.log(data)
       },error=>{
         console.log(error);
@@ -79,8 +85,8 @@ house!: any;
     this.authService.getUser(this.id).subscribe(
       data => {
 
-        this.user = data;
-        console.log(this.user);
+        this.users = data;
+        console.log(data);
       },
       error =>{ 
         console.log(error)
