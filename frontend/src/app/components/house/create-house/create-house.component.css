@@ -9,7 +9,7 @@
 }
 .text.ng-touched.ng-valid{
   border: 1px solid green;}
-.text{
+#text{
   width: 1107px;
   height: 150px;
 }
