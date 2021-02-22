@@ -16,6 +16,7 @@ class HouseImageController extends Controller
     {
         //
     }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +36,10 @@ class HouseImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $images = new HouseImage();
+        $images->fill($request->all());
+        $images->save();
+        return response()->json($images);
     }
 
     /**

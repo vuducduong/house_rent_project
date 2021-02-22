@@ -1,0 +1,104 @@
+<div class="page-head">
+  <div class="container">
+      <div class="row">
+          <div class="page-head-content">
+              <h1 class="page-title">Thông tin cá nhân</h1>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- End page header -->
+
+<!-- property area -->
+<div class="content-area recent-property padding-top-40" style="background-color: #FFF;">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <div class="" id="contact1">
+                  <div class="row">
+                      <div class="col-sm-4">
+                          <h3><i class="fa fa-map-marker"></i> Tên người dùng</h3>
+                          <p>
+                              <strong>{{user.name}}</strong>
+                          </p>
+                      </div>
+                      <!-- /.col-sm-4 -->
+                      <!-- /.col-sm-4 -->
+                      <div class="col-sm-4">
+                          <h3><i class="fa fa-envelope"></i> Email </h3>
+                          <ul>
+                              <li><strong><a href="">{{user.email}}</a></strong> </li>
+                          </ul>
+                      </div>
+                      <!-- /.col-sm-4 -->
+                  </div>
+                  <!-- /.row -->
+                  <hr>
+
+                  <hr>
+                  <h2>Thông tin cá nhân </h2>
+                  <form [formGroup]="profileForm" >
+                      <div class="row">
+                          <div class="col-sm-6">
+                              <div class="form-group"> Tên người dùng :
+                                  <input type="text" class="form-control"  formControlName="name"
+                                      [(ngModel)]="user.name" required
+                                      >
+                                  <div *ngIf="profileForm.get('name').invalid && (profileForm.get('name').dirty || profileForm.get('name').touched)" class="alert alert-danger">
+                                      <div class="text-danger" *ngIf="profileForm.get('name').errors.required" >Tên người dùng không
+                                          được để trống</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group"> Địa chỉ :
+                                  <input type="text" class="form-control" formControlName="address"
+                                      [(ngModel)]="user.address" required
+                                      >
+                                  <div *ngIf="profileForm.get('address').invalid && (profileForm.get('address').dirty || profileForm.get('address').touched)" class="alert alert-danger">
+                                      <div class="text-danger" *ngIf="profileForm.get('address').errors.required">Địa chỉ người dùng
+                                          không được để trống</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group">Số điện thoại :
+                                  <input type="text" class="form-control" formControlName="phone" [(ngModel)]="user.phone"
+                                      required >
+                                  <div *ngIf="profileForm.get('phone').invalid && (profileForm.get('phone').dirty || profileForm.get('phone').touched)" class="alert alert-danger">
+                                      <div class="text-danger" *ngIf="profileForm.get('phone').errors.required">Số điện thoại người
+                                          dùng không được để trống</div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-sm-6">
+                              <div class="form-group"> Email :
+                                  <input disabled type="text" class="form-control" formControlName="email"
+                                      [(ngModel)]="user.email" >
+
+
+                              </div>
+                          </div>
+                          <div  class="col-sm-6">
+                              <div class="form-group">Mật khẩu :
+                                  <input disabled type="password" class="form-control" value="***********">
+                              </div>
+                          </div>
+                          <div  class="col-sm-12 text-center">
+                              <button style="margin-left: -230px; width: 125px; height: 45px;"  (click)="updateUser()" type="submit" class="btn btn-previous btn-default">Cập nhật</button>
+                              <div class="col-sm-6">
+                              <button style="margin-right: -230px;width: 125px;  height: 45px;"   type='submit' routerLink="/house" routerLinkActive="active" class="btn btn-primary">Trở về </button>
+
+                              </div>
+
+                          </div>
+
+                      </div>
+
+                  </form>
+              </div>
+          </div>
+      </div>
+
+  </div>
+</div>

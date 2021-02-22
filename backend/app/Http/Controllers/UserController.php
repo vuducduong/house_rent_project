@@ -4,8 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+
+use PhpParser\Node\Expr\FuncCall;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class UserController extends Controller
 {
@@ -16,7 +21,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users=User::all();
+        return response()->json($users);
     }
 
     /**
@@ -24,8 +30,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+
     }
 
     /**
@@ -42,17 +49,19 @@ class UserController extends Controller
             'password'=>'required|string|min:6',
         ]);
 
-        $statusCode = 201;
-        if($validator->fails()){
-            $statusCode=400;
-            return response()->json($validator->errors()->toJson(),$statusCode);
+        if ($validator->fails()) {
+            return response()->json($validator->errors()->toJson(), 400);
         }
 
-        $user = new User();
-        $user->fill($request->all());
-        $user->password = Hash::make($request->password);
-        $user->save();
-        return response()->json($user);
+        $user = User::create([
+            'email' => $request->get('email'),
+            'name' => $request->get('name'),
+            'password' => Hash::make($request->get('password')),
+        ]);
+
+        $token = JWTAuth::fromUser($user);
+
+        return response()->json(compact('user', 'token'), 201);
     }
 
     /**
@@ -63,7 +72,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user=User::find($id);
+        return response()->json($user);
     }
 
     /**
@@ -74,7 +84,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -86,7 +96,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $user = User::find($id);
+        $user->fill($request->all());
+        $user->save();
+        return response()->json($user);
     }
 
     /**
@@ -99,4 +113,26 @@ class UserController extends Controller
     {
         //
     }
+
+    public function getUserInfo(Request $request){
+        $user = JWTAuth::toUser($request->token);
+        return response()->json(['result' => $user]);
+    }
+    public function changePassword(Request $request, $id){
+        $user = User::find($id);
+        $password = $user->password;
+        $currentPassword = Hash::check($request->password,$password);
+        $newPassword = $request->newPassword === $request->newPasswordConfirm ;
+        if($currentPassword){
+            if($newPassword){
+                $user->password = Hash::make($request->newPassword);
+                $user->save();
+                return response()->json('Đổi mật khẩu thành công');
+            }else{
+                return response()->json('Nhập lại mật khẩu không đúng',401);
+            }
+        }
+        return response()->json('Mật khẩu hiện tại không chính xác', 400);
+    }
+
 }

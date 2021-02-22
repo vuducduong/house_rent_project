@@ -1,0 +1,51 @@
+.single-property-content .light-slide-item {
+    position: relative;
+    overflow: hidden;
+}
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+.favorite-and-print {
+    position: absolute;
+    z-index: 9;
+    right: 0px;
+    padding: 15px;
+}
+.favorite-and-print .add-to-fav {
+    color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    height: 35px;
+    margin-right: 10px;
+    width: 35px;
+    padding: 10px 3px 4px 6px;
+}
+.favorite-and-print  .printer-icon {
+    color: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    padding: 10px 7px 4px 7px;
+}
+.favorite-and-print .add-to-fav:hover  ,.favorite-and-print  .printer-icon:hover  {
+    color:#FDC600;
+    border-color: #FDC600;
+}
+.favorite-and-print .add-to-fav i ,.favorite-and-print  .printer-icon i  {
+    font-size: 25px;
+}
+.list-unstyled{padding-left:0;list-style:none}

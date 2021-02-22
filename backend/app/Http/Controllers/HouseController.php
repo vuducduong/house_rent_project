@@ -18,6 +18,9 @@ class HouseController extends Controller
     public function index()
     {
         $houses= House::all();
+        $houses = DB::table('houses')
+        ->orderBy('status', 'asc')
+        ->get();
         return response()->json($houses);
     }
 
@@ -28,7 +31,7 @@ class HouseController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -39,7 +42,12 @@ class HouseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $myHome = new House();
+
+        $myHome->fill($request->all());
+        $myHome->save();
+        return response()->json($myHome);
     }
 
     /**
@@ -51,11 +59,21 @@ class HouseController extends Controller
     public function show($id)
     {
         $house = House::find($id);
-    $images = DB::table('house_images')->where('houses_id','=',$id)->get();
+        // $users = User::find($id);
+    $images = DB::table('house_images')->where('houses_id','=',$id)
+    ->get();
+    $users= DB:: table('houses')
+    ->join('users','houses.users_id','=','users.id')
+    ->select('users.name','users.email','users.phone','users.address','users.id')
+    ->where('houses.id','=',$id)
+    ->first();
+
     $data = [
         "houses" => $house,
         "houseImages" => $images,
+        "users" => $users
     ];
+
     return response()->json($data);
     }
 
@@ -91,9 +109,9 @@ class HouseController extends Controller
      * @param  \App\Models\House  $house
      * @return \Illuminate\Http\Response
      */
-    public function destroy(House $house)
+    public function destroy($id)
     {
-        //
+
     }
 
 
@@ -104,9 +122,37 @@ class HouseController extends Controller
         $list = DB::table('users')
         ->join('houses','users.id','=','houses.users_id')
         ->select('users.name','houses.*')
+        ->orderBy('status', 'desc')
         ->where('users.id','=',$id)
         ->get();
         return response()->json($list);
 
     }
+
+    // public function uploadImages($id){
+    //     $images = House::find($id);
+    //     $images = DB::table('houses')
+    //     ->join('house_images','houses_id','=','house_images.houses_id')
+    //     ->select('houses.id','house_images.*')
+    //     ->where('houses.id','=',$id)
+    //     ->get();
+    //     return response()->json($images);
+
+    // }
+
+
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $houses = House::where('address', 'LIKE', "%$search%")->orWhere('pricePerDay', 'LIKE', "%$search%")->get();
+        return response()->json($houses);
+    }
+
+    public function getHouse($id){
+        $house = House::find($id);
+        return response()->json($house);
+    }
+
+
 }

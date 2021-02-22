@@ -1,0 +1,263 @@
+<div class="content-area submit-property" style="background-color: #FCFCFC;">&nbsp;
+  <div class="container">
+    <div class="wizard-footer">
+      <!-- <div class="pull-left">
+        <input type='button' (click)="cancel()" class='btn btn-previous btn-default' name='previous'
+               value='Trở về '/>
+
+      </div> -->
+    </div>
+    <div class="clearfix">
+      <div class="wizard-container">
+        <div class="wizard-card ct-wizard-orange" id="wizardProperty">
+
+          <form [formGroup]="editForm">
+            <div class="wizard-header">
+              <h3>
+                <br>CHỈNH SỬA THÔNG TIN NHÀ CỦA BẠN <br>
+              </h3>
+            </div>
+
+            <ul>
+
+            </ul>
+
+            <div class="tab-content">
+
+              <div>
+                <div class="row p-b-15  ">
+                  <div class="col-sm-4 col-sm-offset-1">
+                    <div class="picture-container">
+                      <div class="picture">
+                        <img src="{{house.image}}" class="picture-src" id="wizardPicturePreview" title="" />
+                        <input [(ngModel)]="house.image" type="file" id="file" #userPhoto
+                          (change)="onFileSelected($event)" formControlName="image" autocomplete="off"
+                          id="wizard-picture" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label>Tên căn nhà :</label>
+                      <input formControlName="name" type="text" [(ngModel)]="house.name" class="form-control"
+                        placeholder="Super villa ...">
+                      <div
+                        *ngIf="editForm.get('name').invalid && (editForm.get('name').dirty || editForm.get('name').touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="editForm.get('name').errors.required">Vui lòng nhập tên nhà</div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label>Giá căn nhà :</label>
+                      <input formControlName="pricePerDay" type="text" [(ngModel)]="house.pricePerDay"
+                        class="form-control" placeholder="3330000...">
+                      <div
+                        *ngIf="editForm.get('pricePerDay').invalid && (editForm.get('pricePerDay').dirty || editForm.get('pricePerDay').touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="editForm.get('pricePerDay').errors.required">Vui lòng nhập giá</div>
+                      </div>
+                    </div>
+
+
+                    <div class="form-group">
+                      <label>Phân loại nhà :</label>
+                      <select class="form-control" formControlName="type" [(ngModel)]="house.type">
+                        <option value="">Chọn loại nhà</option>
+                        <option>Phòng đơn</option>
+                        <option>Phòng đôi</option>
+                        <option>Phòng tổng thống,</option>
+                        <option>Phòng VIP</option>
+                        <option>Phòng Luxury</option>
+                      </select>
+                      <div
+                        *ngIf="editForm.get('type').invalid && (editForm.get('type').dirty || editForm.get('type').touched)"
+                        class="alert alert-danger">
+                        <div *ngIf="editForm.get('type').errors.required">Vui lòng nhập loại nhà</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <!--  End step 1 -->
+
+              <div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="col-sm-12">
+                      <div class="form-group">
+                        <label>Mô tả căn nhà :</label>
+                        <textarea formControlName="description" [(ngModel)]="house.description" id="text" class="form-control"></textarea>
+                        <div
+                          *ngIf="editForm.get('description').invalid && (editForm.get('description').dirty || editForm.get('description').touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="editForm.get('description').errors.required">Vui lòng thêm mô tả</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-12">
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <label>Địa chỉ :</label>
+                        <input formControlName="address" type="text" class="form-control" [(ngModel)]="house.address"
+                          placeholder="Nha tang...">
+                        <div
+                          *ngIf="editForm.get('address').invalid && (editForm.get('address').dirty || editForm.get('address').touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="editForm.get('address').errors.required">Vui lòng thêm địa chỉ</div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-3">
+
+
+                      <div class="form-group">
+                        <label>Trạng thái căn nhà :</label>
+                        <select class="form-control" formControlName="status" [(ngModel)]="house.status">
+                          <option value="">Chọn trạng thái</option>
+                          <option>Còn trống</option>
+                          <option>Đã cho thuê</option>
+                          <option>Đang nâng cấp</option>
+                        </select>
+                        <div
+                          *ngIf="editForm.get('status').invalid && (editForm.get('status').dirty || editForm.get('status').touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="editForm.get('status').errors.required">Vui lòng chọn trạng thái</div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <label>Số phòng ngủ :</label>
+                        <select class="form-control" formControlName="amountOfbedrooms"
+                          [(ngModel)]="house.amountOfbedrooms">
+                          <option value="">Chọn số lượng phòng</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                        </select>
+                        <div
+                          *ngIf="editForm.get('amountOfbedrooms').invalid && (editForm.get('amountOfbedrooms').dirty || editForm.get('amountOfbedrooms').touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="editForm.get('amountOfbedrooms').errors.required">Vui lòng nhập số phòng</div>
+                        </div>
+                      </div>
+
+                    </div>
+                    <div class="col-sm-3">
+                      <div class="form-group">
+                        <label>Số phòng tắm:</label>
+                        <select class="form-control" formControlName="amountOfbathrooms"
+                          [(ngModel)]="house.amountOfbathrooms">
+                          <option value="">Chọn số lượng phòng</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                        <div
+                          *ngIf="editForm.get('amountOfbathrooms').invalid && (editForm.get('amountOfbathrooms').dirty || editForm.get('amountOfbathrooms').touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="editForm.get('amountOfbathrooms').errors.required">Vui lòng nhập số phòng</div>
+                        </div>
+
+                      </div>
+
+
+                    </div>
+
+                  </div>
+
+                  <br>
+                </div>
+              </div>
+              <!-- End step 2 -->
+
+              <!--              <div>-->
+              <!--                <h4 class="info-text">Cung cấp thêm ảnh cho chúng tôi ? </h4>-->
+              <!--                <div class="row">-->
+              <!--                  <div class="col-sm-6">-->
+              <!--                    <div class="picture-container">-->
+              <!--                      <div class="picture">-->
+              <!--                        <img src="" class="picture-src" id="wizardPicturePreview" title=""/>-->
+              <!--                        <input multiple-->
+              <!--                               (change)="showPreview($event)" type="file" id="file" #userPhoto-->
+              <!--                               formControlName="image"-->
+              <!--                               [(ngModel)]="house.image" autocomplete="off" id="wizard-picture"/>-->
+              <!--                      </div>-->
+
+
+              <!--                    </div>-->
+              <!--                    <div class="picture-container">-->
+              <!--                      <div class="picture">-->
+              <!--                        <img src="" class="picture-src" id="wizardPicturePreview" title=""/>-->
+              <!--                        <-->
+
+              <!--                        <input multiple-->
+              <!--                               (change)="showPreview($event)" type="file" id="file" #userPhoto-->
+              <!--                               formControlName="image"-->
+
+              <!--                               [(ngModel)]="house.image" autocomplete="off" id="wizard-picture"/>-->
+              <!--                      </div>-->
+              <!--                    </div>-->
+              <!--                  </div>-->
+              <!--                  <div class="col-sm-6">-->
+              <!--                    <div class="picture-container">-->
+              <!--                      <div class="picture">-->
+              <!--                        <img src="" class="picture-src" id="wizardPicturePreview" title=""/>-->
+
+              <!--                        <input multiple-->
+              <!--                               (change)="showPreview($event)" type="file" id="file" #userPhoto-->
+              <!--                               formControlName="image"-->
+
+              <!--                               [(ngModel)]="house.image" autocomplete="off" id="wizard-picture"/>-->
+              <!--                      </div>-->
+              <!--                    </div>-->
+              <!--                    <div class="picture-container">-->
+              <!--                      <div class="picture">-->
+              <!--                        <img src="" class="picture-src" id="wizardPicturePreview" title=""/>-->
+
+              <!--                        <input multiple-->
+              <!--                               (change)="showPreview($event)" type="file" id="file" #userPhoto-->
+              <!--                               formControlName="image"-->
+
+              <!--                               [(ngModel)]="house.image" autocomplete="off" id="wizard-picture"/>-->
+              <!--                      </div>-->
+              <!--                    </div>-->
+              <!--                  </div>-->
+              <!--                </div>-->
+              <!--              </div>-->
+              <!--  End step 3 -->
+
+
+            </div>
+
+
+
+
+          </form>
+        </div>
+        <div>
+          <div style="margin-right: -150px;" class="col-sm-4 col-sm-offset-2">
+            <input style="width: 150px; height: 45px;" type='button' (click)="cancel()"
+              class="btn btn-finish btn-primary pull-right " value="Trở về ">
+          </div>
+          <div style="margin-left: 140px;" class="col-sm-4 col-sm-offset-1">
+            <input style="width: 150px; height: 45px;" type="button" (click)="onSubmit()"
+              class='btn btn-previous btn-default' value="Hoàn thành">
+
+          </div>
+          <!-- End submit form -->
+        </div>

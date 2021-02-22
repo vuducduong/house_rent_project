@@ -1,0 +1,88 @@
+<div class="page-head">
+    <div class="container">
+        <div class="row">
+            <div class="page-head-content">
+                <h1 class="page-title">Thông tin chi tiết</h1>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- End page header -->
+  
+  <!-- property area -->
+  <div class="content-area recent-property padding-top-40" style="background-color: #FFF;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="" id="contact1">
+                    
+                    <h2>Thông tin chi tiết </h2>
+                    <form  >
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group"> Tên người muốn thuê :
+                                    <input type="text" class="form-control"  name="name"
+                                        [(ngModel)]="booking.name"
+                                        >
+                                    
+                                </div>
+                            </div>
+                            
+                           
+                            <div class="col-sm-6">
+                                <div class="form-group"> Địa chỉ :
+                                    <input type="text" class="form-control" name="address" 
+                                        [(ngModel)]="booking.address"  
+                                        >
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">Số điện thoại :
+                                    <input type="number" class="form-control" name="phone" [(ngModel)]="booking.phone"
+                                         >
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group"> Email :
+                                    <input disabled type="text" class="form-control" name="email"
+                                        [(ngModel)]="booking.email" >
+                                        
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group"> Start Day :
+                                    <input disabled type="text" class="form-control" name="startDay"
+                                        [(ngModel)]="booking.startDay" >
+                                        
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group"> End Day :
+                                    <input disabled type="text" class="form-control" name="endDay"
+                                        [(ngModel)]="booking.endDay" >
+                                        
+                                    
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-12 text-center">
+                                <button (click)="changeState()" type="submit" class="btn btn-primary">Đồng ý</button>.  
+                                <button (click)="notChangeState()" type="submit" class="btn btn-danger">Không đồng ý</button>
+  
+                            </div>
+  
+                        </div>
+  
+                    </form>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+  </div>
+  

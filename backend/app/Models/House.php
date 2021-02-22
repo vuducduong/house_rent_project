@@ -18,9 +18,8 @@ class House extends Model
         'description',
         'status',
         'image',
-        'bookings_id',
         'users_id',
-        
+
     ];
     function houseImages(){
         return $this->hasMany(HouseImages::class);

@@ -1,0 +1,65 @@
+
+
+<nav  class="navbar navbar-default ">
+  <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a style="margin-left:  100px;" class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt=""></a>
+          <ul class="main-nav nav navbar-nav navbar-right">
+            <li>
+              <a href="index.html"  data-delay="200">
+
+              
+              <span color="#717071" class="sc-htpNat ilDvFU">Trang chủ</span>
+            </a>
+
+            </li>
+        </ul>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div  class="collapse navbar-collapse yamm" id="navigation">
+          <div    class="button navbar-right">
+            <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="login"
+            routerLinkActive="active">Đăng nhập</button>
+            <button class="navbar-btn nav-button wow bounceInRight login" *ngIf="!isLoggedIn" routerLink="register"
+            routerLinkActive="active">Đăng ký</button>
+            <ul class="main-nav  navbar-nav navbar-right">
+            <li class="dropdown ymm-sw " *ngIf="isLoggedIn" data-wow-delay="0.1s">
+              <a  class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="200" >{{user.name}} <b class="caret"></b></a>
+
+              <ul   class="dropdown-menu navbar-nav">
+                  <li>
+                    <a routerLink="house" routerLinkActive="active">Trang cá nhân</a>
+
+                  </li>
+                  <li>
+                    <a routerLink="update-profile" routerLinkActive="active">Chỉnh sửa trang cá nhân</a>
+                  </li>
+                  <li>
+                      <a routerLink="change-password"  >Đổi mật khẩu</a>
+                  </li>
+                  <li>
+                      <a (click)="logOut()">Đăng xuất</a>
+                  </li>
+
+              </ul>
+            </li>
+            </ul>
+
+            <button   class="navbar-btn nav-button wow bounceInRight login" *ngIf="isLoggedIn" routerLink="house/create-house"
+            routerLinkActive="active">Đăng tin</button>
+          </div>
+
+      </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- End of nav bar -->
+<router-outlet></router-outlet>
+

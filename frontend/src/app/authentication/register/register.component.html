@@ -1,0 +1,56 @@
+<div class="page-head">
+  <div class="container">
+    <div class="row">
+      <div class="page-head-content">
+        <h1 class="page-title">Đăng ký </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="register-area" style="background-color: rgb(249, 249, 249);">
+  <div style="margin: auto 500px;" class="container">
+
+    <div class="col-md-7">
+
+      <div class="box-for overflow">
+        <div class="col-md-12 col-xs-12 register-blocks">
+          <h2>Đăng ký : </h2>
+          <form [formGroup]="registerForm">
+            <div class="form-group">
+              <label>Tên người dùng</label>
+              <input type="text" formControlName="name" class="form-control">
+              <div *ngIf="registerForm.get('name').invalid && (registerForm.get('name').dirty || registerForm.get('name').touched)"
+              class="alert alert-danger">
+              <div *ngIf="registerForm.get('name').errors.required">Vui lòng nhập tên người dùng</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Email</label>
+              <input type="text" formControlName="email" class="form-control">
+              <div *ngIf="registerForm.get('email').invalid && (registerForm.get('email').dirty || registerForm.get('email').touched)"
+              class="alert alert-danger">
+              <div *ngIf="registerForm.get('email').errors.required">Vui lòng nhập email</div>
+              <div *ngIf="registerForm.get('email').errors.email">Định dạng email không hợp lệ</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Mật khẩu</label>
+              <input type="password" formControlName="password" class="form-control">
+              <div *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)"
+                class="alert alert-danger">
+                <div *ngIf="registerForm.get('password').errors.required">Vui lòng nhập mật khẩu</div>
+                <div *ngIf="registerForm.get('password').errors.minlength">Độ dài mật khẩu từ 6-8 kí tự</div>
+              </div>
+            </div>
+
+            <div class="div_submit" style="text-align: center;">
+              <button [disabled]="registerForm.invalid" class="btn btn-default" (click)="onSubmit()">Đăng ký</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
