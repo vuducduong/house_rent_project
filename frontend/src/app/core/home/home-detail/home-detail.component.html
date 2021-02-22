@@ -19,6 +19,7 @@
                                 </div>
 
                                 <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+
                                     <li data-thumb="assets/img/property-1/property1.jpg">
 
                                         <div class="item" ><img [src]="house.houses.image" height="550px" width="550px" ></div>
@@ -175,6 +176,10 @@
 
             </div>
         </div>
+
+        
+        <button type='button' (click)="back()" class='btn btn-finish btn-primary  '>Trở về</button>.   
+        <a *ngIf="house.houses.users_id!=user_id" routerLink="booking/edit-house" routerLinkActive="active" class="btn btn-previous btn-default" type="button">Thuê nhà</a>
 
 
 
